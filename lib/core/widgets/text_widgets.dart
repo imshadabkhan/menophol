@@ -14,7 +14,7 @@ class Texts {
       style: TextStyle(
 
         fontSize: size ?? 28,
-        fontFamily: "Poppins",
+        fontFamily: "LeagueSpartan",
         fontWeight: fontWeight ?? FontWeight.bold,
 
 
@@ -33,7 +33,7 @@ class Texts {
         decoration: decoration,
           fontSize: size ?? 18.0,
           fontWeight: fontWeight??FontWeight.w400,
-          fontFamily: "PlusJakartaSansRegular",
+          fontFamily: "Montserrat",
           color: color ?? ColorConstants.greyTextColor,
           overflow: overflow),
       textAlign: textAlign ?? TextAlign.center,
