@@ -7,6 +7,9 @@ class Assets
   static String image1 = "$images/image.png";
 
 //////////////////////////////////////////I C O N S////////////////////////////////////////////////////////////////////////////////
+  static String calendarIcon = "$icons/calendar.png";
+  static String deleteIcon = "$icons/delete_icon.png";
+  static String searchIcon = "$icons/search_icon.png";
   static String anxietyIcon = "$icons/anxiety.png";
   static String brainIcon = "$icons/brain_icon.png";
   static String contentIcon = "$icons/content.png";
@@ -41,5 +44,6 @@ class Assets
   static String unfilledHeart = "$icons/unfilled_heart.png";
   static String weightGainIcon = "$icons/weight_gain_icon.png";
   static String unfilledHotFlushes = "$icons/unfilled_hot_flushes.png";
+  static String dumbellIcon = "$icons/dumbell.png";
 
 }

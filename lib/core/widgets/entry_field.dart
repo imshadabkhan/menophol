@@ -126,19 +126,19 @@ filled: true,
                   ? Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(width: 17,height: 17,
-                    child: Image.asset(prefixIcon??"",fit: BoxFit.contain,color: Colors.grey)),
+                    child: Image.asset(prefixIcon??"",fit: BoxFit.contain,color: Colors.black)),
                   )
                   : null,
               suffixIcon: InkWell(
                   onTap: onTrailingTap,
 
-                  child: Icon(suffixIcon,size: 17,color: Colors.grey,)),
+                  child: Icon(suffixIcon,size: 17,color: Colors.black,)),
               hintText: hint,
               hintStyle: TextStyle(
                   fontFamily: "PoppinsRegular",
                   fontWeight: FontWeight.w400,
                   fontSize: 12,
-                  color:Colors.white),
+                  color:Colors.grey),
               counterStyle: const TextStyle(
                 height: double.minPositive,
               ),
