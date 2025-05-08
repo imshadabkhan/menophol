@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-
-import '../constants/color_constants.dart';
-
 class EntryField extends StatelessWidget {
   final String? hint;
   final String? prefixIcon;
@@ -129,36 +126,36 @@ filled: true,
                   ? Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(width: 17,height: 17,
-                    child: Image.asset(prefixIcon??"",fit: BoxFit.contain,color: ColorConstants.iconColors)),
+                    child: Image.asset(prefixIcon??"",fit: BoxFit.contain,color: Colors.grey)),
                   )
                   : null,
               suffixIcon: InkWell(
                   onTap: onTrailingTap,
 
-                  child: Icon(suffixIcon,size: 17,color: ColorConstants.iconColors,)),
+                  child: Icon(suffixIcon,size: 17,color: Colors.grey,)),
               hintText: hint,
               hintStyle: TextStyle(
                   fontFamily: "PoppinsRegular",
                   fontWeight: FontWeight.w400,
                   fontSize: 12,
-                  color:ColorConstants.textHintColor),
+                  color:Colors.white),
               counterStyle: const TextStyle(
                 height: double.minPositive,
               ),
               counterText: "",
-              fillColor:fillColor??ColorConstants.entryFieldFillColor ,
+              fillColor:fillColor??Colors.white ,
               border: OutlineInputBorder(
-                borderSide:  BorderSide(color: ColorConstants.greyTextColor),
+                borderSide:  BorderSide(color: Colors.grey),
                 borderRadius:
                     borderRadius ?? BorderRadius.all(Radius.circular(10)),
               ),
               focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: ColorConstants.grayBorderColor),
+                borderSide: BorderSide(color: Colors.grey),
                 borderRadius:
                     borderRadius ?? BorderRadius.all(Radius.circular(10)),
               ),
               enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color:  ColorConstants.grayBorderColor),
+                borderSide: BorderSide(color:  Colors.grey),
                 borderRadius:
                     borderRadius ?? BorderRadius.all(Radius.circular(10)),
               ),
@@ -310,19 +307,19 @@ class EntrySearchField extends StatelessWidget {
               counterStyle: const TextStyle(
                 height: double.minPositive,
               ),
-              counterText: "",fillColor:ColorConstants.greyTextColor ,
+              counterText: "",fillColor:Colors.white ,
               border: OutlineInputBorder(
-                borderSide:  BorderSide(color: ColorConstants.greyTextColor),
+                borderSide:  BorderSide(color: Colors.white),
                 borderRadius:
                 borderRadius ?? BorderRadius.all(Radius.circular(10)),
               ),
               focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color:ColorConstants.greyTextColor),
+                borderSide: BorderSide(color:Colors.white),
                 borderRadius:
                 borderRadius ?? BorderRadius.all(Radius.circular(10)),
               ),
               enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color:  ColorConstants.greyTextColor),
+                borderSide: BorderSide(color:  Colors.white),
                 borderRadius:
                 borderRadius ?? BorderRadius.all(Radius.circular(10)),
               ),
@@ -471,22 +468,22 @@ class EntryBigField extends StatelessWidget {
                 fontSize: 12,
                 color: Colors.black45),
             filled: true,
-            fillColor: ColorConstants.searchFieldFillColor,
+            fillColor: Colors.white,
             counterStyle: const TextStyle(
               height: double.minPositive,
             ),
             counterText: "",
             border:  OutlineInputBorder(
-              borderSide: BorderSide(color: ColorConstants.grayBorderColor),
+              borderSide: BorderSide(color: Colors.black),
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: ColorConstants.grayBorderColor),
+              borderSide: BorderSide(color: Colors.black),
               borderRadius: const BorderRadius.all(Radius.circular(10)),
 
             ),
             enabledBorder:  OutlineInputBorder(
-              borderSide: BorderSide(color: ColorConstants.grayBorderColor),
+              borderSide: BorderSide(color: Colors.black),
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
           ),

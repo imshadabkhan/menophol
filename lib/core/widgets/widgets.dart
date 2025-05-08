@@ -1,14 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-
 import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
-
 import '../constants/assets_constants.dart';
 import '../constants/color_constants.dart';
 
@@ -132,7 +127,7 @@ class Widgets {
     borderRadius: BorderRadius.circular(10),
     boxShadow: [
       BoxShadow(
-        color: ColorConstants.greyTextColor, // Light grey shadow
+        color: Colors.grey, // Light grey shadow
         spreadRadius: 1, // How much the shadow spreads
         blurRadius: 10, // How soft the shadow looks
         offset: Offset(0, 3), // Positioning (horizontal, vertical)
@@ -203,7 +198,7 @@ class Widgets {
                   Widgets.heightSpaceH1,
                   Texts.textNormal(message,
                       size: 12,
-                      color: ColorConstants.greyTextColor,
+                      color: ColorConstants.blackColor,
                       overflow: TextOverflow.ellipsis),
                 ],
               ),
@@ -852,97 +847,7 @@ class Widgets {
     );
   }
 
-  static hostCard() {
-    return InkWell(
-        onTap: () {
 
-        },
-        child: Stack(
-          children: [
-            Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: ColorConstants.greyTextColor, // Light grey shadow
-                      spreadRadius: 1, // How much the shadow spreads
-                      blurRadius: 20, // How soft the shadow looks
-                    ),
-                  ],
-                ),
-                child: Row(children: [
-                  InkWell(
-                    onTap: () {},
-                    child: Container(
-                      width: 65,
-                      height: 65,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(Assets.profileImage))),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 7.0,
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 5.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Texts.textBlock("Luca Moretti",
-                              fontWeight: FontWeight.w700,
-                              maxline: 2,
-                              color: Colors.black,
-                              size: 15),
-                          const SizedBox(
-                            height: 2.0,
-                          ),
-                          Texts.textBlock('Spain, Madrid',
-                              fontWeight: FontWeight.w300,
-                              color: Colors.black54,
-                              size: 10),
-                          const SizedBox(
-                            height: 7.0,
-                          ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Icon(
-                                Icons.star,
-                                color: ColorConstants.primaryColor,
-                                size: 12,
-                              ),
-                              Texts.textBlock(' 4.8 (53 reviews)',
-                                  fontWeight: FontWeight.w300,
-                                  color: Colors.black54,
-                                  size: 10),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ])),
-            Positioned(
-              top: 10,
-              right: 10,
-              child: Row(children: [
-                CircleAvatar(
-                  backgroundColor: Colors.green,
-                  radius: 2,
-                ),
-                Text(" Active Now",
-                    style: TextStyle(fontSize: 10, color: Colors.black87))
-              ]),
-            )
-          ],
-        ));
-  }
 
   static void hideLoader() {
     // EasyLoading.dismiss();

@@ -34,7 +34,7 @@ class Texts {
           fontSize: size ?? 18.0,
           fontWeight: fontWeight??FontWeight.w400,
           fontFamily: "Montserrat",
-          color: color ?? ColorConstants.greyTextColor,
+          color: color ?? ColorConstants.blackColor,
           overflow: overflow),
       textAlign: textAlign ?? TextAlign.center,
 
@@ -53,7 +53,7 @@ class Texts {
     );
   }
 
-  static TextUrbanistCenter(String label,
+  static textUrbanistCenter(String label,
       {double? size,
       Color? color,
       FontWeight? fontWeight,

@@ -46,7 +46,7 @@ class MyOutlineButton extends StatelessWidget {
 
           onPressed: onPressed,
           style: ButtonStyle(
-            padding:  WidgetStateProperty.all(EdgeInsets.symmetric(horizontal: 10.0, vertical: 0.0)),            backgroundColor:WidgetStateProperty.all<Color>(buttonBGColor ?? ColorConstants.transparentColor),
+            padding:  WidgetStateProperty.all(EdgeInsets.symmetric(horizontal: 10.0, vertical: 0.0)),            backgroundColor:WidgetStateProperty.all<Color>(buttonBGColor ??Colors.transparent),
             overlayColor: WidgetStateProperty.all(
               textColor ??ColorConstants.primaryColor,
             ),
