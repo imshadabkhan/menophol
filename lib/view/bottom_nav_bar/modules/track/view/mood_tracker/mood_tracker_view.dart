@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/track/view/mood_tracker/mood_view.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/track/view/mood_tracker/past_entries.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/past_entries.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/symptoms.dart';
 
-class TrackView extends StatefulWidget {
+
+class MoodTrackerView extends StatefulWidget {
+  const MoodTrackerView({super.key});
+
   @override
-  _TrackViewState createState() => _TrackViewState();
+  _MoodTrackerViewState createState() => _MoodTrackerViewState();
 }
 
-class _TrackViewState extends State<TrackView> with SingleTickerProviderStateMixin {
+class _MoodTrackerViewState extends State<MoodTrackerView> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   final List<Tab> myTabs = <Tab>[
-    Tab(text: 'Symptoms'),
+    Tab(text: 'Mood'),
     Tab(text: 'Past Entries'),
 
   ];
@@ -34,16 +38,16 @@ class _TrackViewState extends State<TrackView> with SingleTickerProviderStateMix
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-     leading: BackButton(),
+        leading: BackButton(),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textBold("Symptoms Tracker",size: 24),),
-Widgets.heightSpaceH1,
-           Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textNormal("Your symptoms are real. Track them to take control.",textAlign: TextAlign.start,size: 16),
-           ),
-           Widgets.heightSpaceH1,
+          Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textBold("Mood Tracker",size: 24),),
+          Widgets.heightSpaceH1,
+          Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textNormal("Track your mood to spot patterns in yur health and emotional wellbeing",textAlign: TextAlign.start,size: 16),
+          ),
+          Widgets.heightSpaceH1,
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: TabBar(
@@ -62,8 +66,8 @@ Widgets.heightSpaceH1,
 
               controller: _tabController,
               children: [
-                SymptomsView(),
-                PastEntries(),
+                MoodView(),
+                MoodPastEntries(),
 
               ],
             ),

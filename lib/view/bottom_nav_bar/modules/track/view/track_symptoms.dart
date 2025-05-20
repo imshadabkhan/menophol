@@ -6,6 +6,7 @@ import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/model.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/track/view/mood_tracker/mood_tracker_view.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/track_view.dart';
 
 class TrackSymptoms extends StatelessWidget {
@@ -79,6 +80,7 @@ class TrackSymptoms extends StatelessWidget {
                     return InkWell(
                       onTap: (){
                         Get.to(TrackView());
+                        if(index==1){Get.to(MoodTrackerView());}
                       },
                       child: Container(
                         padding: const EdgeInsets.all(12),

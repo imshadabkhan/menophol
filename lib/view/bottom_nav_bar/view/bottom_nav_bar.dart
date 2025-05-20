@@ -5,6 +5,7 @@ import 'package:menophol/view/bottom_nav_bar/modules/chat/chat_view.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/consult/consult_view.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/home/home.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/track_symptoms.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/validate/validate_view.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -21,7 +22,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     TrackSymptoms(),
     ChatView(),
 
-    Placeholder(), // Profile screen placeholder
+    ValidateHomePage(), // Profile screen placeholder
     ConsultView(),
   ];
 

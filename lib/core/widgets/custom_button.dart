@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,7 +21,7 @@ class CustomButton extends StatelessWidget {
   final double? radius; final double? fontSize;
   final TextStyle? textStyle;
  final Color? borderColor;
- final Color? borderWidth;
+ var borderWidth;
   final Color? backgroundColor;
    CustomButton({
     super.key,
@@ -49,7 +51,7 @@ class CustomButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.circular(radius ?? 8),
-          border: Border.all(color: borderColor??Colors.transparent,width: .6),
+          border: Border.all(color: borderColor??Colors.transparent,width: borderWidth ??.6),
           // color: color ?? ColorConstants.secondaryColor,
         ),
         padding: EdgeInsets.all(padding ?? (icon != null ? 12.0 : 12.0)),

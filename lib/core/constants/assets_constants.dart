@@ -23,6 +23,7 @@ class Assets
   static String hrtIcon = "$icons/hrt_icon.png";
   static String insightIcon = "$icons/insight_icon.png";
   static String insomnia = "$icons/insomnia.png";
+  static String happy = "$icons/happy.png";
   static String irritable = "$icons/irritable.png";
   static String moodSwingsIcon = "$icons/mood_swings_icon.png";
   static String navbarIcon1 = "$icons/nav_bar_icon1.png";
@@ -45,5 +46,13 @@ class Assets
   static String weightGainIcon = "$icons/weight_gain_icon.png";
   static String unfilledHotFlushes = "$icons/unfilled_hot_flushes.png";
   static String dumbellIcon = "$icons/dumbell.png";
-
+  static String unfilledCalm = "$icons/unfilled_calm.png";
+  static String unfilledConfused = "$icons/unfilled_confused.png";
+  static String unfilledEnergetic = "$icons/unfilled_energetic.png";
+  static String unfilledHappy = "$icons/unfilled_happy.png";
+  static String unfilledIrritable = "$icons/unfilled_irritable.png";
+  static String unfilledOverwhelmed = "$icons/unfilled_overwhelmed.png";
+  static String unfilledSad = "$icons/unfilled_sad.png";
+  static String unfilledTired = "$icons/unfilled_tired.png";
+  static String unfilledUnaxious= "$icons/unfilled_unaxious.png";
 }

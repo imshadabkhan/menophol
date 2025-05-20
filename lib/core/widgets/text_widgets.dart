@@ -24,13 +24,14 @@ class Texts {
   }
 
   static textNormal(String label,
-      {double? size, Color? color, String? fontFamily, textAlign, overflow,var decoration,var fontWeight}) {
+      {double? size, Color? color, String? fontFamily, textAlign, overflow,var decoration,var fontWeight,var textBaseline}) {
     return AutoSizeText(
       label,
       maxLines: 3,
       style: TextStyle(
 
         decoration: decoration,
+          textBaseline: textBaseline,
           fontSize: size ?? 18.0,
           fontWeight: fontWeight??FontWeight.w400,
           fontFamily: "Montserrat",
