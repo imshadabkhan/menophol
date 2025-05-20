@@ -47,9 +47,10 @@ class Texts {
     return AutoSizeText(
       label,
       style: TextStyle(
-          fontWeight: fontWeight,
+          fontWeight: fontWeight??FontWeight.w600,
           fontSize: size ?? 18.0,
-          fontFamily: "PoppinsBlack",
+          fontFamily: "Montserrat",
+
           color: color ?? Colors.black),
     );
   }
@@ -89,7 +90,6 @@ decoration: decoration,
           fontSize: size ?? 18.0,
           fontFamily: fontFamily ?? "PoppinsRegular",
           fontWeight: fontWeight ?? FontWeight.bold,
-
           color: color ?? Colors.black,
 
       ),

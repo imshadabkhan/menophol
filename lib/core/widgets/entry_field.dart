@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:menophol/core/constants/color_constants.dart';
 
 class EntryField extends StatelessWidget {
   final String? hint;
@@ -309,17 +310,17 @@ class EntrySearchField extends StatelessWidget {
               ),
               counterText: "",fillColor:Colors.white ,
               border: OutlineInputBorder(
-                borderSide:  BorderSide(color: Colors.white),
+                borderSide:  BorderSide(color: ColorConstants.greyBorderColor),
                 borderRadius:
                 borderRadius ?? BorderRadius.all(Radius.circular(10)),
               ),
               focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color:Colors.white),
+                borderSide: BorderSide(color:ColorConstants.greyBorderColor),
                 borderRadius:
                 borderRadius ?? BorderRadius.all(Radius.circular(10)),
               ),
               enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color:  Colors.white),
+                borderSide: BorderSide(color:  ColorConstants.greyBorderColor),
                 borderRadius:
                 borderRadius ?? BorderRadius.all(Radius.circular(10)),
               ),

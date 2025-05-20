@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:menophol/core/constants/assets_constants.dart';
+import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/widgets/entry_field.dart';
 import 'package:menophol/core/widgets/radiobuttonwithtext.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
 
-class MoodPastEntries extends StatefulWidget {
-  const MoodPastEntries({super.key});
+class SleepPastEnteries extends StatefulWidget {
+  const SleepPastEnteries({super.key});
 
   @override
-  State<MoodPastEntries> createState() => _MoodPastEntriesState();
+  State<SleepPastEnteries> createState() => _SleepPastEnteriesState();
 }
 
-class _MoodPastEntriesState extends State<MoodPastEntries> {
+class _SleepPastEnteriesState extends State<SleepPastEnteries> {
   @override
   List<String> triggers=["Exercise",'Sleep Changes','Temperature',"Weather Changes"];
   List<String> trigger2=["Exercise",'Temperature',"Weather Changes"];
@@ -26,7 +27,7 @@ class _MoodPastEntriesState extends State<MoodPastEntries> {
             hint: "07/04/2025",
           ),
           Widgets.heightSpaceH05,
-          PastEntryCards(triggers: triggers,title: "Happy",icon:Assets.unfilledHappy,),
+          PastEntryCards(triggers: triggers,title: "Good Sleep",icon:Assets.unfilledHappy,),
           // PastEntryCards(triggers: trigger2,title: 'Sleep Issues',label:"Very Severe" ,labelColor: ColorConstants.redColor,),
 
         ],),
@@ -73,25 +74,57 @@ class PastEntryCards extends StatelessWidget {
                   Image.asset(Assets.deleteIcon,height: 20,),
 
                 ],),
+
+              Texts.textNormal("5/10",size: 12,color: ColorConstants.grayColor),
               Widgets.heightSpaceH1,
-              // Container(
-              //   decoration: BoxDecoration(
-              //     color: ColorConstants.greyBgColor,
-              //     borderRadius: BorderRadius.circular(8),
-              //
-              //   ),
-              //   child: Padding(padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),child: Texts.textNormal(label,color:labelColor?? ColorConstants.goldenColor,size: 14),),),
+
               Widgets.heightSpaceH1,
               Widgets.divider(),
               Widgets.heightSpaceH1,
-              Texts.textBold("Triggers",size: 18),
-              Widgets.heightSpaceH1,
-              Wrap(
-                direction:Axis.horizontal,
-                children: List.generate(triggers.length, (index)=> Padding(
-                  padding: const EdgeInsets.only(right: 5,top: 5,bottom: 5),
-                  child: RadioBtnWithTextChip(label: triggers[index]),
-                ),),),
+              Row(
+
+                children: [
+
+                Column(
+
+                  crossAxisAlignment:CrossAxisAlignment.start,
+                    children: [
+                  Texts.textBold("Duration",size: 16),
+                  Widgets.heightSpaceH05,
+                  Texts.textNormal("8 hours",size: 14)
+
+                ],),
+                Widgets.widthSpaceW4,
+                  Widgets.widthSpaceW4,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                  Texts.textBold("Times Awake",size: 16),
+                  Widgets.heightSpaceH05,
+                  Texts.textNormal("0",size: 14),
+
+                ],),
+
+              ],),
+              Widgets.heightSpaceH2,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Texts.textBold("Notes",size: 16),
+                  Widgets.heightSpaceH05,
+                  Texts.textNormal("Lorem ipsum dolor sit amet consectetur",size: 14,textAlign: TextAlign.start),
+                  Widgets.heightSpaceH1,
+                  Texts.textBold("Triggers",size: 16),
+                  Widgets.heightSpaceH05,
+                  Wrap(
+                    direction:Axis.horizontal,
+                    children: List.generate(1, (index)=> Padding(
+                      padding: const EdgeInsets.all(4.0).copyWith(left: 0),
+                      child: RadioBtnWithTextChip(label:"Exercise"),
+                    ),),),
+
+                ],),
+
 
             ],
           ),
