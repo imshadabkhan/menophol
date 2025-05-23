@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:menophol/core/constants/color_constants.dart';
@@ -10,6 +9,7 @@ class HomeScreenCards extends StatelessWidget {
     super.key,
     required this.icon,required this.text
   });
+
   final String icon;
   final String text;
 
@@ -17,7 +17,7 @@ class HomeScreenCards extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 120.h,
-      width: 120.w,
+      width: 110.w,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.r),
@@ -46,7 +46,7 @@ class HomeScreenCards extends StatelessWidget {
                 ),
               ),
               Widgets.heightSpaceH1,
-              Texts.textNormal(text, size: 14),
+              Texts.textNormal(text, size: 10),
             ],
           ),
         ),

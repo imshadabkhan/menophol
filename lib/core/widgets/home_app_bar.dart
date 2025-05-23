@@ -20,7 +20,7 @@ class HomeAppBar extends StatelessWidget {
       ),
       title: Texts.textNormal('Welcome Back',
           textAlign: TextAlign.start, size: 16),
-      subtitle: Texts.textBold("Freddy", textAlign: TextAlign.start, size: 22),
+      subtitle: Texts.textBold("Freddy", textAlign: TextAlign.start, size: 20),
       trailing: SizedBox(
         width: 50.w,
         child: Row(

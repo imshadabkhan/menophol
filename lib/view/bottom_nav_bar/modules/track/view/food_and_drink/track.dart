@@ -100,7 +100,7 @@ class Track extends StatelessWidget {
 
                   child: ListView.builder(
                     shrinkWrap: true,
-                      itemCount:1,
+                      itemCount:mealList.length,
                       itemBuilder: (BuildContext context,int index){
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 8.0),

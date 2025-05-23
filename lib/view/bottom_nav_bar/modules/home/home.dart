@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:menophol/core/constants/assets_constants.dart';
 import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/constants/padding_constants.dart';
 import 'package:menophol/core/widgets/conversation_block.dart';
@@ -16,7 +15,7 @@ import 'package:menophol/view/bottom_nav_bar/modules/home/controller.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
-  HomeController controller = Get.put(HomeController());
+  final HomeController controller = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,11 +34,11 @@ class HomeScreen extends StatelessWidget {
             ReportCard(),
             Widgets.heightSpaceH2,
             Texts.textBold('How are you feeling today?',
-                textAlign: TextAlign.start, size: 22),
+                textAlign: TextAlign.start, size: 20),
             Widgets.heightSpaceH05,
             Texts.textNormal(
                 "Track your symptoms. Take back control of your  health.",
-                size: 16,
+                size: 14,
                 textAlign: TextAlign.start),
             Widgets.heightSpaceH1,
             FeelingListWidget(controller: controller),
@@ -48,7 +47,7 @@ class HomeScreen extends StatelessWidget {
 
             ConversationBlock(),
             Widgets.heightSpaceH2,
-            Texts.textBold('What You Need to Know', size: 22),
+            Texts.textBold('What You Need to Know', size: 20),
             Widgets.heightSpaceH05,
             Texts.textNormal('Insights on your body, mind, and hormones.',
                 size: 16,textAlign: TextAlign.start),

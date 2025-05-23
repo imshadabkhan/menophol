@@ -30,8 +30,8 @@ class ListTile_Widget extends StatelessWidget {
                   children: [
                     Container(
 
-                      height: 80.h,
-                      width: 90.w,
+                      height: 60.h,
+                      width: 70.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                       ),
@@ -44,7 +44,7 @@ class ListTile_Widget extends StatelessWidget {
                         children: [
                           Texts.textBold('Common Menopause Symptoms',
                               textAlign: TextAlign.start,
-                              size: 20,
+                              size: 18,
                               maxlines: 2),
 
                           Widgets.heightSpaceH05,
@@ -57,19 +57,19 @@ class ListTile_Widget extends StatelessWidget {
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      Icon(Icons.access_time_sharp,size: 15,),
+                                      Icon(Icons.access_time_sharp,size: 14,),
                                       Widgets.widthSpaceW1,
-                                      Texts.textNormal('8 Min Read',size: 14,color: ColorConstants.blackColor)
+                                      Texts.textNormal('8 Min Read',size: 13,color: ColorConstants.blackColor)
                                     ],
                                   ),
 
                                   Widgets.heightSpaceH05,
-                                  Texts.textNormal('HSE',color: ColorConstants.blackColor,size: 14),
+                                  Texts.textNormal('HSE',color: ColorConstants.blackColor,size: 13),
 
                                 ],
                               ),
 
-                              SvgPicture.asset(Assets.femaleIcon,height: 40,),
+                              SvgPicture.asset(Assets.femaleIcon,height: 35,),
                             ],
                           ),
 

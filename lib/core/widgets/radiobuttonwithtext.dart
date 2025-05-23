@@ -17,7 +17,7 @@ class RadioBtnWithTextChip extends StatelessWidget {
 
       decoration: BoxDecoration(
         border: Border.all(color: ColorConstants.greyBorderColor),
-        color:ColorConstants.greyBgColor,
+        color:ColorConstants.chipBGColor,
 
         borderRadius: BorderRadius.circular(8),
 
@@ -44,7 +44,7 @@ class RadioBtnWithTextChip extends StatelessWidget {
             ),
           ),
           Widgets.widthSpaceW1,
-          Texts.textNormal(label,size: 16),
+          Texts.textNormal(label,size: 12),
         ],)),
     );
   }

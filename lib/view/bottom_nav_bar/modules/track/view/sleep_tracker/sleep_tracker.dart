@@ -5,7 +5,7 @@ import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/widgets/custom_button.dart';
 import 'package:menophol/core/widgets/custom_dropdown.dart';
 import 'package:menophol/core/widgets/custom_slider.dart';
-import 'package:menophol/core/widgets/expandable_list_tile.dart';
+
 import 'package:menophol/core/widgets/radiobuttonwithtext.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/model.dart';
@@ -25,32 +25,32 @@ class _SleepTrackerState extends State<SleepTracker> {
     TrackItem(
         icon: Assets.symptomsIcon,
         title: 'Symptoms',
-        subtitle: 'Track your hormonal health symptoms'),
+        subtitle: 'Track your hormonal health symptoms',subtitle2: "",),
     TrackItem(
         icon: Assets.unfilledHeart,
         title: 'Mood',
-        subtitle: 'Monitor your emotional wellbeing'),
+        subtitle: 'Monitor your emotional wellbeing',subtitle2: "",),
     TrackItem(
         icon: Assets.sleepIcon,
         title: 'Sleep',
-        subtitle: 'Track your sleep patterns'),
+        subtitle: 'Track your sleep patterns',subtitle2: "",),
     TrackItem(
         icon: Assets.foodDrinkIcon,
         title: 'Food & Drink',
-        subtitle: 'Track your diet and liquid intake'),
+        subtitle: 'Track your diet and liquid intake',subtitle2: "",),
     TrackItem(
         icon: Assets.dumbellIcon,
         title: 'Exercise',
-        subtitle: 'Log your physical activity'),
-    TrackItem(icon: Assets.hrtIcon, title: 'joint Pain', subtitle: 'aching'),
+        subtitle: 'Log your physical activity',subtitle2: "",),
+    TrackItem(icon: Assets.hrtIcon, title: 'joint Pain', subtitle: 'aching',subtitle2: "",),
     TrackItem(
         icon: Assets.hrtIcon,
         title: 'HRT',
-        subtitle: 'Increased Weight gain'),
+        subtitle: 'Increased Weight gain',subtitle2: "",),
     TrackItem(
         icon: Assets.supplimentsIcon,
         title: 'Suppliments',
-        subtitle: 'Sudden heat and sweating'),
+        subtitle: 'Sudden heat and sweating',subtitle2: "",),
     // TrackItem(
     //     icon: Assets.supplimentsIcon,
     //     title: 'Periods',
@@ -58,7 +58,7 @@ class _SleepTrackerState extends State<SleepTracker> {
     TrackItem(
         icon: Assets.periodsIcon,
         title: 'Irregualr Periods',
-        subtitle: 'Irregular menstrual cycles'),
+        subtitle: 'Irregular menstrual cycles',subtitle2: "",),
   ];
 
   final List<String> options = ['Option 1', 'Option 2', 'Option 3'];

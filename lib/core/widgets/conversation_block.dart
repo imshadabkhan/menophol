@@ -28,12 +28,12 @@ class ConversationBlock extends StatelessWidget {
         children: [
           Texts.textBold(
             'Ask The Menopal',
-            size: 22,
+            size: 20,
           ),
           Widgets.heightSpaceH05,
           Texts.textNormal(
               'Struggling with symptoms, weight, or sleep? Let’s work it out together.',
-              size: 16,
+              size: 14,
               textAlign: TextAlign.center),
           Widgets.heightSpaceH1,
           CustomButton(

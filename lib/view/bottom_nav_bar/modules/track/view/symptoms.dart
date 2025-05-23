@@ -25,42 +25,43 @@ class _SymptomsViewState extends State<SymptomsView> {
     TrackItem(
         icon: Assets.symptomsIcon,
         title: 'Anxiety',
-        subtitle: 'Track your hormonal health symptoms'),
+        subtitle: 'Track your hormonal health symptoms',
+    subtitle2: "",
+    ),
     TrackItem(
         icon: Assets.unfilledHeart,
         title: 'Brain Fog',
-        subtitle: 'Monitor your emotional wellbeing'),
+        subtitle: 'Monitor your emotional wellbeing',subtitle2: "",),
     TrackItem(
         icon: Assets.sleepIcon,
         title: 'Sleep Issues',
-        subtitle: 'Track your sleep patterns'),
+        subtitle: 'Track your sleep patterns',subtitle2: "",),
     TrackItem(
         icon: Assets.foodDrinkIcon,
         title: 'Mood Swings',
-        subtitle: 'Track your diet and liquid intake'),
+        subtitle: 'Track your diet and liquid intake',subtitle2: "",),
     TrackItem(
         icon: Assets.dumbellIcon,
         title: 'Fatigue',
-        subtitle: 'Log your physical activity'),
-    TrackItem(icon: Assets.hrtIcon, title: 'joint Pain', subtitle: 'aching'),
+        subtitle: 'Log your physical activity',subtitle2: "",),
+    TrackItem(icon: Assets.hrtIcon, title: 'joint Pain', subtitle: 'aching',subtitle2: "",),
     TrackItem(
         icon: Assets.supplimentsIcon,
         title: 'Weight Gain',
-        subtitle: 'Increased Weight gain'),
+        subtitle: 'Increased Weight gain',subtitle2: "",),
     TrackItem(
         icon: Assets.periodsIcon,
         title: 'Hot Flushes',
-        subtitle: 'Sudden heat and sweating'),
+        subtitle: 'Sudden heat and sweating',subtitle2: "",),
     TrackItem(
         icon: Assets.supplimentsIcon,
         title: 'Night Sweats',
-        subtitle: 'Sweating at night'),
+        subtitle: 'Sweating at night',subtitle2: "",),
     TrackItem(
         icon: Assets.periodsIcon,
         title: 'Irregualr Periods',
-        subtitle: 'Irregular menstrual cycles'),
+        subtitle: 'Irregular menstrual cycles',subtitle2: "",),
   ];
-  bool _isExpanded = false;
   String selectedOption = 'Option 1';
   String selectedValue = 'Option 1';
   final List<String> options = ['Option 1', 'Option 2', 'Option 3'];
