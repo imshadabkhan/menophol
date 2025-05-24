@@ -19,7 +19,7 @@ class PeriodEntryCard extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: ColorConstants.whiteColor,
-          border: Border.all(color: ColorConstants.borderColor)
+          border: Border.all(color: ColorConstants.greyBorderColor)
 
       ),
       child: Padding(

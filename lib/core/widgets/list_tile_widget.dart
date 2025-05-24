@@ -17,7 +17,7 @@ class ListTile_Widget extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 12.0),
       child: Container(
           decoration: BoxDecoration(
-            border: Border.all(color: ColorConstants.borderColor),
+            border: Border.all(color: ColorConstants.greyBorderColor),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Column(

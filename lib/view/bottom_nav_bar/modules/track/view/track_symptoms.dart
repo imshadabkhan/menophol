@@ -9,6 +9,7 @@ import 'package:menophol/core/widgets/widgets.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/model.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/exercise_tracker/exercise_tracker_view.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/food_and_drink/food_and_drink.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/track/view/hrt/hrt_tracker.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/mood_tracker/mood_tracker_view.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/period_tracker/period_tracker_view.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/sleep_tracker/sleep_view.dart';
@@ -92,6 +93,7 @@ class TrackSymptoms extends StatelessWidget {
                         if(index==2){Get.to(SleepView());}
                         if(index==3){Get.to(FoodAndDrinkOrder());}
                         if(index==4){Get.to(ExerciseTrackerView());}
+                        if(index==6){Get.to(HrtTracker());}
                         if(index==7){Get.to(SupplementTracker());}
                         if(index==8){Get.to(PeriodTrackerView());}
                       },

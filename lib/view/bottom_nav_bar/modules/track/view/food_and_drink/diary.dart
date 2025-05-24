@@ -144,7 +144,7 @@ class TimeChipWidget extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: ColorConstants.greyBgColor,
-        border: Border.all(color: ColorConstants.borderColor,width: 1),
+        border: Border.all(color: ColorConstants.greyBorderColor,width: 1),
         borderRadius: BorderRadius.circular(6),
 
       ),

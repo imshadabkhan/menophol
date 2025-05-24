@@ -5,8 +5,17 @@ class Assets
   static String icons= "$assets/icons";
   static String appLogo = "$images/app_logo.png";
   static String image1 = "$images/image.png";
+  static String detailScreenImage = "$images/detail_screen_image.png";
 
 //////////////////////////////////////////I C O N S////////////////////////////////////////////////////////////////////////////////
+
+
+  static String emailIcon = "$icons/email.png";
+  static String phoneIcon = "$icons/phoneIcon.png";
+  static String reminder = "$icons/reminder.png";
+  static String linkImage = "$icons/link.png";
+  static String uploadPhoto = "$icons/upload_photo.png";
+  static String infoIcon = "$icons/info_icon.png";
   static String sendBtn = "$icons/send.png";
   static String doctorLocationIcon = "$icons/doctor_location.png";
   static String forkKnifeIcon = "$icons/forkknife.png";

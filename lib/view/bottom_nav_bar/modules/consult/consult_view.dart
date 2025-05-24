@@ -37,7 +37,7 @@ class ConsultView extends StatelessWidget {
       "available": ["In Person", "Corporate"]
     },
     {
-      "name": "Dr. Emma Collins",
+      "name": "Dr.Emma Collins",
       "specialty": "Menopause Specialist",
       "location": "London, UK",
       "experience": "8 years experience",

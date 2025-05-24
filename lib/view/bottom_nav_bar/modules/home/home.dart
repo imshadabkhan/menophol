@@ -11,6 +11,7 @@ import 'package:menophol/core/widgets/report_card.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/home/controller.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/home/detail_screen.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -56,11 +57,16 @@ class HomeScreen extends StatelessWidget {
               children: List.generate(3, (index) {
 
 
-                return ListTile_Widget();
+                return GestureDetector(
+                    onTap: ()=>Get.to(()=>DetailScreen()),
+                    child: ListTile_Widget());
               }),
             ),
             Widgets.heightSpaceH1,
             CustomButton(
+              onTap: (){
+                Get.to(()=>DetailScreen());
+              },
               label: "View all",
               backgroundColor: ColorConstants.primaryColor,
             ),

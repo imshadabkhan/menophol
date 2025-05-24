@@ -475,16 +475,16 @@ class EntryBigField extends StatelessWidget {
             ),
             counterText: "",
             border:  OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.black),
+              borderSide: BorderSide(color: ColorConstants.greyBorderColor),
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.black),
+              borderSide: BorderSide(color: ColorConstants.greyBorderColor),
               borderRadius: const BorderRadius.all(Radius.circular(10)),
 
             ),
             enabledBorder:  OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.black),
+              borderSide: BorderSide(color: ColorConstants.greyBorderColor),
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
           ),

@@ -22,7 +22,7 @@ class HomeScreenCards extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
-            color:ColorConstants.borderColor,
+            color:ColorConstants.greyBorderColor,
           ),
         ),
         child: Padding(

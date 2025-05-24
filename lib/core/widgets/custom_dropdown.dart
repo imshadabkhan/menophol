@@ -8,12 +8,14 @@ import 'package:menophol/core/widgets/text_widgets.dart';
 import '../constants/color_constants.dart';
 
 class CustomDropdown extends StatelessWidget {
-  const CustomDropdown({
+   CustomDropdown({
     super.key,
     required this.onTap,
     required this.value,
     required this.hint,
-    required this.label
+    required this.label,
+     this.color,
+     this.iconColor
   });
 
 
@@ -21,6 +23,8 @@ class CustomDropdown extends StatelessWidget {
   final String? value;
   final String? hint;
   final String? label;
+  final Color? color;
+   Color? iconColor;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -45,8 +49,13 @@ class CustomDropdown extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
-                  color: ColorConstants.darkPrimaryColor,
-                  borderRadius: BorderRadius.circular(10)),
+                  color: color??ColorConstants.darkPrimaryColor,
+                  borderRadius: BorderRadius.circular(10),
+              border: Border.all(
+                  width: 0.5,
+                  color: ColorConstants.greyBorderColor)
+
+              ),
               height: 45,
               width: 1.sw,
               child: Row(
@@ -57,11 +66,11 @@ class CustomDropdown extends StatelessWidget {
                       size: 14,
                         value ?? hint!,color:
                         value == null
-                            ? Colors.grey
-                            : ColorConstants.whiteColor),
+                            ? Colors.red
+                            : ColorConstants.blackColor),
                   ),
                   const SizedBox(width: 10,),
-                   Icon(Icons.keyboard_arrow_down_outlined,color: Colors.white,size: 18,)
+                   Icon(Icons.keyboard_arrow_down_outlined,color: iconColor??Colors.white,size: 18,)
                 ],
               ),
             )),const SizedBox(

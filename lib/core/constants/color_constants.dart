@@ -10,7 +10,7 @@ class ColorConstants {
   static var greyBgColor =  Color(0xffF0F0F0);
   static var greyBorderColor =  Colors.black.withAlpha((0.1*255).toInt());
   static var blackColor =  Color(0xff000000);
-  static var borderColor =  Color(0xff050505).withAlpha((0.1*255).toInt());
+
   static var redColor =  Color(0xffC0392B);
   static var peachColor =  Color(0xffF7E5B7);
   static var redTextColor =  Color(0xffC0392B);
