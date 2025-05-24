@@ -10,16 +10,19 @@ class DynamicButton extends StatelessWidget {
      this.icon,
     this.borderColor,
     this.textColor,
+     this.bgColor
   });
   final String title;
    String? icon;
   final Color? borderColor;
   final Color? textColor;
+   final Color? bgColor;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        color: bgColor??ColorConstants.transparentColor,
           borderRadius: BorderRadius.circular(7),
           border: Border.all(color: borderColor??ColorConstants.darkPrimaryColor)
       ),

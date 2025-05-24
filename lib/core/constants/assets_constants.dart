@@ -6,10 +6,10 @@ class Assets
   static String appLogo = "$images/app_logo.png";
   static String image1 = "$images/image.png";
   static String detailScreenImage = "$images/detail_screen_image.png";
-
+  static String profileImg = "$images/profile_circular_image.png";
 //////////////////////////////////////////I C O N S////////////////////////////////////////////////////////////////////////////////
 
-
+  static String exportIcon = "$icons/export.png";
   static String emailIcon = "$icons/email.png";
   static String phoneIcon = "$icons/phoneIcon.png";
   static String reminder = "$icons/reminder.png";

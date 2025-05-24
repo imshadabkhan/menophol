@@ -1,8 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/home/edit_profile.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/home/notification_screen.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({
@@ -14,9 +17,15 @@ class HomeAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
-      leading: CircleAvatar(
-        radius: 20.r,
-        backgroundImage: AssetImage('assets/images/profile_circular_image.png'),
+      leading: GestureDetector(
+        onTap: (){
+          Get.to(()=> EditProfile());
+        },
+        child: CircleAvatar(
+
+          radius: 20.r,
+          backgroundImage: AssetImage('assets/images/profile_circular_image.png'),
+        ),
       ),
       title: Texts.textNormal('Welcome Back',
           textAlign: TextAlign.start, size: 16),
@@ -29,9 +38,14 @@ class HomeAppBar extends StatelessWidget {
             Stack(
               alignment: Alignment.topRight,
               children: [
-                Image.asset(
-                  "assets/icons/notification.png",
-                  height: 20,
+                GestureDetector(
+                  onTap: (){
+                    Get.to(()=>ManageNotificationsScreen());
+                  },
+                  child: Image.asset(
+                    "assets/icons/notification.png",
+                    height: 20,
+                  ),
                 ),
                 Positioned(
                     top: 1,

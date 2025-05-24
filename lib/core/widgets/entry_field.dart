@@ -146,17 +146,17 @@ filled: true,
               counterText: "",
               fillColor:fillColor??Colors.white ,
               border: OutlineInputBorder(
-                borderSide:  BorderSide(color: Colors.grey),
+                borderSide:  BorderSide(color: ColorConstants.greyBorderColor),
                 borderRadius:
                     borderRadius ?? BorderRadius.all(Radius.circular(10)),
               ),
               focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey),
+                borderSide:  BorderSide(color: ColorConstants.greyBorderColor),
                 borderRadius:
                     borderRadius ?? BorderRadius.all(Radius.circular(10)),
               ),
               enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color:  Colors.grey),
+                borderSide:  BorderSide(color: ColorConstants.greyBorderColor),
                 borderRadius:
                     borderRadius ?? BorderRadius.all(Radius.circular(10)),
               ),

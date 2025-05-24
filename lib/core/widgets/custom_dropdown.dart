@@ -52,7 +52,7 @@ class CustomDropdown extends StatelessWidget {
                   color: color??ColorConstants.darkPrimaryColor,
                   borderRadius: BorderRadius.circular(10),
               border: Border.all(
-                  width: 0.5,
+                  width: .5,
                   color: ColorConstants.greyBorderColor)
 
               ),
@@ -62,13 +62,15 @@ class CustomDropdown extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Texts.textNormal(
-                        textAlign: TextAlign.start,
+                      textAlign: TextAlign.start,
                       size: 14,
-                        value ?? hint!,color:
-                        value == null
-                            ? Colors.red
-                            : ColorConstants.blackColor),
+                      (value == null || value!.isEmpty) ? hint! : value!,
+                      color: (value == null || value!.isEmpty)
+                          ? Colors.grey // or your placeholder color
+                          : ColorConstants.blackColor,
+                    ),
                   ),
+
                   const SizedBox(width: 10,),
                    Icon(Icons.keyboard_arrow_down_outlined,color: iconColor??Colors.white,size: 18,)
                 ],
@@ -128,12 +130,16 @@ class CustomDropdown2 extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    child: Texts.textBlock(fontWeight: FontWeight.w300,size: 10,
-                        value ?? hint!,color:
-                        value == null
-                            ? Colors.grey
-                            : Colors.black87),
+                    child: Texts.textNormal(
+                      textAlign: TextAlign.start,
+                      size: 14,
+                      (value == null || value!.isEmpty) ? hint! : value!,
+                      color: (value == null || value!.isEmpty)
+                          ? Colors.grey // hint color
+                          : ColorConstants.blackColor,
+                    ),
                   ),
+
                   const SizedBox(width: 10,),
                   Icon(Icons.keyboard_arrow_down_outlined,color: Colors.black54,size: 18,)
                 ],

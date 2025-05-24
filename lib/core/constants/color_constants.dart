@@ -5,6 +5,7 @@ class ColorConstants {
   static var primaryColor =  Color(0xffEAA0AB);
   static var darkPrimaryColor =  Color(0xffD87080);
   static var whiteColor =  Color(0xffFFFFFF);
+  static var transparentColor =  Colors.transparent;
   static var greenColor =  Color(0xff57D472);
   static var goldenColor =  Color(0xffE68B3A);
   static var greyBgColor =  Color(0xffF0F0F0);

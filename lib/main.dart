@@ -4,6 +4,8 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/track_view.dart';
 import 'package:menophol/view/bottom_nav_bar/view/bottom_nav_bar.dart';
+import 'package:menophol/view/change_email.dart';
+import 'package:menophol/view/change_password.dart';
 
 
 void main() => runApp(MyApp());
@@ -35,8 +37,9 @@ class MyApp extends StatelessWidget {
         );
       },
 
-      // child: BottomNavBar(),
-        child: BottomNavBar(),
+      child: BottomNavBar(),
+      //   child: BottomNavBar(),
+      // child: ChangePassword(),
       // child: SplashView(),
     );
   }
