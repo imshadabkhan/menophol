@@ -9,6 +9,8 @@ import 'package:menophol/view/change_password.dart';
 import 'package:menophol/view/connect_wearable_devices.dart';
 import 'package:menophol/view/glp_medication/view/glp1_medications.dart';
 import 'package:menophol/view/hrt_medication.dart';
+import 'package:menophol/view/medical_condition.dart';
+import 'package:menophol/view/medical_procedure_screen.dart';
 
 
 void main() => runApp(MyApp());
@@ -42,7 +44,7 @@ class MyApp extends StatelessWidget {
         // child: GlpMedications(),
       // child: HrtMedication(),
       //   child: BottomNavBar(),
-      child: ConnectWearableDevicesScreen(),
+      child: MedicalConditionView(),
       // child: ChangePassword(),
       // child: SplashView(),
     );

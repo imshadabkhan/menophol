@@ -9,6 +9,7 @@ import 'package:menophol/core/widgets/custom_button.dart';
 import 'package:menophol/core/widgets/custom_dropdown.dart';
 import 'package:menophol/core/widgets/dynamic_button.dart';
 import 'package:menophol/core/widgets/entry_field.dart';
+import 'package:menophol/core/widgets/meal_box_widget.dart';
 import 'package:menophol/core/widgets/radiobtn_withtext.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
@@ -175,7 +176,7 @@ class Track extends StatelessWidget {
                       return controller.selected.value == 'Food'
                           ? Padding(
                               padding: const EdgeInsets.only(bottom: 8.0),
-                              child: MealBoxWidget(title: mealList[index]),
+                              child: MealBoxWidget(title: mealList[index],prefixIcon: Assets.forkKnifeIcon,),
                             )
                           : Column(
                               children: [
@@ -333,42 +334,4 @@ class Track extends StatelessWidget {
   }
 }
 
-class MealBoxWidget extends StatelessWidget {
-  const MealBoxWidget({
-    super.key,
-    required this.title,
-  });
-  final String title;
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 40.h,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(
-            color: ColorConstants.blackColor,
-            width: 1,
-          )),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          children: [
-            Image.asset(
-              Assets.forkKnifeIcon,
-              width: 20,
-              height: 20,
-            ),
-            Widgets.widthSpaceW2,
-            Texts.textMedium(title, size: 15),
-            Expanded(child: Widgets.widthSpaceW1),
-            Icon(
-              Icons.add,
-              color: Colors.black,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}

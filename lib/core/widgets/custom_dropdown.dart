@@ -67,7 +67,7 @@ class CustomDropdown extends StatelessWidget {
               child: Row(
                 children: [
                prefixIcon!=null? Image.asset(prefixIcon!,height: 20,width: 20,):Container(),
-                  const SizedBox(width: 10,),
+                  prefixIcon!=null? SizedBox(width: 10,):Container(),
 
                   Expanded(
                     child: Texts.textNormal(
