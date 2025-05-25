@@ -52,8 +52,8 @@ class _HrtTrackerState extends State<HrtTracker> with SingleTickerProviderStateM
                 end: Alignment.center,
                 colors: [
 
-                  ColorConstants.primaryColor,
-                  ColorConstants.whiteColor
+                  ColorConstants.exerciseTrackerGradient1,
+                  ColorConstants.exerciseTrackerGradient2
 
                 ]),
           ),
@@ -63,6 +63,8 @@ class _HrtTrackerState extends State<HrtTracker> with SingleTickerProviderStateM
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
+            elevation: 0,
+            scrolledUnderElevation: 0,
             backgroundColor: Colors.transparent,
             leading: BackButton(),
           ),

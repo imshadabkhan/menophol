@@ -68,7 +68,7 @@ class HomeScreen extends StatelessWidget {
                 Get.to(()=>DetailScreen());
               },
               label: "View all",
-              backgroundColor: ColorConstants.primaryColor,
+              backgroundColor: ColorConstants.darkPrimaryColor,
             ),
           ],
         ),

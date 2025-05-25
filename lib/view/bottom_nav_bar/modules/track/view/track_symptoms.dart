@@ -63,91 +63,113 @@ class TrackSymptoms extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Padding(
-          padding: PaddingConstants.screenPaddingHalf.copyWith(top: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Texts.textBold("Track", size: 22),
-              Widgets.heightSpaceH05,
-              Texts.textNormal(
-                  'Track your symptoms, sleep, mood, and more to uncover patterns, gain insights, and take back control of your health.',
-                  size: 14,
-                  textAlign: TextAlign.start),
-              Widgets.heightSpaceH2,
-              Texts.textBold('What would you like to track today?', size: 24),
-              Widgets.heightSpaceH2,
-              Expanded(
-                child: ListView.separated(
-                  itemCount: trackItems.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 12),
-                  itemBuilder: (context, index) {
-                    final item = trackItems[index];
-                    return InkWell(
-                      onTap: (){
-                        if(index==0){Get.to(TrackView());}
-                        if(index==1){Get.to(MoodTrackerView());}
-                        if(index==2){Get.to(SleepView());}
-                        if(index==3){Get.to(FoodAndDrinkOrder());}
-                        if(index==4){Get.to(ExerciseTrackerView());}
-                        if(index==6){Get.to(HrtTracker());}
-                        if(index==7){Get.to(SupplementTracker());}
-                        if(index==8){Get.to(PeriodTrackerView());}
-                      },
-                      child: Container(
-                        padding: const EdgeInsets.all(12),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                            color: ColorConstants.primaryColor
-                                .withAlpha((0.3 * 255).toInt()),
-                          ),
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                color: ColorConstants.primaryColor.withAlpha((0.5*255).toInt()),
-                                borderRadius: BorderRadius.circular(10.r),
-                              ),
-                              alignment: Alignment.center,
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 10.0, horizontal: 10),
-                                child: Image.asset(
-                                  item.icon,
-                                  height: 32.h,
-                                  width: 32.w,
-                                ),
-                              ),
-                            ),
-                            Widgets.widthSpaceW2,
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Texts.textMedium(item.title, size: 16),
+    return Stack(
 
-                                  Texts.textNormal(item.subtitle,
-                                      size: 14, textAlign: TextAlign.start),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ],
+      children: [
+        Container(
+          height: 200.h,
+          decoration: BoxDecoration(
+
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+
+                colors: [
+
+                  ColorConstants.gradient1.withAlpha((0.5*255).toInt()),
+                  ColorConstants.gradient2.withAlpha((0.5*255).toInt()),
+                  Colors.transparent,
+                ]),
           ),
         ),
-      ),
+        Scaffold(
+backgroundColor: ColorConstants.transparentColor,
+
+          body: SafeArea(
+            child: Padding(
+              padding: PaddingConstants.screenPaddingHalf.copyWith(top: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Texts.textBold("Track", size: 22),
+                  Widgets.heightSpaceH05,
+                  Texts.textNormal(
+                      'Track your symptoms, sleep, mood, and more to uncover patterns, gain insights, and take back control of your health.',
+                      size: 14,
+                      textAlign: TextAlign.start),
+                  Widgets.heightSpaceH2,
+                  Texts.textBold('What would you like to track today?', size: 24),
+                  Widgets.heightSpaceH2,
+                  Expanded(
+                    child: ListView.separated(
+                      itemCount: trackItems.length,
+                      separatorBuilder: (_, __) => const SizedBox(height: 12),
+                      itemBuilder: (context, index) {
+                        final item = trackItems[index];
+                        return InkWell(
+                          onTap: (){
+                            if(index==0){Get.to(TrackView());}
+                            if(index==1){Get.to(MoodTrackerView());}
+                            if(index==2){Get.to(SleepView());}
+                            if(index==3){Get.to(FoodAndDrinkOrder());}
+                            if(index==4){Get.to(ExerciseTrackerView());}
+                            if(index==6){Get.to(HrtTracker());}
+                            if(index==7){Get.to(SupplementTracker());}
+                            if(index==8){Get.to(PeriodTrackerView());}
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: ColorConstants.primaryColor
+                                    .withAlpha((0.3 * 255).toInt()),
+                              ),
+                            ),
+                            child: Row(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: ColorConstants.primaryColor.withAlpha((0.5*255).toInt()),
+                                    borderRadius: BorderRadius.circular(10.r),
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 10.0, horizontal: 10),
+                                    child: Image.asset(
+                                      item.icon,
+                                      height: 32.h,
+                                      width: 32.w,
+                                    ),
+                                  ),
+                                ),
+                                Widgets.widthSpaceW2,
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Texts.textMedium(item.title, size: 16),
+            
+                                      Texts.textNormal(item.subtitle,
+                                          size: 14, textAlign: TextAlign.start),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

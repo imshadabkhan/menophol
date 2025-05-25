@@ -15,9 +15,10 @@ class ConversationBlock extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          colors: [
-            Colors.transparent,
-            Colors.blueAccent,
+          colors: [ Color(0xffF5E1FC),
+            Color(0xff97B5FB),
+
+
           ],
         ),
         borderRadius: BorderRadius.circular(16),
@@ -26,6 +27,7 @@ class ConversationBlock extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+
           Texts.textBold(
             'Ask The Menopal',
             size: 20,
@@ -39,7 +41,7 @@ class ConversationBlock extends StatelessWidget {
           CustomButton(
             label: "Start a conversation",
             textStyle: TextStyle(color: Colors.white),
-            backgroundColor: ColorConstants.primaryColor,
+            backgroundColor: ColorConstants.darkPrimaryColor,
           ),
         ],
       ),

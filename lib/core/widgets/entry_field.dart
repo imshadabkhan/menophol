@@ -339,6 +339,7 @@ class EntryBigField extends StatelessWidget {
   final String? hint;
   final IconData? prefixIcon;
   final Color? color;
+  final Color? fillColor;
   final TextEditingController? controller;
   final String? initialValue;
   final bool? readOnly;
@@ -388,7 +389,9 @@ class EntryBigField extends StatelessWidget {
     this.onChange,
     this.minLines,
     this.textCapitalization,
+    this.fillColor
   });
+
 
   @override
   Widget build(BuildContext context) {
@@ -469,7 +472,7 @@ class EntryBigField extends StatelessWidget {
                 fontSize: 12,
                 color: Colors.black45),
             filled: true,
-            fillColor: Colors.white,
+            fillColor:fillColor?? Colors.white,
             counterStyle: const TextStyle(
               height: double.minPositive,
             ),

@@ -8,7 +8,7 @@ class Assets
   static String detailScreenImage = "$images/detail_screen_image.png";
   static String profileImg = "$images/profile_circular_image.png";
 //////////////////////////////////////////I C O N S////////////////////////////////////////////////////////////////////////////////
-
+  static String drinkIcon = "$icons/drink.png";
   static String exportIcon = "$icons/export.png";
   static String emailIcon = "$icons/email.png";
   static String phoneIcon = "$icons/phoneIcon.png";

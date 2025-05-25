@@ -33,7 +33,8 @@ class HomeScreenCards extends StatelessWidget {
               Container(
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: ColorConstants.primaryColor.withAlpha((0.5 * 255).toInt()),
+
+                    color: ColorConstants.primaryColor.withAlpha((0.3 * 255).toInt()),
                   shape: BoxShape.circle,
 
                 ),

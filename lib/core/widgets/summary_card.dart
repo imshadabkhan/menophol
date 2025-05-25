@@ -62,8 +62,9 @@ class SummaryCard extends StatelessWidget {
                   radius: 40.0,
                   lineWidth: 7.0,
                   percent: 0.3,
+                 backgroundColor: ColorConstants.lightGray,
                   center: Text("3",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
-                  progressColor: Colors.green,
+                  progressColor: ColorConstants.darkGray,
                 ),
                 Widgets.widthSpaceW3,
                 Flexible(

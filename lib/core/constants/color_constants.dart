@@ -2,6 +2,16 @@ import 'package:flutter/material.dart';
 
 
 class ColorConstants {
+  static var exerciseTrackerGradient2= Color(0xffD1D1EE);
+  static var exerciseTrackerGradient1= Color(0xffF5F1F5);
+  static var sleepTrackerGradient2= Color(0xffAACDF6);
+  static var sleepTrackerGradient1= Color(0xffAAE8FA);
+  static var moodTrackerGradient2= Color(0xffC6BDF9);
+static var moodTrackerGradient1= Color(0xffEAD1F5);
+  static var simpleTrackerGradient1= Color(0xffB8EEF7);
+  static var simpleTrackerGradient2= Color(0xffCCF6FE);
+  static var gradient1= Color(0xffF5E1FC);
+  static var gradient2=  Color(0xff97B5FB);
   static var primaryColor =  Color(0xffEAA0AB);
   static var darkPrimaryColor =  Color(0xffD87080);
   static var whiteColor =  Color(0xffFFFFFF);
@@ -17,6 +27,8 @@ class ColorConstants {
   static var redTextColor =  Color(0xffC0392B);
   static var chipBGColor =  Color(0xffF0F0F0);
 
+  static var lightGray =  Color(0xffF1F1F1);
+  static var darkGray =  Color(0xffB6C1B1);
   static var grayColor =  Color(0xffB6C1B1);
   static var darkPeachColor =  Color(0xffF2B279);
 

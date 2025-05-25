@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:menophol/core/constants/assets_constants.dart';
 import 'package:menophol/core/constants/color_constants.dart';
+import 'package:menophol/core/widgets/symptom_chart.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
 
@@ -20,6 +21,7 @@ class SymptomsTrendWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -57,6 +59,7 @@ class SymptomsTrendWidget extends StatelessWidget {
             Widgets.heightSpaceH1,
             Widgets.divider(),
             Widgets.heightSpaceH1,
+            SymptomSeverityChart(),
           ],
         ),
       ),

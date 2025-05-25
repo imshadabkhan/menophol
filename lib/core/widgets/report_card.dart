@@ -10,7 +10,11 @@ class ReportCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         decoration: BoxDecoration(
-          color: Colors.blue[100],
+          gradient: LinearGradient(colors: [
+
+            Color(0xffF5E1FC),
+            Color(0xff97B5FB),
+          ]),
           borderRadius: BorderRadius.circular(16),
         ),
         padding: const EdgeInsets.all(16),

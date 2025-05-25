@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:menophol/core/constants/assets_constants.dart';
 import 'package:menophol/core/constants/color_constants.dart';
+import 'package:menophol/core/widgets/sleep_chart.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
 
@@ -49,6 +50,7 @@ class SleepPatternWidgets extends StatelessWidget {
           Widgets.heightSpaceH1,
           Widgets.divider(),
           Widgets.heightSpaceH1,
+          SleepPatternChart(),
 
 
 

@@ -15,7 +15,10 @@ class CustomDropdown extends StatelessWidget {
     required this.hint,
     required this.label,
      this.color,
-     this.iconColor
+     this.labelColor,
+     this.borderColor,
+     this.iconColor,
+     this.prefixIcon
   });
 
 
@@ -24,7 +27,10 @@ class CustomDropdown extends StatelessWidget {
   final String? hint;
   final String? label;
   final Color? color;
+   final Color? borderColor;
    Color? iconColor;
+   Color? labelColor;
+   String? prefixIcon;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -53,13 +59,16 @@ class CustomDropdown extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
               border: Border.all(
                   width: .5,
-                  color: ColorConstants.greyBorderColor)
+                  color:borderColor?? ColorConstants.greyBorderColor)
 
               ),
               height: 45,
               width: 1.sw,
               child: Row(
                 children: [
+               prefixIcon!=null? Image.asset(prefixIcon!,height: 20,width: 20,):Container(),
+                  const SizedBox(width: 10,),
+
                   Expanded(
                     child: Texts.textNormal(
                       textAlign: TextAlign.start,
