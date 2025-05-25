@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/past_entries.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/symptoms.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/track/view/symptoms/past_entries.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/track/view/symptoms/symptoms.dart';
 
 class TrackView extends StatefulWidget {
   @override

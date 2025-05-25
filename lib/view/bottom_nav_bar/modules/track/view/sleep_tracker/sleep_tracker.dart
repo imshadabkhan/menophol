@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:menophol/core/constants/assets_constants.dart';
 import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/widgets/custom_button.dart';
@@ -9,6 +10,7 @@ import 'package:menophol/core/widgets/custom_slider.dart';
 import 'package:menophol/core/widgets/radiobuttonwithtext.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/model.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/track/view/sleep_tracker/controller.dart';
 
 import '../../../../../../core/widgets/entry_field.dart';
 import '../../../../../../core/widgets/widgets.dart';
@@ -21,6 +23,9 @@ class SleepTracker extends StatefulWidget {
 }
 
 class _SleepTrackerState extends State<SleepTracker> {
+
+  SleepTrackerController sleepTrackerController=Get.put(SleepTrackerController());
+
   final List<TrackItem> trackItems = [
     TrackItem(
         icon: Assets.symptomsIcon,
@@ -86,6 +91,7 @@ class _SleepTrackerState extends State<SleepTracker> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Widgets.heightSpaceH1,
               EntryField(
                 prefixIcon: Assets.calendarIcon,
                 hint: "07/04/2025",
@@ -105,7 +111,7 @@ class _SleepTrackerState extends State<SleepTracker> {
 
               ],),
               Widgets.heightSpaceH1,
-              SeveritySlider(),
+              SeveritySlider(labels: ["Poor","Fair","Good","Perfect"],),
 
               Widgets.heightSpaceH1,
               EntryField(
@@ -126,12 +132,15 @@ class _SleepTrackerState extends State<SleepTracker> {
                 hint: "Add any notes about your sleep..",
 
               ),
-              // CustomDropdown(onTap: (){}, value: "Related Triggers", hint: "", label: '',),
-CustomDropdown(onTap: (){}, value:"Related Triggers (1) ", hint: "", label: ""),
-          Container(
+             Obx(()=>CustomDropdown(onTap: (){
+               sleepTrackerController.toggleDropDown();
+
+             }, value:"Related Triggers (1) ", hint: "", label: "",color: sleepTrackerController.dropDown.value?ColorConstants.darkPrimaryColor:ColorConstants.transparentColor,iconColor: sleepTrackerController.dropDown.value?ColorConstants.whiteColor:ColorConstants.blackColor,),),
+
+          Obx(()=> sleepTrackerController.dropDown.value?Container(
             decoration: BoxDecoration(
-              border: Border.all(color: ColorConstants.greyBorderColor),
-              borderRadius: BorderRadius.circular(10)
+                border: Border.all(color: ColorConstants.greyBorderColor),
+                borderRadius: BorderRadius.circular(10)
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -140,74 +149,76 @@ CustomDropdown(onTap: (){}, value:"Related Triggers (1) ", hint: "", label: ""),
                 children: [
 
 
-                Widgets.heightSpaceH1,
-                Texts.textNormal('Life Style',textAlign: TextAlign.start,size: 16),
-                Widgets.heightSpaceH05,
-                Wrap(
-                  direction:Axis.horizontal,
-                  children: List.generate(2, (index)=> Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child:RadioBtnWithTextChip(label: lifeStyleList[index]),
-                  ),),),
-                Widgets.heightSpaceH1,
-                Texts.textNormal('Environmental',textAlign: TextAlign.start,size: 16),
-
-                Wrap(
-                  direction:Axis.horizontal,
-                  children: List.generate(2, (index)=> Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: RadioBtnWithTextChip(label: environmentalList[index]),
-                  ),),),
-                Widgets.heightSpaceH1,
-                Texts.textNormal('Dietary',textAlign: TextAlign.start,size: 16),
-
-                Wrap(
-                  direction:Axis.horizontal,
-                  children: List.generate(2, (index)=> Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: RadioBtnWithTextChip(label: dietaryList[index]),
-                  ),),),
-
-                Widgets.heightSpaceH1,
-                Texts.textNormal('Stress',textAlign: TextAlign.start,size: 16),
-
-                Wrap(
-                  direction:Axis.horizontal,
-                  children: List.generate(2, (index)=> Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: RadioBtnWithTextChip(label: stressList[index]),
-                  ),),),
-
-                Widgets.heightSpaceH1,
-                Texts.textNormal('Custom Triggers',textAlign: TextAlign.start,size: 16),
-                Widgets.heightSpaceH05,
-
-                Row(children: [
-                  Expanded(child: EntryField(
-                    hint:"Enter custom trigger",
-                    borderRadius: BorderRadius.circular(4),)),
-                  Widgets.widthSpaceW3,
-                  Container(decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(12),
-
-                  ),
-                    child: Padding(
+                  Widgets.heightSpaceH1,
+                  Texts.textNormal('Life Style',textAlign: TextAlign.start,size: 12),
+                  Widgets.heightSpaceH05,
+                  Wrap(
+                    direction:Axis.horizontal,
+                    children: List.generate(2, (index)=> Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Icon(Icons.add,color: Colors.white,),
+                      child:RadioBtnWithTextChip(isSelected:false,label: lifeStyleList[index]),
+                    ),),),
+                  Widgets.heightSpaceH1,
+                  Texts.textNormal('Environmental',textAlign: TextAlign.start,size: 12),
+
+                  Wrap(
+                    direction:Axis.horizontal,
+                    children: List.generate(2, (index)=> Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: RadioBtnWithTextChip(isSelected:false,label: environmentalList[index]),
+                    ),),),
+                  Widgets.heightSpaceH1,
+                  Texts.textNormal('Dietary',textAlign: TextAlign.start,size: 12),
+
+                  Wrap(
+                    direction:Axis.horizontal,
+                    children: List.generate(2, (index)=> Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: RadioBtnWithTextChip(label: dietaryList[index],isSelected: false,),
+                    ),),),
+
+                  Widgets.heightSpaceH1,
+                  Texts.textNormal('Stress',textAlign: TextAlign.start,size: 12),
+
+                  Wrap(
+                    direction:Axis.horizontal,
+                    children: List.generate(2, (index)=> Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: RadioBtnWithTextChip(isSelected:false,label: stressList[index]),
+                    ),),),
+
+                  Widgets.heightSpaceH1,
+                  Texts.textNormal('Custom Triggers',textAlign: TextAlign.start,size: 12),
+                  Widgets.heightSpaceH05,
+
+                  Row(children: [
+                    Expanded(child: EntryField(
+                      hint:"Enter custom trigger",
+                      borderRadius: BorderRadius.circular(4),)),
+                    Widgets.widthSpaceW3,
+                    Container(decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(12),
+
                     ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(Icons.add,color: Colors.white,),
+                      ),
 
 
-                  ),
+                    ),
+                  ],),
+                  Widgets.heightSpaceH1,
+
+
+
+
                 ],),
-                Widgets.heightSpaceH1,
-
-
-
-
-              ],),
             ),
-          ),
+          ):Container()),
+
+
 
               Widgets.heightSpaceH2,
               CustomButton(

@@ -29,7 +29,7 @@ class SymptomsSeverityRowWidget extends StatelessWidget {
                 Image.asset(icon,height: 16,width: 16,),
                 Widgets.widthSpaceW1,
 
-                Expanded(child: Texts.textNormal(title,size: 16,textAlign: TextAlign.start,),)
+                Expanded(child: Texts.textNormal(title,size: 14,textAlign: TextAlign.start,),)
               ],),
           ),
 

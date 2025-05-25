@@ -44,8 +44,10 @@ class _ExpandableListTileState extends State<ExpandableListTile> {
             ),
           ),
           child: Column(
+
             children: [
               Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     decoration: BoxDecoration(
@@ -66,16 +68,19 @@ class _ExpandableListTileState extends State<ExpandableListTile> {
                   Widgets.widthSpaceW2,
                   Expanded(
                     child: Column(
-                      crossAxisAlignment:
-                      CrossAxisAlignment.start,
+
+
+                      crossAxisAlignment: CrossAxisAlignment.start,
+
                       children: [
-                        Texts.textBold(widget.item.title, size: 16),
+                        Texts.textBold(widget.item.title, size: 14),
                         Widgets.heightSpaceH05,
                         Texts.textNormal(widget.item.subtitle,
-                            size: 14, textAlign: TextAlign.start),
+                            size: 12, textAlign: TextAlign.start),
                         Widgets.heightSpaceH05,
-                        Texts.textNormal(widget.item.subtitle2??'',
-                            size: 14, textAlign: TextAlign.start),
+                       widget.item.subtitle2!=null?
+                        Texts.textNormal(widget.item.subtitle2!,
+                            size: 14, textAlign: TextAlign.start):Container(),
 
                       ],
                     ),

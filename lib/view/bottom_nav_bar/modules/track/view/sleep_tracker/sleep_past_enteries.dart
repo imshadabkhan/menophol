@@ -120,7 +120,7 @@ class PastEntryCards extends StatelessWidget {
                     direction:Axis.horizontal,
                     children: List.generate(1, (index)=> Padding(
                       padding: const EdgeInsets.all(4.0).copyWith(left: 0),
-                      child: RadioBtnWithTextChip(label:"Exercise"),
+                      child: RadioBtnWithTextChip(isSelected:false,label:"Exercise"),
                     ),),),
 
                 ],),

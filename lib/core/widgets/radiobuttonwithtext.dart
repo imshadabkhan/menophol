@@ -7,9 +7,11 @@ import 'package:menophol/core/widgets/widgets.dart';
 class RadioBtnWithTextChip extends StatelessWidget {
   const RadioBtnWithTextChip({
     super.key,
-    required this.label
+    required this.label,
+    required this.isSelected
   });
   final String  label;
+  final bool isSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -28,19 +30,25 @@ class RadioBtnWithTextChip extends StatelessWidget {
         children: [
           InkWell(
             onTap:(){},
-            child: Container(
-              alignment: Alignment.center,
-              width: 12.w,height: 12.h,
+            child:  Container(
+              height: 12,
+              width: 12,
               decoration: BoxDecoration(
-                color: ColorConstants.primaryColor,
                 shape: BoxShape.circle,
-                border: Border.all(
-                    color: Colors.black,
-                    width: 1
-                ),
-
+                border: Border.all(color: Colors.black, width: 1),
               ),
-
+              child: Center(
+                child: isSelected
+                    ? Container(
+                  height: 8,
+                  width: 8,
+                  decoration: BoxDecoration(
+                    color: Colors.pink,
+                    shape: BoxShape.circle,
+                  ),
+                )
+                    : null,
+              ),
             ),
           ),
           Widgets.widthSpaceW1,

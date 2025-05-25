@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SeveritySlider extends StatefulWidget {
-  @override
-  _SeveritySliderState createState() => _SeveritySliderState();
+class SeveritySliderController extends GetxController {
+  var currentValue = 0.0.obs;
+
+  void setValue(double value) {
+    currentValue.value = value;
+  }
 }
 
-class _SeveritySliderState extends State<SeveritySlider> {
-  double _currentValue = 0;
+class SeveritySlider extends StatelessWidget {
+  final List<String> labels;
+  final SeveritySliderController controller;
 
-  final List<String> labels = [
-    "None",
-    "Mild",
-    "Moderate",
-    "Severe",
-    "Very Severe"
-  ];
+  SeveritySlider({
+    Key? key,
+    required this.labels,
+    SeveritySliderController? controller,
+  })  : controller = controller ?? Get.put(SeveritySliderController()),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,48 +27,43 @@ class _SeveritySliderState extends State<SeveritySlider> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SliderTheme(
-            data: SliderTheme.of(context).copyWith(
-              activeTrackColor: Colors.pink.shade100,
-              inactiveTrackColor: Colors.pink.shade100,
-              trackHeight: 4.0,
-              thumbColor: Colors.white,
-              thumbShape: CustomThumbShape(
-        thumbRadius: 10.0,
-        borderColor: Colors.pink,
-      ),
-
-      overlayColor: Colors.pink.withAlpha(32),
-              overlayShape: RoundSliderOverlayShape(overlayRadius: 20.0),
-            ),
-            child: Slider(
-
-              min: 0,
-              max: 4,
-              divisions: 4,
-              value: _currentValue,
-              onChanged: (value) {
-                setState(() {
-                  _currentValue = value;
-                });
-              },
-            ),
-          ),
+          Obx(() {
+            return SliderTheme(
+              data: SliderTheme.of(context).copyWith(
+                activeTrackColor: Colors.pink.shade100,
+                inactiveTrackColor: Colors.pink.shade100,
+                trackHeight: 4.0,
+                thumbColor: Colors.white,
+                thumbShape: CustomThumbShape(
+                  thumbRadius: 10.0,
+                  borderColor: Colors.pink,
+                ),
+                overlayColor: Colors.pink.withAlpha(32),
+                overlayShape: RoundSliderOverlayShape(overlayRadius: 20.0),
+              ),
+              child: Slider(
+                min: 0,
+                max: (labels.length - 1).toDouble(),
+                divisions: labels.length - 1,
+                value: controller.currentValue.value,
+                onChanged: (value) => controller.setValue(value),
+              ),
+            );
+          }),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: labels
                 .map((label) => Text(
               label,
-              style: TextStyle(fontSize: 10,color: Colors.black),
-            )).toList(),
+              style: TextStyle(fontSize: 10, color: Colors.black),
+            ))
+                .toList(),
           ),
         ],
       ),
     );
   }
 }
-
-
 
 class CustomThumbShape extends SliderComponentShape {
   final double thumbRadius;

@@ -63,7 +63,7 @@ class Track extends StatelessWidget {
                     children: [
                       DynamicButton(
                         padding:
-                            EdgeInsets.symmetric(vertical: 5, horizontal: 12),
+                        EdgeInsets.symmetric(vertical: 9, horizontal: 16),
                         bgColor: controller.selected.value == 'Food'
                             ? ColorConstants.darkPrimaryColor
                             : ColorConstants.transparentColor,
@@ -75,15 +75,17 @@ class Track extends StatelessWidget {
                             ? ColorConstants.whiteColor
                             : ColorConstants.blackColor,
                         onTap: () => controller.select('Food'),
+                        size: 14.0,
                       ),
                       Widgets.widthSpaceW2,
                       DynamicButton(
+                        size: 14.0,
                         padding:
-                            EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                            EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                         bgColor: controller.selected.value == 'Drink'
                             ? ColorConstants.darkPrimaryColor
                             : ColorConstants.transparentColor,
-                        borderColor: ColorConstants.blackColor,
+                        borderColor: controller.selected.value == 'Drink'?ColorConstants.transparentColor: ColorConstants.blackColor,
                         title: "Drink",
                         textColor: controller.selected.value == 'Drink'
                             ? ColorConstants.whiteColor
@@ -141,7 +143,8 @@ class Track extends StatelessWidget {
                         padding: const EdgeInsets.all(6.0),
                         child: DynamicButton(
                           padding:
-                              EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                              EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                          size: 16.0,
                           onTap: () => controller.selectItem(label),
                           title: label,
                           bgColor: isSelected

@@ -66,9 +66,9 @@ class _FoodAndDrinkOrderState extends State<FoodAndDrinkOrder> with SingleTicker
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textBold("Food & Drink Tracker",size: 24),),
+              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textBold("Food & Drink Tracker",size: 20),),
               Widgets.heightSpaceH1,
-              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textNormal("Track your drinks to stay hydrated and understand your intake patterns.",textAlign: TextAlign.start,size: 16),
+              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textNormal("Track your drinks to stay hydrated and understand your intake patterns.",textAlign: TextAlign.start,size: 14),
               ),
               Widgets.heightSpaceH1,
               Padding(

@@ -11,7 +11,7 @@ class DynamicButton extends StatelessWidget {
     this.borderColor,
     this.textColor,
      this.bgColor,
-     this.onTap,this.padding
+     this.onTap,this.padding,this.size
   });
   final String title;
    String? icon;
@@ -20,6 +20,7 @@ class DynamicButton extends StatelessWidget {
    final Color? bgColor;
     GestureTapCallback? onTap;
     var padding;
+    var size;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,7 @@ class DynamicButton extends StatelessWidget {
               ):Text(""),
               Widgets.widthSpaceW1,
               Texts.textNormal(title,
-                  color: textColor??ColorConstants.blackColor, size: 12,maxLines: 2,textAlign: TextAlign.start),
+                  color: textColor??ColorConstants.blackColor, size:size?? 12,maxLines: 2,textAlign: TextAlign.start,),
             ],
           ),
         ),

@@ -5,7 +5,7 @@ import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/mood_tracker/mood_view.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/mood_tracker/past_entries.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/past_entries.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/track/view/symptoms/past_entries.dart';
 
 
 class MoodTrackerView extends StatefulWidget {

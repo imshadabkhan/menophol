@@ -8,6 +8,14 @@ class Assets
   static String detailScreenImage = "$images/detail_screen_image.png";
   static String profileImg = "$images/profile_circular_image.png";
 //////////////////////////////////////////I C O N S////////////////////////////////////////////////////////////////////////////////
+
+  static String tickIcon = "$icons/tick_icon.png";
+  static String chainIcon = "$icons/chain.png";
+  static String appleHealthIcon = "$icons/apple_health.png";
+  static String ouraRingIcon = "$icons/oura_ring.png";
+  static String overwhelmed = "$icons/overwhelmed.png";
+  static String fitbitIcon = "$icons/fitbit.png";
+  static String deleteAccount = "$icons/deleteaccount.png";
   static String drinkIcon = "$icons/drink.png";
   static String exportIcon = "$icons/export.png";
   static String emailIcon = "$icons/email.png";
@@ -72,4 +80,6 @@ class Assets
   static String corporateIcon = "$icons/corporate.png";
   static String onlineIcon = "$icons/online.png";
   static String inpersonIcon = "$icons/inperson.png";
+  static String overwhelmedIcon = "$icons/overwhelmed.png";
+
 }

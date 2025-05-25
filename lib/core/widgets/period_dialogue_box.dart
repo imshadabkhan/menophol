@@ -53,7 +53,7 @@ class PreviousPeriodDialogBox extends StatelessWidget {
                   EntryField(label: "End Date", prefixIcon: Assets.calendarIcon,hint: "7/4/2025",),
                   Widgets.heightSpaceH05,
                   Texts.textMedium('Flow Intensity',size: 14),
-                  SeveritySlider(),
+                  SeveritySlider(labels: ["Spotting","Light","Medium","Heavy",'Very Heavy'],),
                   Widgets.heightSpaceH2,
                   Texts.textMedium('Common Symptoms',size: 14),
                   Widgets.heightSpaceH1,
@@ -62,7 +62,7 @@ class PreviousPeriodDialogBox extends StatelessWidget {
                     runSpacing: 8,
                     children: List.generate(
                       commonSymptoms.length,
-                          (index) => RadioBtnWithTextChip(label: commonSymptoms[index]),
+                          (index) => RadioBtnWithTextChip(isSelected:false,label: commonSymptoms[index]),
                     ),
                   ),
                   Widgets.heightSpaceH2,

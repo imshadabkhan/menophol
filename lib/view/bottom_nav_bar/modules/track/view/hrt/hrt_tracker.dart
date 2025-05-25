@@ -84,9 +84,9 @@ class _HrtTrackerState extends State<HrtTracker> with SingleTickerProviderStateM
                         (
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                        Texts.textBold("HRT Tracker",size: 24),
+                        Texts.textBold("HRT Tracker",size: 20),
                         Widgets.heightSpaceH05,
-                        Texts.textNormal("Track your HRT to spot patterns and support better health decisions",textAlign: TextAlign.start,size: 20,maxLines: 5),
+                        Texts.textNormal("Track your HRT to spot patterns and support better health decisions",textAlign: TextAlign.start,size: 14,maxLines: 5),
 
 
                       ],),

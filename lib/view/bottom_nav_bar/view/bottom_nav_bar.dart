@@ -4,7 +4,7 @@ import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/chat/chat_view.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/consult/consult_view.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/home/home.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/track_symptoms.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/track/view/symptoms/track_symptoms.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/validate/validate_view.dart';
 
 class BottomNavBar extends StatefulWidget {

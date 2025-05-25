@@ -26,41 +26,41 @@ class _SymptomsViewState extends State<SymptomsView> {
         icon: Assets.symptomsIcon,
         title: 'Anxiety',
         subtitle: 'Track your hormonal health symptoms',
-    subtitle2: "",
+
     ),
     TrackItem(
         icon: Assets.unfilledHeart,
         title: 'Brain Fog',
-        subtitle: 'Monitor your emotional wellbeing',subtitle2: "",),
+        subtitle: 'Monitor your emotional wellbeing'),
     TrackItem(
         icon: Assets.sleepIcon,
         title: 'Sleep Issues',
-        subtitle: 'Track your sleep patterns',subtitle2: "",),
+        subtitle: 'Track your sleep patterns'),
     TrackItem(
         icon: Assets.foodDrinkIcon,
         title: 'Mood Swings',
-        subtitle: 'Track your diet and liquid intake',subtitle2: "",),
+        subtitle: 'Emotional ups and downs'),
     TrackItem(
         icon: Assets.dumbellIcon,
         title: 'Fatigue',
-        subtitle: 'Log your physical activity',subtitle2: "",),
-    TrackItem(icon: Assets.hrtIcon, title: 'joint Pain', subtitle: 'aching',subtitle2: "",),
+        subtitle: 'Constant Tiredness',subtitle2: "",),
+    TrackItem(icon: Assets.hrtIcon, title: 'joint Pain', subtitle: 'Aching or stiff joints'),
     TrackItem(
         icon: Assets.supplimentsIcon,
         title: 'Weight Gain',
-        subtitle: 'Increased Weight gain',subtitle2: "",),
+        subtitle: 'Increased Weight gain'),
     TrackItem(
         icon: Assets.periodsIcon,
         title: 'Hot Flushes',
-        subtitle: 'Sudden heat and sweating',subtitle2: "",),
+        subtitle: 'Sudden heat and sweating'),
     TrackItem(
         icon: Assets.supplimentsIcon,
         title: 'Night Sweats',
-        subtitle: 'Sweating at night',subtitle2: "",),
+        subtitle: 'Sweating at night'),
     TrackItem(
         icon: Assets.periodsIcon,
         title: 'Irregualr Periods',
-        subtitle: 'Irregular menstrual cycles',subtitle2: "",),
+        subtitle: 'Irregular menstrual cyclesss'),
   ];
   String selectedOption = 'Option 1';
   String selectedValue = 'Option 1';
@@ -99,50 +99,50 @@ class _SymptomsViewState extends State<SymptomsView> {
                       itemBuilder: (context, index) {
                         final item = trackItems[index];
                         return ExpandableListTile(item: item,children: [
-                          SeveritySlider(),
+                          SeveritySlider(labels: ["None","Mild",'Moderate',"Severe","Very Severe"],),
 
                           Widgets.heightSpaceH2,
-                          Texts.textBold("Related Triggers",size: 22),
+                          Texts.textBold("Related Triggers",size: 16),
                           Widgets.heightSpaceH1,
-                          Texts.textNormal('Life Style',textAlign: TextAlign.start,size: 16),
+                          Texts.textNormal('Life Style',textAlign: TextAlign.start,size: 12),
                           Widgets.heightSpaceH05,
                           Wrap(
                             direction:Axis.horizontal,
                             children: List.generate(2, (index)=> Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child:RadioBtnWithTextChip(label: lifeStyleList[index]),
+                              child:RadioBtnWithTextChip(isSelected:false,label: lifeStyleList[index]),
                             ),),),
                           Widgets.heightSpaceH1,
-                          Texts.textNormal('Environmental',textAlign: TextAlign.start,size: 16),
+                          Texts.textNormal('Environmental',textAlign: TextAlign.start,size: 12),
 
                           Wrap(
                             direction:Axis.horizontal,
                             children: List.generate(2, (index)=> Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: RadioBtnWithTextChip(label: environmentalList[index]),
+                              child: RadioBtnWithTextChip(isSelected:true,label: environmentalList[index]),
                             ),),),
                           Widgets.heightSpaceH1,
-                          Texts.textNormal('Dietary',textAlign: TextAlign.start,size: 16),
+                          Texts.textNormal('Dietary',textAlign: TextAlign.start,size: 12),
 
                           Wrap(
                             direction:Axis.horizontal,
                             children: List.generate(2, (index)=> Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: RadioBtnWithTextChip(label: dietaryList[index]),
+                              child: RadioBtnWithTextChip(isSelected:false,label: dietaryList[index]),
                             ),),),
 
                           Widgets.heightSpaceH1,
-                          Texts.textNormal('Stress',textAlign: TextAlign.start,size: 16),
+                          Texts.textNormal('Stress',textAlign: TextAlign.start,size: 12),
 
                           Wrap(
                             direction:Axis.horizontal,
                             children: List.generate(2, (index)=> Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: RadioBtnWithTextChip(label: stressList[index]),
+                              child: RadioBtnWithTextChip(isSelected:true,label: stressList[index]),
                             ),),),
 
                           Widgets.heightSpaceH1,
-                          Texts.textNormal('Custom Triggers',textAlign: TextAlign.start,size: 16),
+                          Texts.textNormal('Custom Triggers',textAlign: TextAlign.start,size: 12),
                           Widgets.heightSpaceH05,
 
                           Row(children: [
@@ -165,7 +165,7 @@ class _SymptomsViewState extends State<SymptomsView> {
                           ],),
                           Widgets.heightSpaceH1,
                           CustomButton(
-                            backgroundColor: ColorConstants.primaryColor,
+                            backgroundColor: ColorConstants.darkPrimaryColor,
                             label: 'Save rating',
 
                           ),
@@ -187,50 +187,50 @@ class _SymptomsViewState extends State<SymptomsView> {
                 Widgets.heightSpaceH05,
                 EntryField(hint: "Describe the Symptom",maxLines: 2,height: 50,),
 
-                SeveritySlider(),
+                SeveritySlider(labels: ["None","Mild","Moderate","Severe","Very Severe"],),
 
                 Widgets.heightSpaceH2,
-                Texts.textBold("Related Triggers",size: 22),
+                Texts.textBold("Related Triggers",size: 16),
                 Widgets.heightSpaceH1,
-                Texts.textNormal('Life Style',textAlign: TextAlign.start,size: 16),
+                Texts.textNormal('Life Style',textAlign: TextAlign.start,size: 12),
                 Widgets.heightSpaceH05,
                 Wrap(
                   direction:Axis.horizontal,
                   children: List.generate(2, (index)=> Padding(
                     padding: const EdgeInsets.only(top:4,right: 8,bottom: 4),
-                    child:RadioBtnWithTextChip(label: lifeStyleList[index]),
+                    child:RadioBtnWithTextChip(isSelected:false,label: lifeStyleList[index]),
                   ),),),
                 Widgets.heightSpaceH1,
-                Texts.textNormal('Environmental',textAlign: TextAlign.start,size: 16),
+                Texts.textNormal('Environmental',textAlign: TextAlign.start,size: 12),
 
                 Wrap(
                   direction:Axis.horizontal,
                   children: List.generate(2, (index)=> Padding(
                     padding: const EdgeInsets.only(top:4,right: 8,bottom: 4),
-                    child: RadioBtnWithTextChip(label: environmentalList[index]),
+                    child: RadioBtnWithTextChip(isSelected:false,label: environmentalList[index]),
                   ),),),
                 Widgets.heightSpaceH1,
-                Texts.textNormal('Dietary',textAlign: TextAlign.start,size: 16),
+                Texts.textNormal('Dietary',textAlign: TextAlign.start,size: 12),
 
                 Wrap(
                   direction:Axis.horizontal,
                   children: List.generate(2, (index)=> Padding(
                     padding: const EdgeInsets.only(top:4,right: 8,bottom: 4),
-                    child: RadioBtnWithTextChip(label: dietaryList[index]),
+                    child: RadioBtnWithTextChip(isSelected:false,label: dietaryList[index]),
                   ),),),
 
                 Widgets.heightSpaceH1,
-                Texts.textNormal('Stress',textAlign: TextAlign.start,size: 16),
+                Texts.textNormal('Stress',textAlign: TextAlign.start,size: 12),
 
                 Wrap(
                   direction:Axis.horizontal,
                   children: List.generate(2, (index)=> Padding(
                     padding: const EdgeInsets.only(top:4,right: 8,bottom: 4),
-                    child: RadioBtnWithTextChip(label: stressList[index]),
+                    child: RadioBtnWithTextChip(isSelected:false,label: stressList[index]),
                   ),),),
 
                 Widgets.heightSpaceH1,
-                Texts.textNormal('Custom Triggers',textAlign: TextAlign.start,size: 16),
+                Texts.textNormal('Custom Triggers',textAlign: TextAlign.start,size: 12),
                 Widgets.heightSpaceH05,
 
                 Row(children: [
@@ -253,7 +253,7 @@ class _SymptomsViewState extends State<SymptomsView> {
                 ],),
                 Widgets.heightSpaceH05,
                 CustomButton(
-                  backgroundColor: ColorConstants.primaryColor,
+                  backgroundColor: ColorConstants.darkPrimaryColor,
                   label: 'Add custom symptoms',
 
                 ),

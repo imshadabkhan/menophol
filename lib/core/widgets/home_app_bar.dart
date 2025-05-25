@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/home/edit_profile.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/home/editprofile/edit_profile.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/home/notification_screen.dart';
 
 class HomeAppBar extends StatelessWidget {

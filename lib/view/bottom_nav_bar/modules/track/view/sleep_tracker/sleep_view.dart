@@ -66,9 +66,9 @@ class _SleepViewState extends State<SleepView> with SingleTickerProviderStateMix
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textBold("Sleep Tracker",size: 24),),
+              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textBold("Sleep Tracker",size: 20),),
               Widgets.heightSpaceH1,
-              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textNormal("Track your sleep to spot what's helping or disrupting your rest.",textAlign: TextAlign.start,size: 16),
+              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textNormal("Track your sleep to spot what's helping or disrupting your rest.",textAlign: TextAlign.start,size: 14),
               ),
               Widgets.heightSpaceH1,
               Padding(

@@ -28,7 +28,7 @@ List<String> symptomsList=["Cramps","Bloating","Headache",'Fatigue','Mood Swings
             ),
             Texts.textMedium("Flow Intensity",),
             Widgets.heightSpaceH05,
-            SeveritySlider(),
+            SeveritySlider(labels: ["Spotting","Light","Medium",'Heavy',"Very Heavy"],),
             Widgets.heightSpaceH2,
             Texts.textMedium("Symptoms"),
             Widgets.heightSpaceH05,
@@ -36,7 +36,7 @@ List<String> symptomsList=["Cramps","Bloating","Headache",'Fatigue','Mood Swings
                 direction:Axis.horizontal,
                 children: List.generate(symptomsList.length, (index)=> Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child:RadioBtnWithTextChip(label: symptomsList[index]),
+                  child:RadioBtnWithTextChip(isSelected:false,label: symptomsList[index]),
                 ),),),
               Widgets.heightSpaceH05,
               Texts.textMedium("Custom Symptoms",size: 16),

@@ -64,9 +64,9 @@ class _SupplementTrackerState extends State<SupplementTracker> with SingleTicker
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textBold("Supplement Tracker",size: 24),),
-              Widgets.heightSpaceH1,
-              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textNormal("Track your supplements and vitamins",textAlign: TextAlign.start,size: 16),
+              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textBold("Supplement Tracker",size: 20),),
+              Widgets.heightSpaceH05,
+              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textNormal("Track your supplements and vitamins",textAlign: TextAlign.start,size: 14),
               ),
               Widgets.heightSpaceH1,
               Padding(
@@ -74,7 +74,7 @@ class _SupplementTrackerState extends State<SupplementTracker> with SingleTicker
                 child: TabBar(
                   padding: EdgeInsets.zero,
                   controller: _tabController,
-                  labelColor: Colors.black,
+                  labelColor: ColorConstants.blackColor,
                   unselectedLabelColor: Colors.grey,
                   indicatorColor: Colors.black,
                   indicatorSize: TabBarIndicatorSize.tab,

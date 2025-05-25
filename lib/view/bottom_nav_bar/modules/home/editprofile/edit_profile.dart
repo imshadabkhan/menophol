@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:menophol/core/constants/assets_constants.dart';
 import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/constants/padding_constants.dart';
@@ -7,12 +8,16 @@ import 'package:menophol/core/widgets/custom_dropdown.dart';
 import 'package:menophol/core/widgets/entry_field.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/home/controller.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/home/editprofile/controller.dart';
 
 class EditProfile extends StatelessWidget {
    EditProfile({super.key});
   int selectedOption = 0;
+   final ProfileController controller = Get.put(ProfileController());
 
-  final List<String> options = [
+
+   final List<String> options = [
     'Required Data Processing',
     'Marketing Communications',
     'Third-Party Data Sharing',
@@ -118,62 +123,77 @@ Widgets.heightSpaceH1,
              , Widgets.heightSpaceH1,
               CustomButton(label: "Save changes",textColor: ColorConstants.whiteColor,backgroundColor: ColorConstants.darkPrimaryColor,),
            Widgets.heightSpaceH2,
-              Texts.textBold('Privacy Setting',size: 20),
+              Texts.textBold('Privacy Setting',size: 18),
               Widgets.heightSpaceH1,
 
-              ...List.generate(options.length, (index) {
-                return Container(
-                  margin: const EdgeInsets.only(bottom: 12),
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(
-                      color: selectedOption == index
-                          ? ColorConstants.darkPrimaryColor
-                          : Colors.grey.shade300,
-                      width: selectedOption == index ? 1 : 0.5,
-                    ),
-                  ),
-                  child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                    Baseline(
-                    baseline: 22, baselineType: TextBaseline.alphabetic,
-                      child: Container(
-                        height:25,width: 25,
+             ...List.generate(options.length, (index) {
+                return Obx(() {
+                  bool isSelected = controller.selectedOption.value == index;
 
-                        decoration: BoxDecoration(
-                          border: Border.all(color: ColorConstants.greyBorderColor),
-                          shape: BoxShape.circle,
-
+                  return GestureDetector(
+                    onTap: () => controller.selectOption(index),
+                    child: Container(
+                      margin: const EdgeInsets.only(bottom: 12),
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(
+                          color: isSelected
+                              ? ColorConstants.darkPrimaryColor
+                              : Colors.grey.shade300,
+                          width: isSelected ? 1 : 0.5,
                         ),
                       ),
-                    ),
-                      Widgets.widthSpaceW2,
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Baseline(baseline: 16, baselineType: TextBaseline.alphabetic,child:  Texts.textBold(
-                              options[index],size: 20
-
-                            ), ),
-
-
-                           Widgets.heightSpaceH05,
-                            Texts.textNormal(
-                              _getDescription(index),
-                              size: 14,textAlign: TextAlign.start,maxLines: 6,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Baseline(
+                            baseline: 22,
+                            baselineType: TextBaseline.alphabetic,
+                            child: Container(
+                              height: 25,
+                              width: 25,
+                              decoration: BoxDecoration(
+                                color: isSelected
+                                    ? ColorConstants.primaryColor
+                                    : Colors.transparent,
+                                shape: BoxShape.circle,
+                                border: isSelected
+                                    ? null
+                                    : Border.all(color: ColorConstants.greyBorderColor),
+                              ),
+                              child: isSelected
+                                  ? Icon(Icons.check, color: Colors.white, size: 16)
+                                  : null,
                             ),
-                          ],
-                        ),
+                          ),
+                          Widgets.widthSpaceW2,
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Baseline(
+                                  baseline: 16,
+                                  baselineType: TextBaseline.alphabetic,
+                                  child: Texts.textBold(options[index], size: 16),
+                                ),
+                                Widgets.heightSpaceH05,
+                                Texts.textNormal(
+                                  _getDescription(index),
+                                  size: 12,
+                                  textAlign: TextAlign.start,
+                                  maxLines: 6,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                );
+                    ),
+                  );
+                });
               }),
+
 
 
               Widgets.heightSpaceH1,
@@ -186,7 +206,7 @@ Widgets.heightSpaceH1,
 
              Widgets.heightSpaceH2,
                Texts.textBold(
-                "Data Management",size: 20
+                "Data Management",size: 18
 
               ),
              Widgets.heightSpaceH05,
@@ -218,7 +238,7 @@ Widgets.heightSpaceH1,
                 label: "Delete my account",
 
                 backgroundColor: ColorConstants.redTextColor,
-                icon: Image.asset(Assets.deleteIcon,color: ColorConstants.whiteColor,height: 20,width: 20,),
+                icon: Image.asset(Assets.deleteAccount,color: ColorConstants.whiteColor,height: 20,width: 20,),
                 textColor: Colors.white,
               ),
 

@@ -15,7 +15,7 @@ class BulletPoint extends StatelessWidget {
         children: [
           Baseline(baseline: 16, baselineType: TextBaseline.ideographic,child:   Texts.textBold("\u2022 ",size: 16),),
 
-          Expanded(child: Baseline(baseline: 16, baselineType: TextBaseline.alphabetic,child:Texts.textNormal(text,textAlign: TextAlign.start,size: 16) ,),),
+          Expanded(child: Baseline(baseline: 16, baselineType: TextBaseline.alphabetic,child:Texts.textNormal(text,textAlign: TextAlign.start,size: 14) ,),),
 
         ],
       ),

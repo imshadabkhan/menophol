@@ -89,7 +89,7 @@ final String title;
                 direction:Axis.horizontal,
                 children: List.generate(triggers.length, (index)=> Padding(
                   padding: const EdgeInsets.only(right: 5,top: 5,bottom: 5),
-                  child: RadioBtnWithTextChip(label: triggers[index]),
+                  child: RadioBtnWithTextChip(isSelected:false,label: triggers[index]),
                 ),),),
 
             ],
