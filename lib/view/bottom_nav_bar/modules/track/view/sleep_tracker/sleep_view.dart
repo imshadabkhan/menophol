@@ -3,8 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/mood_tracker/mood_view.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/mood_tracker/past_entries.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/sleep_tracker/sleep_past_enteries.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/sleep_tracker/sleep_tracker.dart';
 
@@ -12,10 +10,10 @@ class SleepView extends StatefulWidget {
   const SleepView({super.key});
 
   @override
-  _SleepViewState createState() => _SleepViewState();
+  SleepViewState createState() => SleepViewState();
 }
 
-class _SleepViewState extends State<SleepView> with SingleTickerProviderStateMixin {
+class SleepViewState extends State<SleepView> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   final List<Tab> myTabs = <Tab>[
@@ -78,7 +76,7 @@ class _SleepViewState extends State<SleepView> with SingleTickerProviderStateMix
                   controller: _tabController,
                   labelColor: Colors.black,
                   unselectedLabelColor: Colors.grey,
-                  indicatorColor: Colors.black,
+                  indicatorColor: ColorConstants.primaryColor,
                   indicatorSize: TabBarIndicatorSize.tab,
                   tabs: myTabs,
                 ),
