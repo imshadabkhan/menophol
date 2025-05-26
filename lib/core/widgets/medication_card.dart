@@ -17,9 +17,10 @@ class MedicationCard extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(color: ColorConstants.greyBorderColor),
         borderRadius: BorderRadius.circular(20),
+
       ),
       child: Padding(
-        padding: PaddingConstants.screenPaddingHalf,
+        padding: PaddingConstants.screenPaddingHalf.copyWith(top: 16),
         child: Column(
           children: [
             Row(
@@ -79,10 +80,11 @@ class MedicationCard extends StatelessWidget {
               decoration: BoxDecoration(
                 border:
                 Border.all(color: ColorConstants.darkPrimaryColor),
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(20),
+                color: ColorConstants.primaryColor.withAlpha((0.3*255).toInt()),
               ),
               child: Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: PaddingConstants.screenPaddingHalf.copyWith(top: 16),
                 child: Column(
                   children: [
                     Row(
@@ -96,7 +98,7 @@ class MedicationCard extends StatelessWidget {
                         ),
                         Widgets.widthSpaceW1,
                         Texts.textBold("Dosage Information",
-                            color: ColorConstants.primaryColor,
+                            color: ColorConstants.darkPrimaryColor,
                             size: 18),
                       ],
                     ),
