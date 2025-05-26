@@ -18,28 +18,12 @@ class SymptomSeverityChart extends StatelessWidget {
             maxY: 8,
             barTouchData: BarTouchData(enabled: false),
             titlesData: FlTitlesData(
-              leftTitles: AxisTitles(sideTitles: SideTitles(showTitles: true,
-
-    )),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+              leftTitles: AxisTitles(
+                  sideTitles: SideTitles(
+                showTitles: true,
+              )),
+              rightTitles:
+                  AxisTitles(sideTitles: SideTitles(showTitles: false)),
               topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
               bottomTitles: AxisTitles(
                 sideTitles: SideTitles(
@@ -51,7 +35,8 @@ class SymptomSeverityChart extends StatelessWidget {
                           Widgets.divider(),
                           Widgets.heightSpaceH05,
                           Text('17 March',
-                              style: TextStyle(fontSize: 10, color: Colors.black54)),
+                              style: TextStyle(
+                                  fontSize: 10, color: Colors.black54)),
                         ],
                       );
                     } else if (value.toInt() == 6) {
@@ -60,7 +45,8 @@ class SymptomSeverityChart extends StatelessWidget {
                           Widgets.divider(),
                           Widgets.heightSpaceH05,
                           Text('24 March',
-                              style: TextStyle(fontSize: 10, color: Colors.black54)),
+                              style: TextStyle(
+                                  fontSize: 10, color: Colors.black54)),
                         ],
                       );
                     }
@@ -80,7 +66,6 @@ class SymptomSeverityChart extends StatelessWidget {
                 strokeWidth: 1,
               ),
             ),
-
             borderData: FlBorderData(show: false),
             barGroups: List.generate(actualSleep.length, (index) {
               double actual = actualSleep[index];
@@ -94,7 +79,8 @@ class SymptomSeverityChart extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     rodStackItems: [
                       BarChartRodStackItem(0, actual, Colors.red.shade400),
-                      BarChartRodStackItem(actual, maxSleep, Colors.red.shade100),
+                      BarChartRodStackItem(
+                          actual, maxSleep, Colors.red.shade100),
                     ],
                   ),
                 ],

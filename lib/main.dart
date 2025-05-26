@@ -41,10 +41,10 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-        // child: GlpMedications(),
+         // child: GlpMedications(),
       // child: HrtMedication(),
-      //   child: BottomNavBar(),
-      child: MedicalConditionView(),
+        child: BottomNavBar(),
+      // child: MedicalConditionView(),
       // child: ChangePassword(),
       // child: SplashView(),
     );

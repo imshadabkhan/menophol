@@ -3,7 +3,7 @@ import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
 
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/supplement_tracker/database.dart';
+// import 'package:menophol/view/bottom_nav_bar/modules/track/view/supplement_tracker/database.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/supplement_tracker/past_enteries.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/supplement_tracker/supplements.dart';
 
@@ -11,16 +11,16 @@ class SupplementTracker extends StatefulWidget {
   const SupplementTracker({super.key});
 
   @override
-  _SupplementTrackerState createState() => _SupplementTrackerState();
+  SupplementTrackerState createState() => SupplementTrackerState();
 }
 
-class _SupplementTrackerState extends State<SupplementTracker> with SingleTickerProviderStateMixin {
+class SupplementTrackerState extends State<SupplementTracker> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   final List<Tab> myTabs = <Tab>[
     Tab(text: 'Supplements'),
     Tab(text: 'Past Entries'),
-    Tab(text: 'Database'),
+    // Tab(text: 'Database'),
 
   ];
 
@@ -89,7 +89,7 @@ class _SupplementTrackerState extends State<SupplementTracker> with SingleTicker
                   children: [
                     Supplements(),
                    PastEnteries(),
-                    Database(),
+                    // Database(),
 
                   ],
                 ),
