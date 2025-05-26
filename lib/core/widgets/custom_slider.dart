@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:menophol/core/widgets/text_widgets.dart';
 
 class SeveritySliderController extends GetxController {
   var currentValue = 0.0.obs;
@@ -25,8 +26,11 @@ class SeveritySlider extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 0.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisSize: MainAxisSize.min,
         children: [
+          Obx(()=>Texts.textNormal("${controller.currentValue.value.toStringAsFixed(0)}/10",size: 12,textAlign: TextAlign.start),),
+
           Obx(() {
             return SliderTheme(
               data: SliderTheme.of(context).copyWith(
@@ -43,7 +47,7 @@ class SeveritySlider extends StatelessWidget {
               ),
               child: Slider(
                 min: 0,
-                max: (labels.length - 1).toDouble(),
+                max: (11 - 1).toDouble(),
                 divisions: labels.length - 1,
                 value: controller.currentValue.value,
                 onChanged: (value) => controller.setValue(value),

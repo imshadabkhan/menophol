@@ -115,17 +115,17 @@ class _SleepTrackerState extends State<SleepTracker> {
 
               Widgets.heightSpaceH1,
               EntryField(
-                prefixIcon: Assets.calendarIcon,
-                hint: "Enter your mood",
+
+
                 label: "Duration (hours)",
               ),
               Widgets.heightSpaceH05,
               EntryField(
                 label: "Times Awake",
-                hint: "Describe your feeling",
+
               ),
               Widgets.heightSpaceH05,
-              EntryField(
+              EntryBigField(
 
 
                 label: "Notes",
@@ -135,7 +135,7 @@ class _SleepTrackerState extends State<SleepTracker> {
              Obx(()=>CustomDropdown(onTap: (){
                sleepTrackerController.toggleDropDown();
 
-             }, value:"Related Triggers (1) ", hint: "", label: "",color: sleepTrackerController.dropDown.value?ColorConstants.darkPrimaryColor:ColorConstants.transparentColor,iconColor: sleepTrackerController.dropDown.value?ColorConstants.whiteColor:ColorConstants.blackColor,),),
+             }, value:"Related Triggers (1) ", hint: "", label:null,color: sleepTrackerController.dropDown.value?ColorConstants.darkPrimaryColor:ColorConstants.transparentColor,iconColor: sleepTrackerController.dropDown.value?ColorConstants.whiteColor:ColorConstants.blackColor,),),
 
           Obx(()=> sleepTrackerController.dropDown.value?Container(
             decoration: BoxDecoration(

@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 class ColorConstants {
   static var exerciseTrackerGradient2= Color(0xffD1D1EE);
   static var exerciseTrackerGradient1= Color(0xffF5F1F5);
-  static var sleepTrackerGradient2= Color(0xffF5E1E5);
-  static var sleepTrackerGradient1= Color(0xffE9DCD2);
+  static var sleepTrackerGradient2= Color(0xffA8C3F4);
+  static var sleepTrackerGradient1= Color(0xffB5E9F9);
   static var moodTrackerGradient2= Color(0xffC6BDF9);
 static var moodTrackerGradient1= Color(0xffEAD1F5);
   static var simpleTrackerGradient1= Color(0xffB8EEF7);

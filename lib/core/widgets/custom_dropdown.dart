@@ -46,9 +46,9 @@ class CustomDropdown extends StatelessWidget {
 
           ],
         ),
-        const SizedBox(
+        label!=null?const SizedBox(
           height: 7,
-        ),
+        ):Container(),
         GestureDetector(
             onTap:onTap,
             child: Container(
