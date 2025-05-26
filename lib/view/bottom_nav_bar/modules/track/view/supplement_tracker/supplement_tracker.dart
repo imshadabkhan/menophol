@@ -76,7 +76,7 @@ class SupplementTrackerState extends State<SupplementTracker> with SingleTickerP
                   controller: _tabController,
                   labelColor: ColorConstants.blackColor,
                   unselectedLabelColor: Colors.grey,
-                  indicatorColor: Colors.black,
+                  indicatorColor:ColorConstants.darkPrimaryColor,
                   indicatorSize: TabBarIndicatorSize.tab,
                   tabs: myTabs,
                 ),

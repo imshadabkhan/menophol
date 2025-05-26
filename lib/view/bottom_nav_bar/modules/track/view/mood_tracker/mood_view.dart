@@ -68,7 +68,7 @@ class _MoodViewState extends State<MoodView> {
                 prefixIcon: Assets.calendarIcon,
                 hint: "07/04/2025",
               ),
-              CustomDropdown(
+              Obx(()=> CustomDropdown(
                 onTap: () {
                   controller.toggleDropDown();
                 },
@@ -78,8 +78,12 @@ class _MoodViewState extends State<MoodView> {
                 color: controller.dropDown.value
                     ? ColorConstants.darkPrimaryColor
                     : ColorConstants.whiteColor,
-                iconColor: ColorConstants.blackColor,
-              ),
+                iconColor: controller.dropDown.value
+                    ? ColorConstants.whiteColor:ColorConstants.blackColor,
+                suffixIcon:  controller.dropDown.value?Icons.keyboard_arrow_up_outlined:Icons.keyboard_arrow_down_rounded
+
+              ),),
+
               Obx(() => controller.dropDown.value
                   ? Container(
                       decoration: BoxDecoration(
@@ -95,70 +99,87 @@ class _MoodViewState extends State<MoodView> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Texts.textNormal('Life Style',
-                                textAlign: TextAlign.start, size: 12),
-                            Widgets.heightSpaceH05,
+                            Texts.textNormal('Life Style',textAlign: TextAlign.start,size: 12),
+
                             Wrap(
-                              direction: Axis.horizontal,
-                              children: List.generate(
-                                2,
-                                (index) => Padding(
-                                  padding: const EdgeInsets.only(
-                                      top: 4, right: 8, bottom: 4),
-                                  child: RadioBtnWithTextChip(
-                                      isSelected: false,
-                                      label: lifeStyleList[index]),
-                                ),
-                              ),
+                              children: List.generate(lifeStyleList.length, (index) {
+                                final label = lifeStyleList[index];
+                                final sectionKey = "${label}_LifeStyle";
+
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Obx(() => RadioBtnWithTextChip(
+                                    label: label,
+                                    isSelected: controller.isSelected(sectionKey, label),
+                                    onTap: () => controller.toggleTrigger(sectionKey, label),
+                                  )),
+                                );
+                              }),
                             ),
+
+
                             Widgets.heightSpaceH1,
-                            Texts.textNormal('Environmental',
-                                textAlign: TextAlign.start, size: 12),
+                            Texts.textNormal('Environmental',textAlign: TextAlign.start,size: 12),
+
                             Wrap(
-                              direction: Axis.horizontal,
-                              children: List.generate(
-                                2,
-                                (index) => Padding(
-                                  padding: const EdgeInsets.only(
-                                      top: 4, right: 8, bottom: 4),
-                                  child: RadioBtnWithTextChip(
-                                      isSelected: false,
-                                      label: environmentalList[index]),
-                                ),
-                              ),
-                            ),
+                              direction:Axis.horizontal,
+                              children: List.generate( environmentalList.length, (index){
+                                final label = lifeStyleList[index];
+                                final sectionKey = "${label}_Environmental";
+
+
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Obx(() => RadioBtnWithTextChip(
+                                    label: label,
+                                    isSelected: controller.isSelected(sectionKey, label),
+                                    onTap: () => controller.toggleTrigger(sectionKey, label),
+                                  )),                            );}),),
                             Widgets.heightSpaceH1,
-                            Texts.textNormal('Dietary',
-                                textAlign: TextAlign.start, size: 12),
+                            Texts.textNormal('Dietary',textAlign: TextAlign.start,size: 12),
+
+
+
                             Wrap(
-                              direction: Axis.horizontal,
-                              children: List.generate(
-                                2,
-                                (index) => Padding(
-                                  padding: const EdgeInsets.only(
-                                      top: 4, right: 8, bottom: 4),
-                                  child: RadioBtnWithTextChip(
-                                      isSelected: false,
-                                      label: dietaryList[index]),
-                                ),
-                              ),
-                            ),
+                              direction:Axis.horizontal,
+                              children: List.generate( dietaryList.length, (index){
+                                final label = dietaryList[index];
+                                final sectionKey = "${label}_Dietary";
+
+
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Obx(() => RadioBtnWithTextChip(
+                                    label: label,
+                                    isSelected: controller.isSelected(sectionKey, label),
+                                    onTap: () => controller.toggleTrigger(sectionKey, label),
+                                  )),                            );}),),
+
+
+
                             Widgets.heightSpaceH1,
-                            Texts.textNormal('Stress',
-                                textAlign: TextAlign.start, size: 12),
+                            Texts.textNormal('Stress',textAlign: TextAlign.start,size: 12),
+
+
+
+
                             Wrap(
-                              direction: Axis.horizontal,
-                              children: List.generate(
-                                2,
-                                (index) => Padding(
-                                  padding: const EdgeInsets.only(
-                                      top: 4, right: 8, bottom: 4),
-                                  child: RadioBtnWithTextChip(
-                                      isSelected: false,
-                                      label: stressList[index]),
-                                ),
-                              ),
-                            ),
+                              direction:Axis.horizontal,
+                              children: List.generate( stressList.length, (index){
+                                final label = stressList[index];
+                                final sectionKey = "${label}_Stress";
+
+
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Obx(() => RadioBtnWithTextChip(
+                                    label: label,
+                                    isSelected: controller.isSelected(sectionKey, label),
+                                    onTap: () => controller.toggleTrigger(sectionKey, label),
+                                  )),                            );}),),
+
+
+
                             Widgets.heightSpaceH1,
                             Texts.textNormal('Custom Triggers',
                                 textAlign: TextAlign.start, size: 12),
@@ -250,10 +271,10 @@ class _MoodViewState extends State<MoodView> {
                 hint: "Enter your mood",
               ),
               Widgets.heightSpaceH05,
-              EntryField(
+              EntryBigField(
                 hint: "Describe your feeling",
               ),
-              Widgets.heightSpaceH05,
+              Widgets.heightSpaceH2,
               CustomButton(
                 label: "Add custom mood",
                 textColor: ColorConstants.blackColor,

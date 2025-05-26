@@ -4,17 +4,10 @@ import 'package:get/get.dart';
 import 'package:menophol/core/constants/assets_constants.dart';
 import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/constants/padding_constants.dart';
+import 'package:menophol/core/routes/app_routes.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/model.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/exercise_tracker/exercise_tracker_view.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/food_and_drink/food_and_drink.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/hrt/hrt_tracker.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/mood_tracker/mood_tracker_view.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/period_tracker/period_tracker_view.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/sleep_tracker/sleep_view.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/supplement_tracker/supplement_tracker.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/track_view.dart';
 
 class TrackSymptoms extends StatelessWidget {
   final List<TrackItem> trackItems = [
@@ -22,33 +15,33 @@ class TrackSymptoms extends StatelessWidget {
         icon: Assets.symptomsIcon,
         title: 'Symptoms',
         subtitle: 'Track your hormonal health symptoms',
-      subtitle2: "",
+
     ),
     TrackItem(
         icon: Assets.unfilledHeart,
         title: 'Mood',
-        subtitle: 'Monitor your emotional wellbeing',subtitle2: "",),
+        subtitle: 'Monitor your emotional wellbeing',),
     TrackItem(
         icon: Assets.sleepIcon,
         title: 'Sleep',
-        subtitle: 'Track your sleep patterns',subtitle2: "",),
+        subtitle: 'Track your sleep patterns',),
     TrackItem(
         icon: Assets.foodDrinkIcon,
         title: 'Food & Drink',
-        subtitle: 'Track your diet and liquid intake',subtitle2: "",),
+        subtitle: 'Track your diet and liquid intake',),
     TrackItem(
         icon: Assets.dumbellIcon,
         title: 'Exercise',
-        subtitle: 'Log your physical activity',subtitle2: "",),
-    TrackItem(icon: Assets.hrtIcon, title: 'joint Pain', subtitle: 'aching',subtitle2: "",),
+        subtitle: 'Log your physical activity',),
+    TrackItem(icon: Assets.hrtIcon, title: 'joint Pain', subtitle: 'aching',),
     TrackItem(
         icon: Assets.hrtIcon,
         title: 'HRT',
-        subtitle: 'Track your harmone therapy',subtitle2: "",),
+        subtitle: 'Track your harmone therapy',),
     TrackItem(
         icon: Assets.supplimentsIcon,
         title: 'Suppliments',
-        subtitle: 'Track your suppliments and vitamins',subtitle2: "",),
+        subtitle: 'Track your suppliments and vitamins',),
     // TrackItem(
     //     icon: Assets.supplimentsIcon,
     //     title: 'Periods',
@@ -56,7 +49,7 @@ class TrackSymptoms extends StatelessWidget {
     TrackItem(
         icon: Assets.periodsIcon,
         title: 'Periods',
-        subtitle: 'Track your menstrual cycles',subtitle2: "",),
+        subtitle: 'Track your menstrual cyclesss',),
   ];
 
   TrackSymptoms({super.key});
@@ -108,14 +101,14 @@ backgroundColor: ColorConstants.transparentColor,
                         final item = trackItems[index];
                         return InkWell(
                           onTap: (){
-                            if(index==0){Get.to(TrackView());}
-                            if(index==1){Get.to(MoodTrackerView());}
-                            if(index==2){Get.to(SleepView());}
-                            if(index==3){Get.to(FoodAndDrinkOrder());}
-                            if(index==4){Get.to(ExerciseTrackerView());}
-                            if(index==6){Get.to(HrtTracker());}
-                            if(index==7){Get.to(SupplementTracker());}
-                            if(index==8){Get.to(PeriodTrackerView());}
+                            if(index==0){Get.toNamed(AppRoutes.trackView);}
+                            if(index==1){Get.toNamed(AppRoutes.moodTrackerView);}
+                            if(index==2){Get.toNamed(AppRoutes.sleepView);}
+                            if(index==3){Get.toNamed(AppRoutes.foodAndDrinkOrder);}
+                            if(index==4){Get.toNamed(AppRoutes.exerciseTrackerView);}
+                            if(index==6){Get.toNamed(AppRoutes.hrtTracker);}
+                            if(index==7){Get.toNamed(AppRoutes.supplementTracker);}
+                            if(index==8){Get.toNamed(AppRoutes.periodTrackerView);}
                           },
                           child: Container(
                             padding: const EdgeInsets.all(12),
@@ -150,7 +143,7 @@ backgroundColor: ColorConstants.transparentColor,
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Texts.textMedium(item.title, size: 16),
+                                      Texts.textMedium(item.title, size: 15),
             
                                       Texts.textNormal(item.subtitle,
                                           size: 14, textAlign: TextAlign.start),

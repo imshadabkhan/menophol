@@ -18,7 +18,8 @@ class CustomDropdown extends StatelessWidget {
      this.labelColor,
      this.borderColor,
      this.iconColor,
-     this.prefixIcon
+     this.prefixIcon,
+     this.suffixIcon
   });
 
 
@@ -27,6 +28,7 @@ class CustomDropdown extends StatelessWidget {
   final String? hint;
   final String? label;
   final Color? color;
+  final IconData? suffixIcon;
    final Color? borderColor;
    Color? iconColor;
    Color? labelColor;
@@ -81,7 +83,7 @@ class CustomDropdown extends StatelessWidget {
                   ),
 
                   const SizedBox(width: 10,),
-                   Icon(Icons.keyboard_arrow_down_outlined,color: iconColor??Colors.white,size: 18,)
+           suffixIcon==null?Icon(Icons.keyboard_arrow_down_outlined,color: iconColor??Colors.white,size: 18,):Icon(suffixIcon!,color: iconColor??Colors.white,size: 18,)
                 ],
               ),
             )),const SizedBox(

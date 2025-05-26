@@ -59,13 +59,14 @@ class DairyWidget extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
             begin: Alignment.topCenter,
-            end: Alignment.center,
+            end: Alignment.bottomCenter,
             colors: [
           ColorConstants.primaryColor,
+              ColorConstants.primaryColor,
           ColorConstants.whiteColor
 
         ]),
-        border: Border.all(color: ColorConstants.greyBorderColor,
+        border: Border.all(color: ColorConstants.darkPrimaryColor,
 
 
 
@@ -143,8 +144,8 @@ class TimeChipWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: ColorConstants.greyBgColor,
-        border: Border.all(color: ColorConstants.greyBorderColor,width: 1),
+        color: ColorConstants.chipBGColor,
+        border: Border.all(color: ColorConstants.greyBorderColor),
         borderRadius: BorderRadius.circular(6),
 
       ),

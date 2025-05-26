@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:menophol/core/constants/assets_constants.dart';
 import 'package:menophol/core/widgets/entry_field.dart';
 import 'package:menophol/core/widgets/radiobuttonwithtext.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/track/view/mood_tracker/controller.dart';
 
 class MoodPastEntries extends StatefulWidget {
   const MoodPastEntries({super.key});
@@ -14,6 +16,7 @@ class MoodPastEntries extends StatefulWidget {
 
 class _MoodPastEntriesState extends State<MoodPastEntries> {
   @override
+  final MoodController controller = Get.put(MoodController());
   List<String> triggers=["Exercise",'Sleep Changes','Temperature',"Weather Changes"];
   List<String> trigger2=["Exercise",'Temperature',"Weather Changes"];
   Widget build(BuildContext context) {
@@ -26,7 +29,7 @@ class _MoodPastEntriesState extends State<MoodPastEntries> {
             hint: "07/04/2025",
           ),
           Widgets.heightSpaceH05,
-          PastEntryCards(triggers: triggers,title: "Happy",icon:Assets.unfilledHappy,),
+          PastEntryCards(triggers: triggers,title: "Happy",icon:Assets.unfilledHappy,controller:controller,),
           // PastEntryCards(triggers: trigger2,title: 'Sleep Issues',label:"Very Severe" ,labelColor: ColorConstants.redColor,),
 
         ],),
@@ -42,12 +45,14 @@ class PastEntryCards extends StatelessWidget {
     required this.title,
     required this.icon,
     this.labelColor,
+    this.controller
   });
 
   final List<String> triggers;
   final String title;
   final String icon;
   final Color? labelColor;
+  final controller;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -86,12 +91,26 @@ class PastEntryCards extends StatelessWidget {
               Widgets.heightSpaceH1,
               Texts.textBold("Triggers",size: 18),
               Widgets.heightSpaceH1,
+
+
+
               Wrap(
-                direction:Axis.horizontal,
-                children: List.generate(triggers.length, (index)=> Padding(
-                  padding: const EdgeInsets.only(right: 5,top: 5,bottom: 5),
-                  child: RadioBtnWithTextChip(isSelected:false,label: triggers[index]),
-                ),),),
+                children: List.generate(triggers.length, (index) {
+                  final label = triggers[index];
+                  final sectionKey = "${label}_LifeStylee";
+
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Obx(() => RadioBtnWithTextChip(
+                      label: label,
+                      isSelected: controller.isSelected(sectionKey, label),
+                      onTap: () => controller.toggleTrigger(sectionKey, label),
+                    )),
+                  );
+                }),
+              ),
+
+
 
             ],
           ),

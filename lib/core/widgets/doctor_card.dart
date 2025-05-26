@@ -106,6 +106,7 @@ class DoctorCard extends StatelessWidget {
                 }
 
                 return Chip(
+
                   side: BorderSide.none,
                   label: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -116,7 +117,7 @@ class DoctorCard extends StatelessWidget {
                     ],
                   ),
                   backgroundColor: ColorConstants.primaryColor
-                      .withAlpha((0.6 * 255).toInt()),
+                      .withAlpha((0.2 * 255).toInt()),
                   labelStyle: TextStyle(color: ColorConstants.redTextColor),
                 );
               }).toList(),
@@ -162,6 +163,7 @@ class DoctorDialogBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      backgroundColor: ColorConstants.whiteColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       content: Column(
         mainAxisSize: MainAxisSize
@@ -201,19 +203,20 @@ class DoctorDialogBox extends StatelessWidget {
                   ),
                 ],
               ),
-             
+
               Texts.textNormal(
                   speaciality,
                   size: 14,
                   textAlign: TextAlign.start),
             ],
           ),
+          Widgets.heightSpaceH1,
           Widgets.divider(),
-          Widgets.heightSpaceH05,
+          Widgets.heightSpaceH1,
           Texts.textNormal(
               "Specializing in personalized menopause care with focus on hormone optimization and lifestyle medicine.",
-              textAlign: TextAlign.start,size: 18,overflow: TextOverflow.ellipsis),
-          Widgets.heightSpaceH05,
+              textAlign: TextAlign.start,size: 14,overflow: TextOverflow.ellipsis,maxLines: 5),
+          Widgets.heightSpaceH1,
           Wrap(
             children: List.generate(
                 symptomsList.length,
@@ -221,7 +224,7 @@ class DoctorDialogBox extends StatelessWidget {
                       padding: const EdgeInsets.all(4.0),
                       child: ChipWidget(
                         label: symptomsList[index],
-                        bgColor: ColorConstants.greyBgColor,
+                        bgColor: ColorConstants.primaryColor.withAlpha((0.3*255).toInt()),
                         textColor:
                             ColorConstants.darkPrimaryColor,
                       ),
@@ -237,7 +240,7 @@ class DoctorDialogBox extends StatelessWidget {
                 width: 20,
                 height: 20,
               ),
-              Widgets.widthSpaceW05,
+              Widgets.widthSpaceW1,
               Texts.textNormal("+44 20 24253456", size: 14),
             ],
           ),
@@ -250,7 +253,7 @@ class DoctorDialogBox extends StatelessWidget {
                 width: 20,
                 height: 20,
               ),
-              Widgets.widthSpaceW05,
+              Widgets.widthSpaceW1,
               Expanded(
                 child: Texts.textNormal("dr.thompson@menopal.com",
                     size: 14, textAlign: TextAlign.start),

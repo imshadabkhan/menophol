@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
 
 class SymptomSeverityChart extends StatelessWidget {
@@ -9,9 +10,9 @@ class SymptomSeverityChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(10.0),
       child: AspectRatio(
-        aspectRatio: 2,
+        aspectRatio: 1.9,
         child: BarChart(
           BarChartData(
             alignment: BarChartAlignment.spaceBetween,
@@ -19,9 +20,29 @@ class SymptomSeverityChart extends StatelessWidget {
             barTouchData: BarTouchData(enabled: false),
             titlesData: FlTitlesData(
               leftTitles: AxisTitles(
-                  sideTitles: SideTitles(
-                showTitles: true,
-              )),
+                sideTitles: SideTitles(
+                  showTitles: true,
+                  reservedSize: 80, // Ensure enough space for text
+                  interval: 2, // Add this to make sure the right labels are triggered
+                  getTitlesWidget: (value, meta) {
+                    switch (value.toInt()) {
+                      case 0:
+                        return  Texts.textNormal('None',size: 8,textAlign: TextAlign.start);
+                      case 2:
+                        return  Texts.textNormal('Mild',size: 8,textAlign: TextAlign.start);
+                      case 4:
+                        return  Texts.textNormal('Moderate',size: 8,textAlign: TextAlign.start );
+                      case 6:
+                        return  Texts.textNormal('Severe',size: 8,textAlign: TextAlign.start);
+                      case 8:
+                        return  Texts.textNormal('very Severe',size: 8,textAlign: TextAlign.start);
+                      default:
+                        return const SizedBox.shrink();
+                    }
+                  },
+                ),
+              ),
+
               rightTitles:
                   AxisTitles(sideTitles: SideTitles(showTitles: false)),
               topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
@@ -60,7 +81,8 @@ class SymptomSeverityChart extends StatelessWidget {
               show: true,
               drawHorizontalLine: true,
               drawVerticalLine: false,
-              horizontalInterval: 1.5,
+
+              horizontalInterval: 2,
               getDrawingHorizontalLine: (value) => FlLine(
                 color: Colors.grey.withOpacity(0.3),
                 strokeWidth: 1,

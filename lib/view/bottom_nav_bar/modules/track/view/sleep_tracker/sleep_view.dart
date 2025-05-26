@@ -51,6 +51,7 @@ class SleepViewState extends State<SleepView> with SingleTickerProviderStateMixi
 
                   ColorConstants.sleepTrackerGradient1,
                   ColorConstants.sleepTrackerGradient2,
+                  Colors.white,
 
                 ]),
           ),

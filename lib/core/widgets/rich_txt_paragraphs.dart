@@ -29,13 +29,13 @@ class RichTextParagraphs extends StatelessWidget {
                         color: ColorConstants.blackColor,
                         fontWeight: FontWeight.bold,
                         fontFamily: "Montserrat",
-                        fontSize: 16),
+                        fontSize: 14),
                     children: [
                       TextSpan(
                           text: subTitle,
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontSize: 16,
+                              fontSize: 14,
                               color: ColorConstants.blackColor,
                               fontFamily: "Montserrat")),
                     ])),

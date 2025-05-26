@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:menophol/core/routes/app_routes.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/home/editprofile/edit_profile.dart';
@@ -19,7 +20,7 @@ class HomeAppBar extends StatelessWidget {
       contentPadding: EdgeInsets.zero,
       leading: GestureDetector(
         onTap: (){
-          Get.to(()=> EditProfile());
+          Get.toNamed(AppRoutes.editProfile);
         },
         child: CircleAvatar(
 
@@ -40,7 +41,8 @@ class HomeAppBar extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: (){
-                    Get.to(()=>ManageNotificationsScreen());
+
+                    Get.toNamed(AppRoutes.notificationView);
                   },
                   child: Image.asset(
                     "assets/icons/notification.png",

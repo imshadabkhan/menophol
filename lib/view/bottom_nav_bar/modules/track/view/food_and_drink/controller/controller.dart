@@ -2,8 +2,8 @@ import 'package:get/get.dart';
 
 class FoodDrinkController extends GetxController {
   var selected = 'Food'.obs;
-  var selectedItem = ''.obs;
-  var selectedMealType = ''.obs;
+  var selectedItem = 'Breakfast'.obs;
+  var selectedMealType = 'Breakfast'.obs;
 
   final List<String> drinkList = [
     'Water',

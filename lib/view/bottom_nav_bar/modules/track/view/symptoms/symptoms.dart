@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:menophol/core/constants/assets_constants.dart';
 import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/widgets/custom_button.dart';
@@ -11,6 +12,7 @@ import 'package:menophol/core/widgets/radiobuttonwithtext.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/model.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/track/view/symptoms/controller.dart';
 
 class SymptomsView extends StatefulWidget {
   const SymptomsView({super.key});
@@ -20,6 +22,8 @@ class SymptomsView extends StatefulWidget {
 }
 
 class _SymptomsViewState extends State<SymptomsView> {
+  final SymptomsController controller = Get.put(SymptomsController());
+
 
   final List<TrackItem> trackItems = [
     TrackItem(
@@ -60,7 +64,7 @@ class _SymptomsViewState extends State<SymptomsView> {
     TrackItem(
         icon: Assets.periodsIcon,
         title: 'Irregualr Periods',
-        subtitle: 'Irregular menstrual cyclesss'),
+        subtitle: 'Irregular menstrual cycles'),
   ];
   String selectedOption = 'Option 1';
   String selectedValue = 'Option 1';
@@ -106,40 +110,86 @@ class _SymptomsViewState extends State<SymptomsView> {
                           Widgets.heightSpaceH1,
                           Texts.textNormal('Life Style',textAlign: TextAlign.start,size: 12),
                           Widgets.heightSpaceH05,
-                          Wrap(
-                            direction:Axis.horizontal,
-                            children: List.generate(2, (index)=> Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child:RadioBtnWithTextChip(isSelected:false,label: lifeStyleList[index]),
-                            ),),),
-                          Widgets.heightSpaceH1,
+
+
+                        Wrap(
+                        children: List.generate(lifeStyleList.length, (index) {
+                        final label = lifeStyleList[index];
+                        final sectionKey = "${item.title}_LifeStyle";
+
+                        return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Obx(() => RadioBtnWithTextChip(
+                        label: label,
+                        isSelected: controller.isSelected(sectionKey, label),
+                        onTap: () => controller.toggleTrigger(sectionKey, label),
+                        )),
+                        );
+                        }),
+                        ),
+
+
+                        Widgets.heightSpaceH1,
                           Texts.textNormal('Environmental',textAlign: TextAlign.start,size: 12),
 
                           Wrap(
                             direction:Axis.horizontal,
-                            children: List.generate(2, (index)=> Padding(
+                            children: List.generate( environmentalList.length, (index){
+                              final label = lifeStyleList[index];
+                              final sectionKey = "${item.title}_Environmental";
+
+
+                              return Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: RadioBtnWithTextChip(isSelected:true,label: environmentalList[index]),
-                            ),),),
+                              child: Obx(() => RadioBtnWithTextChip(
+                                label: label,
+                                isSelected: controller.isSelected(sectionKey, label),
+                                onTap: () => controller.toggleTrigger(sectionKey, label),
+                              )),                            );}),),
                           Widgets.heightSpaceH1,
                           Texts.textNormal('Dietary',textAlign: TextAlign.start,size: 12),
 
+
+
                           Wrap(
                             direction:Axis.horizontal,
-                            children: List.generate(2, (index)=> Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: RadioBtnWithTextChip(isSelected:false,label: dietaryList[index]),
-                            ),),),
+                            children: List.generate( dietaryList.length, (index){
+                              final label = dietaryList[index];
+                              final sectionKey = "${item.title}_Dietary";
+
+
+                              return Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Obx(() => RadioBtnWithTextChip(
+                                  label: label,
+                                  isSelected: controller.isSelected(sectionKey, label),
+                                  onTap: () => controller.toggleTrigger(sectionKey, label),
+                                )),                            );}),),
+
+
 
                           Widgets.heightSpaceH1,
                           Texts.textNormal('Stress',textAlign: TextAlign.start,size: 12),
 
+
+
+
                           Wrap(
                             direction:Axis.horizontal,
-                            children: List.generate(2, (index)=> Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: RadioBtnWithTextChip(isSelected:true,label: stressList[index]),
-                            ),),),
+                            children: List.generate( stressList.length, (index){
+                              final label = stressList[index];
+                              final sectionKey = "${item.title}_Stress";
+
+
+                              return Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Obx(() => RadioBtnWithTextChip(
+                                  label: label,
+                                  isSelected: controller.isSelected(sectionKey, label),
+                                  onTap: () => controller.toggleTrigger(sectionKey, label),
+                                )),                            );}),),
+
+
 
                           Widgets.heightSpaceH1,
                           Texts.textNormal('Custom Triggers',textAlign: TextAlign.start,size: 12),
@@ -183,9 +233,10 @@ class _SymptomsViewState extends State<SymptomsView> {
               CustomExpansionTile(title: "Cognitive & Mood Changes",children: [],),
               CustomExpansionTile(title: "Harmonal & Menstrual Health",children: [],),
               CustomExpansionTile(title: "Custom Symptom",children: [
+                Widgets.heightSpaceH1,
                 EntryField(hint: "Enter your Symptom",maxLines:1),
                 Widgets.heightSpaceH05,
-                EntryField(hint: "Describe the Symptom",maxLines: 2,height: 50,),
+                EntryBigField(hint: "Describe the Symptom",),
 
                 SeveritySlider(labels: ["None","Mild","Moderate","Severe","Very Severe"],),
 
@@ -194,40 +245,89 @@ class _SymptomsViewState extends State<SymptomsView> {
                 Widgets.heightSpaceH1,
                 Texts.textNormal('Life Style',textAlign: TextAlign.start,size: 12),
                 Widgets.heightSpaceH05,
+
+
+
+
                 Wrap(
                   direction:Axis.horizontal,
-                  children: List.generate(2, (index)=> Padding(
-                    padding: const EdgeInsets.only(top:4,right: 8,bottom: 4),
-                    child:RadioBtnWithTextChip(isSelected:false,label: lifeStyleList[index]),
-                  ),),),
+                  children: List.generate( lifeStyleList.length, (index){
+                    final label = lifeStyleList[index];
+                    final sectionKey = "${label}Life Style'";
+
+
+                    return Padding(
+                      padding: const EdgeInsets.only(top:4,right: 8,bottom: 4),
+                      child: Obx(() => RadioBtnWithTextChip(
+                        label: label,
+                        isSelected: controller.isSelected(sectionKey, label),
+                        onTap: () => controller.toggleTrigger(sectionKey, label),
+                      )),                            );}),),
+
+
                 Widgets.heightSpaceH1,
                 Texts.textNormal('Environmental',textAlign: TextAlign.start,size: 12),
 
-                Wrap(
-                  direction:Axis.horizontal,
-                  children: List.generate(2, (index)=> Padding(
-                    padding: const EdgeInsets.only(top:4,right: 8,bottom: 4),
-                    child: RadioBtnWithTextChip(isSelected:false,label: environmentalList[index]),
-                  ),),),
-                Widgets.heightSpaceH1,
-                Texts.textNormal('Dietary',textAlign: TextAlign.start,size: 12),
+
 
                 Wrap(
                   direction:Axis.horizontal,
-                  children: List.generate(2, (index)=> Padding(
-                    padding: const EdgeInsets.only(top:4,right: 8,bottom: 4),
-                    child: RadioBtnWithTextChip(isSelected:false,label: dietaryList[index]),
-                  ),),),
+                  children: List.generate( environmentalList.length, (index){
+                    final label = environmentalList[index];
+                    final sectionKey = "${label}Environmental.";
+
+
+                    return Padding(
+                      padding: const EdgeInsets.only(top:4,right: 8,bottom: 4),
+                      child: Obx(() => RadioBtnWithTextChip(
+                        label: label,
+                        isSelected: controller.isSelected(sectionKey, label),
+                        onTap: () => controller.toggleTrigger(sectionKey, label),
+                      )),                            );}),),
+
+                Widgets.heightSpaceH1,
+                Texts.textNormal('Dietary',textAlign: TextAlign.start,size: 12),
+
+
+
+                Wrap(
+                  direction:Axis.horizontal,
+                  children: List.generate( dietaryList.length, (index){
+                    final label = dietaryList[index];
+                    final sectionKey = "${label}Dietary.";
+
+
+                    return Padding(
+                      padding: const EdgeInsets.only(top:4,right: 8,bottom: 4),
+                      child: Obx(() => RadioBtnWithTextChip(
+                        label: label,
+                        isSelected: controller.isSelected(sectionKey, label),
+                        onTap: () => controller.toggleTrigger(sectionKey, label),
+                      )),                            );}),),
+
+
 
                 Widgets.heightSpaceH1,
                 Texts.textNormal('Stress',textAlign: TextAlign.start,size: 12),
 
+
+
                 Wrap(
                   direction:Axis.horizontal,
-                  children: List.generate(2, (index)=> Padding(
-                    padding: const EdgeInsets.only(top:4,right: 8,bottom: 4),
-                    child: RadioBtnWithTextChip(isSelected:false,label: stressList[index]),
-                  ),),),
+                  children: List.generate( stressList.length, (index){
+                    final label = stressList[index];
+                    final sectionKey = "${label}Stress..";
+
+
+                    return Padding(
+                      padding: const EdgeInsets.only(top:4,right: 8,bottom: 4),
+                      child: Obx(() => RadioBtnWithTextChip(
+                        label: label,
+                        isSelected: controller.isSelected(sectionKey, label),
+                        onTap: () => controller.toggleTrigger(sectionKey, label),
+                      )),                            );}),),
+
+
 
                 Widgets.heightSpaceH1,
                 Texts.textNormal('Custom Triggers',textAlign: TextAlign.start,size: 12),
@@ -251,7 +351,7 @@ class _SymptomsViewState extends State<SymptomsView> {
 
                   ),
                 ],),
-                Widgets.heightSpaceH05,
+                Widgets.heightSpaceH1,
                 CustomButton(
                   backgroundColor: ColorConstants.darkPrimaryColor,
                   label: 'Add custom symptoms',

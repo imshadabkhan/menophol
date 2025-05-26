@@ -48,7 +48,7 @@ class PeriodEntryCard extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Texts.textMedium('Date',size: 16),
+                    Texts.textMedium('Date',size: 14),
                     Widgets.heightSpaceH05,
                     Texts.textNormal("April 7,2025",size: 14)
 
@@ -57,7 +57,7 @@ class PeriodEntryCard extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Texts.textMedium('Flow',size: 16),
+                    Texts.textMedium('Flow',size: 14),
                     Widgets.heightSpaceH05,
                     Texts.textNormal("Heavy",size: 14)
 
@@ -67,7 +67,7 @@ class PeriodEntryCard extends StatelessWidget {
             Widgets.heightSpaceH2,
             Texts.textMedium("Triggers",size: 14),
             Widgets.heightSpaceH1,
-            ChipWidget(label: "Cramp",),
+            ChipWidget(label: "Cramps",),
 
 
           ],),

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:menophol/core/constants/assets_constants.dart';
 import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/constants/padding_constants.dart';
+import 'package:menophol/core/routes/app_routes.dart';
 
 import 'package:menophol/core/widgets/entry_field.dart';
 import 'package:menophol/core/widgets/medication_card.dart';
@@ -38,10 +39,10 @@ class HrtTracker extends StatelessWidget {
                   1.0
                 ],
                 colors: [
-                  ColorConstants.exerciseTrackerGradient1,
-                  ColorConstants.exerciseTrackerGradient2,
+                  ColorConstants.hrtTrackerGradient1,
+                  ColorConstants.hrtTrackerGradient2,
 
-                  ColorConstants.exerciseTrackerGradient2.withAlpha(
+                  ColorConstants.hrtTrackerGradient2.withAlpha(
                       (0.4 * 255).toInt()), // Smoothly fade to white background
                   Colors.white,
                 ]),
@@ -56,14 +57,14 @@ class HrtTracker extends StatelessWidget {
               children: [
                 Texts.textNormal("Add Medication", size: 14),
                Widgets.widthSpaceW2,
-                FloatingActionButton(
+                FloatingActionButton.small(
 
                   elevation: 0,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50)),
                   backgroundColor: ColorConstants.darkPrimaryColor,
                   onPressed: () {
-                    Get.to(() => AddMedicationMedication());
+                    Get.toNamed(AppRoutes.addMedicationMedication);
                   },
                   child: Icon(
                     Icons.add,

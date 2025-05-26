@@ -1,16 +1,6 @@
 import 'package:get/get.dart';
 
-class SleepTrackerController extends GetxController{
-  RxBool dropDown=false.obs;
-
-  void toggleDropDown(){
-    dropDown.value=!dropDown.value;
-
-
-
-  }
-
-
+class SymptomsController extends GetxController {
   var selectedTriggers = <String, Set<String>>{}.obs;
 
   void toggleTrigger(String sectionKey, String value) {
@@ -28,8 +18,4 @@ class SleepTrackerController extends GetxController{
   bool isSelected(String sectionKey, String value) {
     return selectedTriggers[sectionKey]?.contains(value) ?? false;
   }
-
-
-
-
 }

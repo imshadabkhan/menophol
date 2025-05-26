@@ -77,12 +77,13 @@ class _PeriodTrackerViewState extends State<PeriodTrackerView> with SingleTicker
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                   Column(children: [
-                    Texts.textBold("Period Tracker",size: 24),
+                    Texts.textBold("Period Tracker",size: 20),
                     Widgets.heightSpaceH05,
-                    Texts.textNormal("Track your periods",textAlign: TextAlign.start,size: 16),
+                    Texts.textNormal("Track your periods",textAlign: TextAlign.start,size: 14),
 
 
                   ],),
+                    Widgets.widthSpaceW4,
                   Widgets.widthSpaceW4,
                     Widgets.widthSpaceW4,
                   Expanded(
@@ -122,7 +123,7 @@ class _PeriodTrackerViewState extends State<PeriodTrackerView> with SingleTicker
                     border:Border.all(color: ColorConstants.darkPrimaryColor),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 12),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -133,7 +134,7 @@ class _PeriodTrackerViewState extends State<PeriodTrackerView> with SingleTicker
                         children: [
                           Texts.textBold('Period Cycle Day 1',size: 18,color: ColorConstants.darkPrimaryColor),
                           Widgets.heightSpaceH05,
-                          Texts.textNormal('Started on Apr 7',size: 14),
+                          Texts.textNormal('Started on Apr 7',size: 12),
                         ],
                       ),
 Widgets.widthSpaceW4,Widgets.widthSpaceW4,Widgets.widthSpaceW2,
@@ -161,8 +162,6 @@ Widgets.widthSpaceW4,Widgets.widthSpaceW4,Widgets.widthSpaceW2,
               ),
               Widgets.heightSpaceH1,
 
-
-              Widgets.heightSpaceH1,
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: TabBar(

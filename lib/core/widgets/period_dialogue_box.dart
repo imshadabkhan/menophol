@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:menophol/core/constants/assets_constants.dart';
 import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/constants/padding_constants.dart';
@@ -9,6 +10,7 @@ import 'package:menophol/core/widgets/entry_field.dart';
 import 'package:menophol/core/widgets/radiobuttonwithtext.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/track/view/period_tracker/controller.dart';
 
 class PreviousPeriodDialogBox extends StatelessWidget {
   PreviousPeriodDialogBox({super.key});
@@ -17,7 +19,7 @@ class PreviousPeriodDialogBox extends StatelessWidget {
     "Cramps", "Bloating", "Headache", "Fatigue",
     "Mood Swings", "Backache", "Breast Tenderness"
   ];
-
+  PeriodTrackerController controller=Get.put(PeriodTrackerController());
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -56,17 +58,24 @@ class PreviousPeriodDialogBox extends StatelessWidget {
                   SeveritySlider(labels: ["Spotting","Light","Medium","Heavy",'Very Heavy'],),
                   Widgets.heightSpaceH2,
                   Texts.textMedium('Common Symptoms',size: 14),
-                  Widgets.heightSpaceH1,
+                  Widgets.heightSpaceH05,
                   Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
-                    children: List.generate(
-                      commonSymptoms.length,
-                          (index) => RadioBtnWithTextChip(isSelected:false,label: commonSymptoms[index]),
-                    ),
+                    children: List.generate(commonSymptoms.length, (index) {
+                      final label = commonSymptoms[index];
+                      final sectionKey = "${label}Common Symptoms";
+
+                      return Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Obx(() => RadioBtnWithTextChip(
+                          label: label,
+                          isSelected: controller.isSelected(sectionKey, label),
+                          onTap: () => controller.toggleTrigger(sectionKey, label),
+                        )),
+                      );
+                    }),
                   ),
                   Widgets.heightSpaceH2,
-                  EntryField(label: "Additional Notes"),
+                  EntryBigField(label: "Additional Notes"),
                   Widgets.heightSpaceH1,
                   Row(
                     children: [

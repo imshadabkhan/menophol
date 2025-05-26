@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 
 class ColorConstants {
+  static var supplimentGradient1= Color(0xffE8DDD7);
+  static var supplimentGradient2= Color(0xffF9EAED);
+  static var hrtTrackerGradient1= Color(0xffDACFEC);
+  static var hrtTrackerGradient2= Color(0xffEAE5EF);
   static var exerciseTrackerGradient2= Color(0xffD1D1EE);
   static var exerciseTrackerGradient1= Color(0xffF5F1F5);
   static var sleepTrackerGradient2= Color(0xffA8C3F4);

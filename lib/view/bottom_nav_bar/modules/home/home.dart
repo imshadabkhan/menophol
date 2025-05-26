@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/constants/padding_constants.dart';
+import 'package:menophol/core/routes/app_routes.dart';
 import 'package:menophol/core/widgets/conversation_block.dart';
 import 'package:menophol/core/widgets/custom_button.dart';
 import 'package:menophol/core/widgets/feeling_list_widget.dart';
@@ -58,14 +59,14 @@ class HomeScreen extends StatelessWidget {
 
 
                 return GestureDetector(
-                    onTap: ()=>Get.to(()=>DetailScreen()),
+                    onTap: ()=>Get.toNamed(AppRoutes.detailView),
                     child: ListTile_Widget());
               }),
             ),
             Widgets.heightSpaceH1,
             CustomButton(
               onTap: (){
-                Get.to(()=>DetailScreen());
+                Get.toNamed(AppRoutes.detailView);
               },
               label: "View all",
               backgroundColor: ColorConstants.darkPrimaryColor,

@@ -24,7 +24,7 @@ class SleepTracker extends StatefulWidget {
 
 class _SleepTrackerState extends State<SleepTracker> {
 
-  SleepTrackerController sleepTrackerController=Get.put(SleepTrackerController());
+  SleepTrackerController controller=Get.put(SleepTrackerController());
 
   final List<TrackItem> trackItems = [
     TrackItem(
@@ -104,9 +104,9 @@ class _SleepTrackerState extends State<SleepTracker> {
                 Baseline(
                   baseline: 30,
                     baselineType: TextBaseline.alphabetic,
-                    child: Image.asset(Assets.sleepQuality,height: 25.h,width: 25.w,)),
+                    child: Image.asset(Assets.sleepQuality,height: 20.h,width: 20.w,)),
                Widgets.widthSpaceW1,
-               Baseline(baseline: 25, baselineType:TextBaseline.alphabetic,child:  Texts.textBold("Sleep Quality (1 - 10)",size: 20),),
+               Baseline(baseline: 25, baselineType:TextBaseline.alphabetic,child:  Texts.textBold("Sleep Quality (1 - 10)",size: 18),),
 
 
               ],),
@@ -133,11 +133,11 @@ class _SleepTrackerState extends State<SleepTracker> {
 
               ),
              Obx(()=>CustomDropdown(onTap: (){
-               sleepTrackerController.toggleDropDown();
+               controller.toggleDropDown();
 
-             }, value:"Related Triggers (1) ", hint: "", label:null,color: sleepTrackerController.dropDown.value?ColorConstants.darkPrimaryColor:ColorConstants.transparentColor,iconColor: sleepTrackerController.dropDown.value?ColorConstants.whiteColor:ColorConstants.blackColor,),),
+             }, value:"Related Triggers (1) ", hint: "", label:null,color: controller.dropDown.value?ColorConstants.darkPrimaryColor:ColorConstants.transparentColor,iconColor: controller.dropDown.value?ColorConstants.whiteColor:ColorConstants.blackColor,suffixIcon:controller.dropDown.value?Icons.keyboard_arrow_up_outlined:Icons.keyboard_arrow_down_outlined,),),
 
-          Obx(()=> sleepTrackerController.dropDown.value?Container(
+          Obx(()=> controller.dropDown.value?Container(
             decoration: BoxDecoration(
                 border: Border.all(color: ColorConstants.greyBorderColor),
                 borderRadius: BorderRadius.circular(10)
@@ -152,40 +152,87 @@ class _SleepTrackerState extends State<SleepTracker> {
                   Widgets.heightSpaceH1,
                   Texts.textNormal('Life Style',textAlign: TextAlign.start,size: 12),
                   Widgets.heightSpaceH05,
+
+
                   Wrap(
                     direction:Axis.horizontal,
-                    children: List.generate(2, (index)=> Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child:RadioBtnWithTextChip(isSelected:false,label: lifeStyleList[index]),
-                    ),),),
+                    children: List.generate( lifeStyleList.length, (index){
+                      final label = lifeStyleList[index];
+                      final sectionKey = "${label}lifeStyleList";
+
+
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Obx(() => RadioBtnWithTextChip(
+                          label: label,
+                          isSelected: controller.isSelected(sectionKey, label),
+                          onTap: () => controller.toggleTrigger(sectionKey, label),
+                        )),                            );}),),
+
+
+
                   Widgets.heightSpaceH1,
                   Texts.textNormal('Environmental',textAlign: TextAlign.start,size: 12),
 
-                  Wrap(
-                    direction:Axis.horizontal,
-                    children: List.generate(2, (index)=> Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: RadioBtnWithTextChip(isSelected:false,label: environmentalList[index]),
-                    ),),),
-                  Widgets.heightSpaceH1,
-                  Texts.textNormal('Dietary',textAlign: TextAlign.start,size: 12),
+
+
 
                   Wrap(
                     direction:Axis.horizontal,
-                    children: List.generate(2, (index)=> Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: RadioBtnWithTextChip(label: dietaryList[index],isSelected: false,),
-                    ),),),
+                    children: List.generate( environmentalList.length, (index){
+                      final label = environmentalList[index];
+                      final sectionKey = "${label}environmentalList";
+
+
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Obx(() => RadioBtnWithTextChip(
+                          label: label,
+                          isSelected: controller.isSelected(sectionKey, label),
+                          onTap: () => controller.toggleTrigger(sectionKey, label),
+                        )),                            );}),),
+
+
+
+                  Widgets.heightSpaceH1,
+                  Texts.textNormal('Dietary',textAlign: TextAlign.start,size: 12),
+
+
+
+
+                  Wrap(
+                    direction:Axis.horizontal,
+                    children: List.generate( dietaryList.length, (index){
+                      final label = dietaryList[index];
+                      final sectionKey = "${label}dietaryList";
+
+
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Obx(() => RadioBtnWithTextChip(
+                          label: label,
+                          isSelected: controller.isSelected(sectionKey, label),
+                          onTap: () => controller.toggleTrigger(sectionKey, label),
+                        )),                            );}),),
 
                   Widgets.heightSpaceH1,
                   Texts.textNormal('Stress',textAlign: TextAlign.start,size: 12),
 
+
                   Wrap(
                     direction:Axis.horizontal,
-                    children: List.generate(2, (index)=> Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: RadioBtnWithTextChip(isSelected:false,label: stressList[index]),
-                    ),),),
+                    children: List.generate( stressList.length, (index){
+                      final label = stressList[index];
+                      final sectionKey = "${label}stressList";
+
+
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Obx(() => RadioBtnWithTextChip(
+                          label: label,
+                          isSelected: controller.isSelected(sectionKey, label),
+                          onTap: () => controller.toggleTrigger(sectionKey, label),
+                        )),                            );}),),
 
                   Widgets.heightSpaceH1,
                   Texts.textNormal('Custom Triggers',textAlign: TextAlign.start,size: 12),

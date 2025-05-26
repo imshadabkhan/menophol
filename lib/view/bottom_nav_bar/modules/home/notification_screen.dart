@@ -39,7 +39,9 @@ class ManageNotificationsScreen extends StatelessWidget {
             Expanded(
               child: ListView(
                 children: [
-                  Texts.textBold("Manage Notifications", size: 22,textAlign: TextAlign.start),
+                  Texts.textBold("Manage Notifications", size: 20,textAlign: TextAlign.start),
+                  Widgets.heightSpaceH05,
+
                   Texts.textNormal(
                     "Choose which notifications you'd like to receive. You can change these settings at any time.",
                     size: 14,
@@ -219,7 +221,7 @@ class ManageNotificationsScreen extends StatelessWidget {
                     value: toggle.value,
                     onChanged: (val) => toggle.value = val,
                     activeColor: ColorConstants.darkPrimaryColor,
-                   
+
                     thumbColor: WidgetStatePropertyAll(ColorConstants.whiteColor),
                   ),
                 )),

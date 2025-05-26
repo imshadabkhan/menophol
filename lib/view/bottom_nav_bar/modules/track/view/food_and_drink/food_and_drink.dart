@@ -78,7 +78,7 @@ class _FoodAndDrinkOrderState extends State<FoodAndDrinkOrder> with SingleTicker
                   controller: _tabController,
                   labelColor: Colors.black,
                   unselectedLabelColor: Colors.grey,
-                  indicatorColor: Colors.black,
+                  indicatorColor: ColorConstants.darkPrimaryColor,
                   indicatorSize: TabBarIndicatorSize.tab,
                   tabs: myTabs,
                 ),

@@ -64,9 +64,9 @@ class _TrackViewState extends State<TrackView> with SingleTickerProviderStateMix
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textBold("Symptoms Tracker",size: 24),),
+              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textBold("Symptoms Tracker",size: 20),),
         Widgets.heightSpaceH1,
-               Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textNormal("Your symptoms are real. Track them to take control.",textAlign: TextAlign.start,size: 16),
+               Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textNormal("Your symptoms are real. Track them to take control.",textAlign: TextAlign.start,size: 14),
                ),
                Widgets.heightSpaceH1,
               Padding(

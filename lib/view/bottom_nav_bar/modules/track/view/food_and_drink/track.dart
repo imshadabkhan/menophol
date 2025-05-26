@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:menophol/core/constants/assets_constants.dart';
 import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/constants/padding_constants.dart';
@@ -286,7 +285,7 @@ class Track extends StatelessWidget {
                     ? Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Texts.textMedium('Add Custom Food', size: 16),
+                          Texts.textMedium('Add Custom Food', size: 14),
                           Widgets.heightSpaceH05,
                           Row(
                             children: [
@@ -310,7 +309,7 @@ class Track extends StatelessWidget {
                     : Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Texts.textMedium('Add Custom Drink', size: 16),
+                          Texts.textMedium('Add Custom Drink', size: 14),
                           Widgets.heightSpaceH05,
                           EntryField(
                             hint: "Enter custom drink",

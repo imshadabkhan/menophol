@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:menophol/core/constants/assets_constants.dart';
 import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/widgets/entry_field.dart';
 import 'package:menophol/core/widgets/radiobuttonwithtext.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
+import 'package:menophol/view/bottom_nav_bar/modules/track/view/symptoms/controller.dart';
 
 class PastEntries extends StatefulWidget {
   const PastEntries({super.key});
@@ -15,6 +17,7 @@ class PastEntries extends StatefulWidget {
 
 class _PastEntriesState extends State<PastEntries> {
   @override
+  final SymptomsController controller = Get.put(SymptomsController());
   List<String> triggers=["Exercise",'Sleep Changes','Temperature',"Weather Changes"];
   List<String> trigger2=["Exercise",'Temperature',"Weather Changes"];
   Widget build(BuildContext context) {
@@ -27,8 +30,8 @@ class _PastEntriesState extends State<PastEntries> {
             hint: "07/04/2025",
           ),
           Widgets.heightSpaceH05,
-          PastEntryCards(triggers: triggers,title: "Anxiety",label: 'High Severity',),
-          PastEntryCards(triggers: trigger2,title: 'Sleep Issues',label:"Very Severe" ,labelColor: ColorConstants.redColor,),
+          PastEntryCards(triggers: triggers,title: "Anxiety",label: 'High Severity',controller: controller,),
+          PastEntryCards(triggers: trigger2,title: 'Sleep Issues',label:"Very Severe" ,labelColor: ColorConstants.redColor,controller: controller,),
 
         ],),
       ),
@@ -42,13 +45,14 @@ class PastEntryCards extends StatelessWidget {
     required this.triggers,
     required this.title,
     required this.label,
-     this.labelColor,
+     this.labelColor,this.controller
   });
 
   final List<String> triggers;
 final String title;
   final String label;
   final Color? labelColor;
+  final controller;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -67,7 +71,7 @@ final String title;
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Texts.textBold(title,size: 22,textAlign: TextAlign.start),
+                  Texts.textBold(title,size: 20,textAlign: TextAlign.start),
 
                 Image.asset(Assets.deleteIcon,height: 20,),
 
@@ -83,14 +87,25 @@ final String title;
               Widgets.heightSpaceH1,
               Widgets.divider(),
               Widgets.heightSpaceH1,
-      Texts.textBold("Triggers",size: 22),
+      Texts.textBold("Triggers",size: 20),
               Widgets.heightSpaceH1,
+
+
+
               Wrap(
                 direction:Axis.horizontal,
-                children: List.generate(triggers.length, (index)=> Padding(
-                  padding: const EdgeInsets.only(right: 5,top: 5,bottom: 5),
-                  child: RadioBtnWithTextChip(isSelected:false,label: triggers[index]),
-                ),),),
+                children: List.generate( triggers.length, (index){
+                  final label = triggers[index];
+                  final sectionKey = "${label}triggers'";
+
+
+                  return Padding(
+                    padding: const EdgeInsets.only(top:4,right: 8,bottom: 4),
+                    child: Obx(() => RadioBtnWithTextChip(
+                      label: label,
+                      isSelected: controller.isSelected(sectionKey, label),
+                      onTap: () => controller.toggleTrigger(sectionKey, label),
+                    )),                            );}),),
 
             ],
           ),

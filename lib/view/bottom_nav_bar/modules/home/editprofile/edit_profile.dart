@@ -8,12 +8,11 @@ import 'package:menophol/core/widgets/custom_dropdown.dart';
 import 'package:menophol/core/widgets/entry_field.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/home/controller.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/home/editprofile/controller.dart';
 
 class EditProfile extends StatelessWidget {
    EditProfile({super.key});
-  int selectedOption = 0;
+  final int selectedOption = 0;
    final ProfileController controller = Get.put(ProfileController());
 
 
@@ -50,7 +49,7 @@ class EditProfile extends StatelessWidget {
             children: [
           Texts.textBold("Edit Profile",size: 20),
             Widgets.heightSpaceH05,
-            Texts.textNormal("Update your personal information and keep your profile up to date.",textAlign: TextAlign.start,size: 16),
+            Texts.textNormal("Update your personal information and keep your profile up to date.",textAlign: TextAlign.start,size: 14),
             Widgets.heightSpaceH1,
             Center(
               child: Stack(

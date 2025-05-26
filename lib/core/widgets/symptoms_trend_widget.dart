@@ -44,13 +44,14 @@ class SymptomsTrendWidget extends StatelessWidget {
                 Flexible(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Texts.textBold("Symptom Trends", size: 16),
+                      Texts.textBold("Symptom Trends", size: 18),
                       Widgets.heightSpaceH05,
                       Texts.textNormal(
                           "Monitor your sleep quality and duration and patterns",
                           textAlign: TextAlign.start,
-                          size: 8),
+                          size: 12),
                     ],
                   ),
                 ),
@@ -58,7 +59,7 @@ class SymptomsTrendWidget extends StatelessWidget {
             ),
             Widgets.heightSpaceH1,
             Widgets.divider(),
-            Widgets.heightSpaceH1,
+            Widgets.heightSpaceH4,
             SymptomSeverityChart(),
           ],
         ),

@@ -7,14 +7,10 @@ import 'package:menophol/core/widgets/recent_symptomsWidgets.dart';
 import 'package:menophol/core/widgets/sleep_patterns_widgets.dart';
 import 'package:menophol/core/widgets/summary_card.dart';
 import 'package:menophol/core/widgets/symptoms_trend_widget.dart';
-
 import 'package:menophol/core/widgets/text_widgets.dart';
-
 import 'package:menophol/core/widgets/widgets.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/validate/controller.dart';
-
 import '../../../../core/widgets/recent_mood_Widget.dart';
-
 import 'package:get/get.dart';
 
 class ValidateHomePage extends StatelessWidget {
@@ -237,10 +233,8 @@ class ValidateHomePage extends StatelessWidget {
                   colorList: colorList,
                   moodTitleList: moodTitleList,
                 ),
-
                 Widgets.heightSpaceH2,
                 SleepPatternWidgets(),
-
                 Widgets.heightSpaceH2,
                 SymptomsTrendWidget(),
               ],
