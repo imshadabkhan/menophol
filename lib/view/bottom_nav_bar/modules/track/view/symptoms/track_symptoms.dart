@@ -33,7 +33,7 @@ class TrackSymptoms extends StatelessWidget {
         icon: Assets.dumbellIcon,
         title: 'Exercise',
         subtitle: 'Log your physical activity',),
-    TrackItem(icon: Assets.hrtIcon, title: 'joint Pain', subtitle: 'aching',),
+    // TrackItem(icon: Assets.hrtIcon, title: 'joint Pain', subtitle: 'aching',),
     TrackItem(
         icon: Assets.hrtIcon,
         title: 'HRT',
@@ -106,9 +106,9 @@ backgroundColor: ColorConstants.transparentColor,
                             if(index==2){Get.toNamed(AppRoutes.sleepView);}
                             if(index==3){Get.toNamed(AppRoutes.foodAndDrinkOrder);}
                             if(index==4){Get.toNamed(AppRoutes.exerciseTrackerView);}
-                            if(index==6){Get.toNamed(AppRoutes.hrtTracker);}
-                            if(index==7){Get.toNamed(AppRoutes.supplementTracker);}
-                            if(index==8){Get.toNamed(AppRoutes.periodTrackerView);}
+                            if(index==5){Get.toNamed(AppRoutes.hrtTracker);}
+                            if(index==6){Get.toNamed(AppRoutes.supplementTracker);}
+                            if(index==7){Get.toNamed(AppRoutes.periodTrackerView);}
                           },
                           child: Container(
                             padding: const EdgeInsets.all(12),
