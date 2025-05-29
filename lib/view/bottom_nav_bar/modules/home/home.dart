@@ -12,7 +12,7 @@ import 'package:menophol/core/widgets/report_card.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/home/controller.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/home/detail_screen.dart';
+
 
 
 class HomeScreen extends StatelessWidget {
@@ -44,15 +44,14 @@ class HomeScreen extends StatelessWidget {
                 textAlign: TextAlign.start),
             Widgets.heightSpaceH1,
             FeelingListWidget(controller: controller),
-
             Widgets.heightSpaceH2,
-
             ConversationBlock(),
             Widgets.heightSpaceH2,
+            Widgets.heightSpaceH05,
             Texts.textBold('What You Need to Know', size: 20),
             Widgets.heightSpaceH05,
             Texts.textNormal('Insights on your body, mind, and hormones.',
-                size: 16,textAlign: TextAlign.start),
+                size: 14,textAlign: TextAlign.start),
             Widgets.heightSpaceH2,
             Column(
               children: List.generate(3, (index) {

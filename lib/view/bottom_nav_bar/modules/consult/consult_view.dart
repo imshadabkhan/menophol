@@ -57,10 +57,10 @@ class ConsultView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Widgets.heightSpaceH1,
-              Texts.textBold('Find a Speacialist',textAlign: TextAlign.start,size: 22),
+              Texts.textBold('Find a Speacialist',textAlign: TextAlign.start,size: 20),
               Widgets.heightSpaceH05,
 
-              Texts.textNormal('Find a Speacialist',textAlign: TextAlign.start,size: 16),
+              Texts.textNormal('Find a Speacialist',textAlign: TextAlign.start,size: 14),
               Widgets.heightSpaceH1,
               EntrySearchField(
                 prefixIcon: Assets.searchbarIcon,color: ColorConstants.blackColor,

@@ -37,7 +37,8 @@ class ListTile_Widget extends StatelessWidget {
                       ),
                       child: Image.asset(Assets.image1),
                     ),
-                    Widgets.widthSpaceW2,
+                    Widgets.widthSpaceW1,
+                    Widgets.widthSpaceW05,
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,

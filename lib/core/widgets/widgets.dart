@@ -4,43 +4,80 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
-import '../constants/assets_constants.dart';
 import '../constants/color_constants.dart';
 
 class Widgets {
   static var heightSpaceH05 = SizedBox(
-    height: 0.005.sh,
+    height: 2.h,
   );
   static var heightSpaceH1 = SizedBox(
-    height: 0.01.sh,
+    height: 5.h,
   );
   static var heightSpaceH2 = SizedBox(
-    height: 0.02.sh,
+    height: 10.h,
   );
   static var heightSpaceH3 = SizedBox(
-    height: 0.03.sh,
+    height: 15.h,
   );
   static var heightSpaceH4 = SizedBox(
-    height: 0.04.sh,
+    height: 20.h,
   );
   static var heightSpaceH5 = SizedBox(
-    height: 0.05.sh,
+    height: 25.h,
   );
   static var widthSpaceW05 = SizedBox(
-    width: 0.005.sw,
+    width: 2.w,
   );
   static var widthSpaceW1 = SizedBox(
-    width: 0.01.sw,
+    width: 7.w,
   );
   static var widthSpaceW2 = SizedBox(
-    width: 0.02.sw,
+    width: 10.w,
   );
   static var widthSpaceW3 = SizedBox(
-    width: 0.03.sw,
+    width: 15.w,
   );
   static var widthSpaceW4 = SizedBox(
-    width: 0.04.sw,
+    width: 20.w,
   );
+
+
+
+
+  // static var heightSpaceH05 = SizedBox(
+  //   height: 0.005.sh,
+  // );
+  // static var heightSpaceH1 = SizedBox(
+  //   height: 0.01.sh,
+  // );
+  // static var heightSpaceH2 = SizedBox(
+  //   height: 0.02.sh,
+  // );
+  // static var heightSpaceH3 = SizedBox(
+  //   height: 0.03.sh,
+  // );
+  // static var heightSpaceH4 = SizedBox(
+  //   height: 0.04.sh,
+  // );
+  // static var heightSpaceH5 = SizedBox(
+  //   height: 0.05.sh,
+  // );
+  // static var widthSpaceW05 = SizedBox(
+  //   width: 0.005.sw,
+  // );
+  // static var widthSpaceW1 = SizedBox(
+  //   width: 0.01.sw,
+  // );
+  // static var widthSpaceW2 = SizedBox(
+  //   width: 0.02.sw,
+  // );
+  // static var widthSpaceW3 = SizedBox(
+  //   width: 0.03.sw,
+  // );
+  // static var widthSpaceW4 = SizedBox(
+  //   width: 0.04.sw,
+  // );
+
 
   static noRecordsFound({required String? title}) {
     return Center(
@@ -92,7 +129,7 @@ class Widgets {
     borderRadius: BorderRadius.circular(15),
     boxShadow: [
       BoxShadow(
-        color: Colors.black12.withOpacity(.03),
+        // color: Colors.black12.withOpacity(.03),
         spreadRadius: 3,
         blurRadius: 3,
         // changes position of shadow
@@ -104,7 +141,7 @@ class Widgets {
     borderRadius: BorderRadius.circular(10),
     boxShadow: [
       BoxShadow(
-        color: Colors.black12.withOpacity(.03),
+        // color: Colors.black12.withOpacity(.03),
         spreadRadius: 3,
         blurRadius: 3,
         // changes position of shadow

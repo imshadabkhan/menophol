@@ -57,7 +57,8 @@ class SymptomsTrendWidget extends StatelessWidget {
                 ),
               ],
             ),
-            Widgets.heightSpaceH1,
+            Widgets.heightSpaceH2,
+
             Widgets.divider(),
             Widgets.heightSpaceH4,
             SymptomSeverityChart(),

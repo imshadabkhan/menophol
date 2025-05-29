@@ -13,6 +13,7 @@ class ConversationBlock extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+      alignment: Alignment.center,
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           colors: [ Color(0xffF5E1FC),
@@ -37,7 +38,7 @@ class ConversationBlock extends StatelessWidget {
               'Struggling with symptoms, weight, or sleep? Let’s work it out together.',
               size: 14,
               textAlign: TextAlign.center),
-          Widgets.heightSpaceH1,
+          Widgets.heightSpaceH2,
           CustomButton(
             label: "Start a conversation",
             textStyle: TextStyle(color: Colors.white),
