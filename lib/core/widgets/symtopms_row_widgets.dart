@@ -10,12 +10,14 @@ class SypmtomRowWidget extends StatelessWidget {
     this.title,
     this.height,
     this.width,
+    this.baseline
 
   });
   final Color? color;
   final  String? title;
   final double? height;
   final  double? width;
+  final  double? baseline;
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +29,14 @@ class SypmtomRowWidget extends StatelessWidget {
 
         children: [
           Baseline(
-            baseline: 15,
+            baseline: baseline??12,
             baselineType: TextBaseline.alphabetic,
             child: Container(
               height: height??15,width: width??15,
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(50.r),color: color),),
           ),
           Widgets.widthSpaceW1,
-          Flexible(child:Texts.textNormal(title.toString(),textAlign: TextAlign.start,size: 14,textBaseline: TextBaseline.alphabetic,overflow: TextOverflow.ellipsis),
+          Flexible(child:Texts.textNormal(title.toString(),textAlign: TextAlign.start,size: 12,textBaseline: TextBaseline.alphabetic,overflow: TextOverflow.ellipsis),
           ),
         ]
     );

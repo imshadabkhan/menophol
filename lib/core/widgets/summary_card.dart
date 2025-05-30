@@ -22,7 +22,7 @@ class SummaryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(20),
           border: Border.all(color: ColorConstants.greyBorderColor)
       ),
       child: Padding(
@@ -46,7 +46,7 @@ class SummaryCard extends StatelessWidget {
                   children: [
                     Texts.textBold(title, size: 18),
                     Widgets.heightSpaceH05,
-                    Text(dateRange, style: TextStyle(color: Colors.grey[600], fontSize: 12))
+                    Texts.textNormal("Mar 17, 2025 - Mar 24, 2025",  size: 12)
 
 
                   ],
@@ -54,7 +54,10 @@ class SummaryCard extends StatelessWidget {
               ],
             ),
             Widgets.heightSpaceH2,
+            Widgets.divider(),
+            Widgets.heightSpaceH2,
             Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
 
@@ -63,40 +66,52 @@ class SummaryCard extends StatelessWidget {
                   lineWidth: 7.0,
                   percent: 0.3,
                  backgroundColor: ColorConstants.lightGray,
-                  center: Text("3",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
+                  center: Texts.textBold("3",size: 18),
                   progressColor: ColorConstants.darkGray,
                 ),
                 Widgets.widthSpaceW3,
-                Flexible(
-                  child: Column(children: [
-                    SypmtomRowWidget(color: ColorConstants.grayColor,title: "Mild",),
-                    Widgets.heightSpaceH2,
-                    SypmtomRowWidget(color:ColorConstants.darkPeachColor ,title: "Severe",),
+                Expanded(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                  
+                    Flexible(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SypmtomRowWidget(color: ColorConstants.grayColor,title:tags[0],baseline: 15,),
+                          Widgets.heightSpaceH2,
+                          SypmtomRowWidget(color:ColorConstants.darkPeachColor ,title: tags[1],baseline: 15,),
+                        ],),
+                    ),
+                    Widgets.widthSpaceW3,
+                    Flexible(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SypmtomRowWidget(color: ColorConstants.peachColor,title: tags[2],baseline: 15,),
+                          Widgets.heightSpaceH2,
+                          SypmtomRowWidget(color:ColorConstants.redColor,title: tags[3],baseline: 15,),
+                        ],),
+                    ),
                   ],),
                 ),
 
-                Flexible(
-                  child: Column(children: [
-                    SypmtomRowWidget(color: ColorConstants.peachColor,title: "Moderate",),
-                    Widgets.heightSpaceH2,
-                    SypmtomRowWidget(color:ColorConstants.redColor,title: "Extreme",),
-
-
-                  ],),
-                ),
 
 
               ],
             ),
-            Widgets.heightSpaceH1,
+            Widgets.heightSpaceH2,
             Widgets.customDivider(),
-            Widgets.heightSpaceH1,
+            Widgets.heightSpaceH2,
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(child: SypmtomRowWidget(height:10,width:10,color: Colors.grey,title: "Mood Swings",)),
-                Expanded(child: SypmtomRowWidget(height:10,width:10,color: Colors.grey,title: "Anxiety",)),
+                Expanded(child: SypmtomRowWidget(height:10,width:10,color: ColorConstants.peachColor,title: "Anxiety",)),
                 Expanded(child: SypmtomRowWidget(height:10,width:10,color: Colors.grey,title: "Night Sweats",)),
               ],
             ),

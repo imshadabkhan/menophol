@@ -21,7 +21,7 @@ class RecentSymptomsWidgets extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(color: ColorConstants.greyBorderColor),
       ),
       child: Padding(
@@ -49,9 +49,9 @@ class RecentSymptomsWidgets extends StatelessWidget {
               ),
             ],
           ),
-          Widgets.heightSpaceH1,
+          Widgets.heightSpaceH2,
           Widgets.divider(),
-          Widgets.heightSpaceH1,
+          Widgets.heightSpaceH2,
           SymptomsSeverityRowWidget(colorList: colorList,title: symptomsTitleList[0],icon: Assets.sweatIcon,),
           SymptomsSeverityRowWidget(colorList: colorList,title: symptomsTitleList[1],icon: Assets.insomnia,),
           SymptomsSeverityRowWidget(colorList: colorList,title: symptomsTitleList[2],icon: Assets.hotFlushes,),

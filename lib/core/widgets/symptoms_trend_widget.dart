@@ -15,7 +15,7 @@ class SymptomsTrendWidget extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(color: ColorConstants.greyBorderColor),
       ),
       child: Padding(

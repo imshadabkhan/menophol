@@ -22,7 +22,7 @@ class RecentMoodWidget extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(color: ColorConstants.greyBorderColor),
       ),
       child: Padding(
@@ -37,7 +37,7 @@ class RecentMoodWidget extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Image.asset(Assets.recentMood,height: 20,width: 20,),
                 ),),
-              Widgets.widthSpaceW2,
+              Widgets.widthSpaceW1,
               Flexible(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,9 +53,9 @@ class RecentMoodWidget extends StatelessWidget {
               ),
             ],
           ),
-          Widgets.heightSpaceH1,
+          Widgets.heightSpaceH2,
           Widgets.divider(),
-          Widgets.heightSpaceH1,
+          Widgets.heightSpaceH2,
           SymptomsSeverityRowWidget(colorList: colorList,title: moodTitleList[0],icon: Assets.happy),
           SymptomsSeverityRowWidget(colorList: colorList,title: moodTitleList[1],icon: Assets.insomnia,),
           SymptomsSeverityRowWidget(colorList: colorList,title: moodTitleList[2],icon: Assets.tiredIcon,),

@@ -26,10 +26,9 @@ class SymptomsSeverityRowWidget extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset(icon,height: 16,width: 16,),
+                Image.asset(icon,height: 18,width: 18,),
                 Widgets.widthSpaceW1,
-
-                Expanded(child: Texts.textNormal(title,size: 14,textAlign: TextAlign.start,),)
+                Expanded(child: Texts.textNormal(title,size: 12,textAlign: TextAlign.start,),)
               ],),
           ),
 
