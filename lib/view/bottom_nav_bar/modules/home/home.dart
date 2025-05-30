@@ -13,8 +13,6 @@ import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/home/controller.dart';
 
-
-
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
   final HomeController controller = Get.put(HomeController());

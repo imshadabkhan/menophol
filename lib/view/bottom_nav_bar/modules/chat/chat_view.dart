@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:menophol/core/constants/assets_constants.dart';
 import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/constants/padding_constants.dart';
-import 'package:menophol/core/widgets/entry_field.dart';
 import 'package:menophol/core/widgets/mssg_container.dart';
 import 'package:menophol/core/widgets/send_message.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
-import 'package:menophol/core/widgets/widgets.dart';
-
 
 class ChatView extends StatelessWidget {
   const ChatView({super.key});

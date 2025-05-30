@@ -12,7 +12,8 @@ class ChangeEmail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-appBar: AppBar(elevation: 0,scrolledUnderElevation: 0,),
+      backgroundColor: ColorConstants.whiteColor,
+appBar: AppBar(elevation: 0,scrolledUnderElevation: 0,backgroundColor: ColorConstants.whiteColor,),
       body: Padding(
         padding:PaddingConstants.screenPaddingHalf,
         child: Column(

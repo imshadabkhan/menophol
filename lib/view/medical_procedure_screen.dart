@@ -61,7 +61,7 @@ class MedicalProcedureScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Texts.textBold('Your Medical Procedures',size: 18,textAlign: TextAlign.start),
-                    Widgets.heightSpaceH05,
+                    Widgets.heightSpaceH1,
                     Row(
                       children: [
                         Expanded(
@@ -71,7 +71,7 @@ class MedicalProcedureScreen extends StatelessWidget {
                               Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15),
-                                  color: Color(0xffF5F5F580).withAlpha((0.1*255).toInt()),
+                                  color: Color(0xffF5F5F5).withAlpha((0.5*255).toInt()),
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsets.all(12.0),

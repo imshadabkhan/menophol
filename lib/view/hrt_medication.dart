@@ -15,7 +15,8 @@ class HrtMedication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar:AppBar(elevation: 0,scrolledUnderElevation: 0,) ,
+      backgroundColor: ColorConstants.whiteColor,
+      appBar:AppBar(elevation: 0,scrolledUnderElevation: 0,backgroundColor: ColorConstants.whiteColor,) ,
       body: Padding(
         padding: PaddingConstants.screenPaddingHalf.copyWith(top: 0),
         child: Column(
@@ -97,10 +98,10 @@ Texts.textBold('HRT Medications',size: 20),
                         ),
                       ],
                     ),
-                    Widgets.heightSpaceH2,
+                    Widgets.heightSpaceH3,
                     Container(
                       decoration: BoxDecoration(
-                        color: ColorConstants.primaryColor.withAlpha((0.2*255).toInt()),
+                        color: ColorConstants.primaryColor.withAlpha((0.1*255).toInt()),
                         border:
                         Border.all(color: ColorConstants.darkPrimaryColor),
                         borderRadius: BorderRadius.circular(10),
@@ -144,7 +145,7 @@ Texts.textBold('HRT Medications',size: 20),
                         ),
                       ),
                     ),
-                    Widgets.heightSpaceH2,
+                    Widgets.heightSpaceH3,
                     Row(
                       children: [
                         Image.asset(

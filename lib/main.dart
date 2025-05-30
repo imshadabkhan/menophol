@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:menophol/core/routes/app_routes.dart';
-import 'package:menophol/view/bottom_nav_bar/view/bottom_nav_bar.dart';
+
+import 'package:menophol/view/medical_condition.dart';
+
+import 'view/bottom_nav_bar/view/bottom_nav_bar.dart';
+import 'view/medical_procedure_screen.dart';
+
+
 
 
 
@@ -36,10 +42,12 @@ class MyApp extends StatelessWidget {
       },
          // child: GlpMedications(),
       // child: HrtMedication(),
-        child: BottomNavBar(),
-      // child: MedicalConditionView(),
+         child: BottomNavBar(),
+      // child:ConnectWearableDevicesScreen(),
+      //  child: MedicalConditionView(),
       // child: ChangePassword(),
       // child: SplashView(),
+      // child: MedicalProcedureScreen(),
     );
   }
 }

@@ -20,7 +20,7 @@ import 'package:menophol/view/bottom_nav_bar/view/bottom_nav_bar.dart';
 import 'package:menophol/view/change_email.dart';
 import 'package:menophol/view/change_password.dart';
 import 'package:menophol/view/connect_wearable_devices.dart';
-import 'package:menophol/view/glp_medication/view/glp1_medications.dart';
+import 'package:menophol/view/glp_medication/view/glp1_medication/glp1_medications.dart';
 import 'package:menophol/view/glp_medication/view/manage_medications.dart';
 import 'package:menophol/view/hrt_medication.dart';
 import 'package:menophol/view/medical_condition.dart';

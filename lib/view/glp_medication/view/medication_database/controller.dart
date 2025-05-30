@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class GlpMedicationController extends GetxController {
+class GlpMedicationDatabaseController extends GetxController {
 
   var selectedIndex = 0.obs;
 

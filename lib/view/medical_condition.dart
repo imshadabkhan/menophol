@@ -19,7 +19,9 @@ class MedicalConditionView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorConstants.whiteColor,
       appBar: AppBar(
+        backgroundColor: ColorConstants.whiteColor,
         elevation: 0,
         scrolledUnderElevation: 0,
       ),
@@ -85,7 +87,7 @@ class MedicalConditionView extends StatelessWidget {
               Texts.textBold('Common Conditions', size: 18),
               Widgets.heightSpaceH05,
               EntrySearchField(prefixIcon: Assets.searchbarIcon,hint: "",),
-              Widgets.heightSpaceH1,
+              Widgets.heightSpaceH05,
               Column(children: List.generate(5, (int index)=>Padding(
                 padding:  EdgeInsets.symmetric(vertical: 8.0),
                 child: MealBoxWidget(title: conditonList[index], prefixIcon: Assets.telescopIcon),

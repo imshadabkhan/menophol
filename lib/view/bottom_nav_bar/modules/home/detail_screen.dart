@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:menophol/core/constants/assets_constants.dart';
-
 import 'package:menophol/core/constants/padding_constants.dart';
 import 'package:menophol/core/widgets/rich_txt_paragraphs.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';

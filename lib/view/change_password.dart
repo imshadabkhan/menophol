@@ -12,14 +12,16 @@ class ChangePassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(elevation: 0,scrolledUnderElevation: 0,),
+      backgroundColor: ColorConstants.whiteColor,
+      appBar: AppBar(elevation: 0,scrolledUnderElevation: 0,backgroundColor: ColorConstants.whiteColor,),
       body: Padding(
         padding:PaddingConstants.screenPaddingHalf,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Texts.textBold('Change Password',size: 20),
-            Widgets.heightSpaceH05,
+            Widgets.heightSpaceH1
+            ,
             Texts.textNormal("Update your account password",size: 14),
             Widgets.heightSpaceH1,
             Widgets.divider(),
@@ -29,6 +31,7 @@ class ChangePassword extends StatelessWidget {
             EntryField(label: "New Password",),
             Widgets.heightSpaceH1,
             EntryField(label: "Confirm New Password",),
+            Widgets.heightSpaceH1,
             CustomButton(
               label: 'Update password',
               backgroundColor: ColorConstants.darkPrimaryColor,

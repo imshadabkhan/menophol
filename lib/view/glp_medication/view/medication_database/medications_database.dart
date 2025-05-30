@@ -5,10 +5,8 @@ import 'package:menophol/core/constants/padding_constants.dart';
 import 'package:menophol/core/widgets/custom_button.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/exercise_tracker/exercise.dart';
-
 import 'package:get/get.dart';
-import 'package:menophol/view/glp_medication/controller/controller.dart';
+import 'package:menophol/view/glp_medication/view/medication_database/controller.dart';
 
 
 
@@ -23,7 +21,7 @@ class GlpMedicationDatabase extends StatelessWidget {
     "JSON format"
   ];
 
-  final GlpMedicationController controller = Get.put(GlpMedicationController());
+  final GlpMedicationDatabaseController controller = Get.put(GlpMedicationDatabaseController());
 
   @override
   Widget build(BuildContext context) {

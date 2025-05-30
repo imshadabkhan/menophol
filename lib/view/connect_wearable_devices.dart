@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:menophol/core/constants/assets_constants.dart';
 import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/constants/padding_constants.dart';
+import 'package:menophol/core/widgets/icon_text_widget.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
 
@@ -72,6 +73,7 @@ class ConnectWearableDevicesScreen extends StatelessWidget {
 
             centerTitle: true,
             backgroundColor: Colors.transparent,
+            scrolledUnderElevation: 0,
             elevation: 0,
             foregroundColor: Colors.black,
           ),
@@ -81,7 +83,7 @@ class ConnectWearableDevicesScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Texts.textBold(
-                "Connect Wearable Devices",size: 20
+                "Connect Wearable Devices",size: 18
                 ),
                 Widgets.heightSpaceH05,
                 Texts.textNormal(
@@ -90,14 +92,14 @@ class ConnectWearableDevicesScreen extends StatelessWidget {
                 ),
               Widgets.heightSpaceH1,
               Widgets.divider(),
-                Widgets.heightSpaceH1,
+                Widgets.heightSpaceH2,
                 Texts.textBold(
-                  'Available Devices',size: 20,
+                  'Available Devices',size: 18,
 
                 ),
                 Widgets.heightSpaceH05,
                 Texts.textNormal("Connect your wearable devices to enhance your health tracking",size: 14,textAlign: TextAlign.start),
-                SizedBox(height: 8.h),
+                Widgets.heightSpaceH2,
                 ...devices.map((device) => Container(
                   margin: EdgeInsets.only(bottom: 12.h),
                   padding: EdgeInsets.all(8.h),
@@ -126,14 +128,14 @@ class ConnectWearableDevicesScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Texts.textBold(
-                              device['name']!,textAlign: TextAlign.start,size: 18
+                              device['name']!,textAlign: TextAlign.start,size: 16
 
 
 
                             ),
                             Widgets.heightSpaceH05,
                             Texts.textNormal(
-                              device['desc']!,textAlign: TextAlign.start,size: 14
+                              device['desc']!,textAlign: TextAlign.start,size: 12
 
                             ),
                           ],
@@ -154,12 +156,12 @@ class ConnectWearableDevicesScreen extends StatelessWidget {
                 )),
                 Widgets.heightSpaceH1,
                 Texts.textBold(
-                  'Why Connect Wearable Devices?',size: 20
+                  'Why Connect Wearable Devices?',size: 18
 
                 ),
         Widgets.heightSpaceH05,
                 Texts.textNormal("Connecting your wearable devices allows us to provide more accurate insights about how your symptoms relate to:",size: 14,textAlign: TextAlign.start),
-                Widgets.heightSpaceH1,
+                Widgets.heightSpaceH2,
 
                 IconTextWidget(text: "Sleep patterns and quality"),
                 Widgets.heightSpaceH05,
@@ -179,20 +181,4 @@ class ConnectWearableDevicesScreen extends StatelessWidget {
   }
 }
 
-class IconTextWidget extends StatelessWidget {
-  const IconTextWidget({
-    super.key,
-    required this.text
-  });
-final String text;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-      Image.asset(Assets.tickIcon,height: 20,width: 15,),Widgets.widthSpaceW2,Texts.textNormal(text,size: 16),
 
-    ],);
-  }
-}

@@ -11,17 +11,16 @@ import 'package:menophol/core/widgets/widgets.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/home/editprofile/controller.dart';
 
 class EditProfile extends StatelessWidget {
-   EditProfile({super.key});
-  final int selectedOption = 0;
-   final ProfileController controller = Get.put(ProfileController());
-
-
+EditProfile({super.key});
+final int selectedOption = 0;
+final ProfileController controller = Get.put(ProfileController());
    final List<String> options = [
     'Required Data Processing',
     'Marketing Communications',
     'Third-Party Data Sharing',
     'Health Research Participation',
   ];
+
    String _getDescription(int index) {
      switch (index) {
        case 0:
@@ -206,7 +205,6 @@ Widgets.heightSpaceH1,
              Widgets.heightSpaceH2,
                Texts.textBold(
                 "Data Management",size: 18
-
               ),
              Widgets.heightSpaceH05,
                Texts.textNormal(
@@ -230,19 +228,14 @@ Widgets.heightSpaceH1,
                Texts.textNormal(
                 "Delete your account and all associated data. This action cannot be undone.",
                  size: 14,textAlign: TextAlign.start
-
-              ),  Widgets.heightSpaceH1,
-
+              ),
+              Widgets.heightSpaceH1,
               CustomButton(
                 label: "Delete my account",
-
                 backgroundColor: ColorConstants.redTextColor,
                 icon: Image.asset(Assets.deleteAccount,color: ColorConstants.whiteColor,height: 20,width: 20,),
                 textColor: Colors.white,
               ),
-
-
-
             ],),
         ),
       ),
