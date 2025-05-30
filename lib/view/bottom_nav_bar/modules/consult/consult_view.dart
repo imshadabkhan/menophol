@@ -6,9 +6,10 @@ import 'package:menophol/core/widgets/doctor_card.dart';
 import 'package:menophol/core/widgets/entry_field.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
+
 class ConsultView extends StatelessWidget {
   ConsultView({super.key});
-  final  specialists = [
+  final specialists = [
     {
       "name": "Dr. Sarah Thompson",
       "specialty": "Menopause Specialist & Gynecologist",
@@ -44,9 +45,8 @@ class ConsultView extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: ColorConstants.whiteColor,
-
       body: SafeArea(
         child: Padding(
           padding: PaddingConstants.screenPaddingHalf,
@@ -54,13 +54,15 @@ class ConsultView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Widgets.heightSpaceH1,
-              Texts.textBold('Find a Speacialist',textAlign: TextAlign.start,size: 20),
+              Texts.textBold('Find a Speacialist',
+                  textAlign: TextAlign.start, size: 20),
               Widgets.heightSpaceH05,
-
-              Texts.textNormal('Find a Speacialist',textAlign: TextAlign.start,size: 14),
+              Texts.textNormal('Find a Speacialist',
+                  textAlign: TextAlign.start, size: 14),
               Widgets.heightSpaceH1,
               EntrySearchField(
-                prefixIcon: Assets.searchbarIcon,color: ColorConstants.blackColor,
+                prefixIcon: Assets.searchbarIcon,
+                color: ColorConstants.blackColor,
                 hint: "Search By Name,Specialty,Location",
               ),
               Widgets.heightSpaceH1,
@@ -69,7 +71,10 @@ class ConsultView extends StatelessWidget {
                   itemCount: specialists.length,
                   itemBuilder: (context, index) {
                     final doc = specialists[index];
-                    return DoctorCard(doc: doc,icon: Assets.corporateIcon,);
+                    return DoctorCard(
+                      doc: doc,
+                      icon: Assets.corporateIcon,
+                    );
                   },
                 ),
               ),

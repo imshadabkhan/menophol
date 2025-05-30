@@ -1,12 +1,6 @@
-
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../constants/color_constants.dart';
-
-
 
 class CustomButton extends StatelessWidget {
   final double? height;
@@ -21,9 +15,9 @@ class CustomButton extends StatelessWidget {
   final double? radius; final double? fontSize;
   final TextStyle? textStyle;
  final Color? borderColor;
- var borderWidth;
+ final borderWidth;
   final Color? backgroundColor;
-   CustomButton({
+   const CustomButton({
     super.key,
     this.label,
      this.backgroundColor,
@@ -63,10 +57,10 @@ class CustomButton extends StatelessWidget {
                 ? SizedBox(width: iconGap ?? 10)
                 : const SizedBox.shrink(),
             Flexible(
-              child: AutoSizeText(
+              child: Text(
                 label ?? "Continue".tr,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize:fontSize??14,color: textColor??Colors.white, fontFamily:"Montserrat",fontWeight: FontWeight.bold
+                style: TextStyle(fontSize:fontSize??12,color: textColor ?? Colors.white, fontFamily:"Montserrat",fontWeight: FontWeight.bold
                 ),
               ),
             ),

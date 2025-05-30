@@ -21,15 +21,17 @@ class ReportCard extends StatelessWidget {
         child: RichText(
             text: TextSpan(children: [
               TextSpan(
-                text: 'Your stress levels have ',style: TextStyle(fontFamily: 'Montserrat',color: ColorConstants.blackColor,fontSize: 16),
+                text: 'Your stress levels have ',style: TextStyle(fontFamily: 'Montserrat',
+                  color: ColorConstants.blackColor,fontSize: 14),
               ),
               TextSpan(
                   text: "decreased by 20% ",
                   style: TextStyle(
-                      fontWeight: FontWeight.w700, color: Colors.black,fontSize: 16)),
+                      fontWeight: FontWeight.w700, color: Colors.black,fontSize: 14,fontFamily: 'Montserrat',)),
               TextSpan(
                   text:
-                  "this week. Keep up the good work with your relaxation strategies!",style: TextStyle(fontFamily: 'Montserrat',color: ColorConstants.blackColor,fontSize: 16)),
+                  "this week. Keep up the good work with your relaxation strategies!",
+                  style: TextStyle(fontFamily: 'Montserrat',color: ColorConstants.blackColor,fontSize: 14)),
             ],),));
   }
 }

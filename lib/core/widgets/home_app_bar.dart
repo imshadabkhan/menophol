@@ -17,7 +17,7 @@ class HomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      contentPadding: EdgeInsets.zero,
+      contentPadding: EdgeInsets.zero,horizontalTitleGap: 5,
       leading: GestureDetector(
         onTap: (){
           Get.toNamed(AppRoutes.editProfile);
@@ -29,10 +29,10 @@ class HomeAppBar extends StatelessWidget {
         ),
       ),
       title: Texts.textNormal('Welcome Back',
-          textAlign: TextAlign.start, size: 16),
-      subtitle: Texts.textBold("Freddy", textAlign: TextAlign.start, size: 20),
+          textAlign: TextAlign.start, size: 11),
+      subtitle: Texts.textBold("Freddy", textAlign: TextAlign.start, size: 16),
       trailing: SizedBox(
-        width: 50.w,
+        width: 100,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -46,7 +46,7 @@ class HomeAppBar extends StatelessWidget {
                   },
                   child: Image.asset(
                     "assets/icons/notification.png",
-                    height: 20,
+                    height: 23,
                   ),
                 ),
                 Positioned(
@@ -60,10 +60,10 @@ class HomeAppBar extends StatelessWidget {
                     ))
               ],
             ),
-            Widgets.widthSpaceW05,
+            Widgets.widthSpaceW1,
             Image.asset(
               "assets/icons/setting_icon.png",
-              height: 20,
+              height: 23,
             ),
           ],
         ),

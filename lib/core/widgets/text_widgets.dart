@@ -6,7 +6,7 @@ import 'package:menophol/core/constants/color_constants.dart';
 class Texts {
   static textBold(String label,
       {double? size, Color? color, FontWeight? fontWeight, textAlign,int? maxlines,TextOverflow? overFlow}) {
-    return AutoSizeText(
+    return Text(
       label,
       textAlign: textAlign ?? TextAlign.center,
       maxLines: maxlines??1,
@@ -25,7 +25,7 @@ class Texts {
 
   static textNormal(String label,
       { var maxLines,double? size, Color? color, String? fontFamily, textAlign, overflow,var decoration,var fontWeight,var textBaseline}) {
-    return AutoSizeText(
+    return Text(
       label,
       maxLines: maxLines??3,
       style: TextStyle(
@@ -44,7 +44,7 @@ class Texts {
 
   static textMedium(String label,
       {double? size, Color? color, String? fontFamily, fontWeight}) {
-    return AutoSizeText(
+    return Text(
       label,
       style: TextStyle(
           fontWeight: fontWeight??FontWeight.w600,
@@ -60,7 +60,7 @@ class Texts {
       Color? color,
       FontWeight? fontWeight,
       String? fontFamily}) {
-    return AutoSizeText(
+    return Text(
       label,
       style: TextStyle(
         fontSize: size ?? 18.0,
@@ -82,7 +82,7 @@ class Texts {
       var align,
       var decoration
       }) {
-    return AutoSizeText(
+    return Text(
       label,
       style: TextStyle(
 decoration: decoration,
@@ -107,7 +107,7 @@ decoration: decoration,
       var overflow,
       int? maxline,
       bool? underline}) {
-    return AutoSizeText(
+    return Text(
       label,
       style: TextStyle(
           decoration: TextDecoration.underline,

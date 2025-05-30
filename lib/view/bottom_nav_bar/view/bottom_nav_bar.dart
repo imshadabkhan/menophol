@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:menophol/core/constants/assets_constants.dart';
 import 'package:menophol/core/constants/color_constants.dart';
-
 import 'package:menophol/view/bottom_nav_bar/modules/chat/chat_view.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/consult/consult_view.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/home/home.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/symptoms/track_symptoms.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/validate/validate_view.dart';
 import 'package:menophol/view/bottom_nav_bar/view/controller.dart';
+
+
 
 class BottomNavBar extends StatelessWidget {
   BottomNavBar({super.key});

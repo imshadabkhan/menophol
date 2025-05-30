@@ -16,11 +16,9 @@ class HomeScreenCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 120.h,
-      width: 110.w,
-      child: Container(
+      child: Container(width: 90,height: 90,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.r),
+          borderRadius: BorderRadius.circular(10),
           border: Border.all(
             color:ColorConstants.greyBorderColor,
           ),
@@ -42,12 +40,12 @@ class HomeScreenCards extends StatelessWidget {
                   padding: const EdgeInsets.all(12.0),
                   child: Image.asset(
                     icon,
-                    height: 19.h,
+                    height: 22,
                   ),
                 ),
               ),
               Widgets.heightSpaceH1,
-              Texts.textNormal(text, size: 10),
+              Flexible(child:Texts.textNormal(text, size: 8,maxLines: 1,overflow: TextOverflow.ellipsis)),
             ],
           ),
         ),

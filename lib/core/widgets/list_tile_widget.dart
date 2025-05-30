@@ -45,10 +45,10 @@ class ListTile_Widget extends StatelessWidget {
                         children: [
                           Texts.textBold('Common Menopause Symptoms',
                               textAlign: TextAlign.start,
-                              size: 18,
+                              size: 16,
                               maxlines: 2),
 
-                          Widgets.heightSpaceH05,
+                          Widgets.heightSpaceH1,
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -56,21 +56,21 @@ class ListTile_Widget extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Icon(Icons.access_time_sharp,size: 14,),
+                                      Icon(Icons.access_time_sharp,size: 13,),
                                       Widgets.widthSpaceW1,
-                                      Texts.textNormal('8 Min Read',size: 13,color: ColorConstants.blackColor)
+                                      Texts.textNormal('8 Min Read',size: 11,color: ColorConstants.blackColor)
                                     ],
                                   ),
 
-                                  Widgets.heightSpaceH05,
-                                  Texts.textNormal('HSE',color: ColorConstants.blackColor,size: 13),
+                                  Widgets.heightSpaceH1,
+                                  Texts.textNormal('HSE',color: ColorConstants.blackColor,size: 11),
 
                                 ],
                               ),
 
-                              SvgPicture.asset(Assets.femaleIcon,height: 35,),
+                              SvgPicture.asset(Assets.femaleIcon,height: 30,),
                             ],
                           ),
 

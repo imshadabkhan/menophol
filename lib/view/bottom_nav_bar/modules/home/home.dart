@@ -12,7 +12,6 @@ import 'package:menophol/core/widgets/report_card.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/home/controller.dart';
-
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
   final HomeController controller = Get.put(HomeController());
@@ -32,29 +31,26 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ReportCard(),
-            Widgets.heightSpaceH2,
-            Texts.textBold('How are you feeling today?',
-                textAlign: TextAlign.start, size: 20),
+            Widgets.heightSpaceH3,
+            Texts.textBold('How are you feeling today?',fontWeight: FontWeight.w700,
+                textAlign: TextAlign.start, size: 18),
             Widgets.heightSpaceH05,
             Texts.textNormal(
                 "Track your symptoms. Take back control of your  health.",
-                size: 14,
+                size: 12,
                 textAlign: TextAlign.start),
-            Widgets.heightSpaceH1,
+            Widgets.heightSpaceH2,
             FeelingListWidget(controller: controller),
             Widgets.heightSpaceH2,
             ConversationBlock(),
-            Widgets.heightSpaceH2,
-            Widgets.heightSpaceH05,
-            Texts.textBold('What You Need to Know', size: 20),
+            Widgets.heightSpaceH3,
+            Texts.textBold('What You Need to Know', size: 18),
             Widgets.heightSpaceH05,
             Texts.textNormal('Insights on your body, mind, and hormones.',
-                size: 14,textAlign: TextAlign.start),
+                size: 12,textAlign: TextAlign.start),
             Widgets.heightSpaceH2,
             Column(
               children: List.generate(3, (index) {
-
-
                 return GestureDetector(
                     onTap: ()=>Get.toNamed(AppRoutes.detailView),
                     child: ListTile_Widget());
