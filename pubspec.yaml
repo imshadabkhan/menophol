@@ -45,6 +45,7 @@ dependencies:
   percent_indicator: ^4.2.5
   dotted_border: ^2.1.0
   fl_chart: ^0.65.0
+  flutter_toggle_button: ^0.0.3
 
 dev_dependencies:
   flutter_test:

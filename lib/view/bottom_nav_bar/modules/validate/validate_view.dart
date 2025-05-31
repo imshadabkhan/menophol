@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:menophol/core/constants/assets_constants.dart';
 import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/widgets/bullet_point_text_widget.dart';
@@ -12,7 +13,7 @@ import 'package:menophol/core/widgets/widgets.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/validate/controller.dart';
 import '../../../../core/widgets/recent_mood_Widget.dart';
 import 'package:get/get.dart';
-
+import 'package:flutter_toggle_button/flutter_toggle_button.dart';
 class ValidateHomePage extends StatelessWidget {
   final controller = Get.put(ValidateController());
 
@@ -65,28 +66,32 @@ class ValidateHomePage extends StatelessWidget {
                   border: Border.all(color: ColorConstants.greyBorderColor),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: Column(
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: List.generate(3, (index) {
-                          return ToggleButton(
-                            index == 0
-                                ? "Last 7 Days"
-                                : index == 1
-                                    ? "Last 14 Days"
-                                    : "Last 30 Days",
-                            controller.selectedIndex.value == index,
-                            onTap: () => controller.changeTab(index),
-                          );
-                        }),
+                      FlutterToggleButton(
+
+                        buttonWidth:	90.w,
+                        buttonHeight: 35.h,
+                        outerContainerColor: ColorConstants.toggleBtnBackgroundColor,
+
+                        borderRadius: 10,
+                        buttonTextFontSize: 14,
+
+                        buttonColor: ColorConstants.blackColor,
+                        items: ['Last 7 Days', 'Last 14 Days', 'Last 30 Days'],
+                        onTap: (index) {
+                          controller.changeTab(index);
+                        },
+
                       ),
+
                       Widgets.heightSpaceH2,
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           gradient: LinearGradient(colors: [
+                            ColorConstants.gradient1,
                             ColorConstants.gradient1,
                             ColorConstants.gradient2
                           ]),
@@ -135,6 +140,8 @@ class ValidateHomePage extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   gradient: LinearGradient(colors: [
+                    ColorConstants.gradient1,
+                    ColorConstants.gradient1,
                     ColorConstants.gradient1,
                     ColorConstants.gradient2,
                   ]),

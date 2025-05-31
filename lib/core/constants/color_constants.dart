@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-
 class ColorConstants {
+static var toggleBtnBackgroundColor= Color(0x1A969696);
   static var supplimentGradient1= Color(0xffE8DDD7);
   static var supplimentGradient2= Color(0xffF9EAED);
   static var hrtTrackerGradient1= Color(0xffDACFEC);
