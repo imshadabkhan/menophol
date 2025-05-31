@@ -29,9 +29,9 @@ class MedicationCard extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Texts.textBold("Sandrena Gel", size: 20),
+                    Texts.textBold("Sandrena Gel", size: 18),
                     Widgets.heightSpaceH1,
-                    Texts.textNormal('1mg(1 sachet)daily', size: 14),
+                    Texts.textNormal('1mg(1 sachet)daily', size: 12),
                   ],
                 ),
                 Expanded(
@@ -102,18 +102,23 @@ class MedicationCard extends StatelessWidget {
                             size: 18),
                       ],
                     ),
-                    Widgets.heightSpaceH05,
+                    Widgets.heightSpaceH1,
                     RichText(
                         text: TextSpan(
                             style: TextStyle(
+                              fontFamily: "Montserrat",
+                              fontSize: 13,
                                 color: ColorConstants.blackColor,
                                 fontWeight: FontWeight.bold),
                             text: 'Initial dosage: ',
+
                             children: [
                               TextSpan(
                                 text:
                                 'Apply 1 applicatorful (0.5 mg estriol) daily for the first 2 to 3 weeks. Maintenance dose: After initial treatment, reduce to 1 applicatorful twice a week.',
                                 style: TextStyle(
+                                  fontSize: 12,
+                                    fontFamily: "Montserrat",
                                     color: ColorConstants.blackColor,
                                     fontWeight: FontWeight.normal),
                               ),

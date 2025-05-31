@@ -5,14 +5,11 @@ import 'package:menophol/core/constants/assets_constants.dart';
 import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/constants/padding_constants.dart';
 import 'package:menophol/core/routes/app_routes.dart';
-
 import 'package:menophol/core/widgets/entry_field.dart';
 import 'package:menophol/core/widgets/medication_card.dart';
-
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
 
-import 'medication_tracker/add_medication.dart';
 
 class HrtTracker extends StatelessWidget {
   const HrtTracker({super.key});
@@ -86,14 +83,14 @@ class HrtTracker extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Texts.textBold("HRT Tracker", size: 20),
+                  Texts.textBold("HRT Tracker", size: 18),
                   Widgets.heightSpaceH05,
                   Texts.textNormal(
                       "Track your HRT to spot patterns and support better health decisions",
                       textAlign: TextAlign.start,
-                      size: 14,
+                      size: 12,
                       maxLines: 5),
-                  Widgets.heightSpaceH3,
+                  Widgets.heightSpaceH2,
                   EntryField(
                     prefixIcon: Assets.calendarIcon,
                     hint: "07/04/2025",

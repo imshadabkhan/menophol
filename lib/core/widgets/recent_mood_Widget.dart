@@ -43,7 +43,7 @@ class RecentMoodWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Texts.textBold("Recent Moods",size: 18),
+                    Texts.textBold("Recent Moods",size: 16),
                     Widgets.heightSpaceH05,
                     Texts.textNormal("Each bar represents mood intensity",textAlign: TextAlign.start,size: 12),
                 

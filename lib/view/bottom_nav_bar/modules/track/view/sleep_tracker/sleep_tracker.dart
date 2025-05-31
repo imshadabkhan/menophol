@@ -86,12 +86,12 @@ class _SleepTrackerState extends State<SleepTracker> {
 
     return  Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 10),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Widgets.heightSpaceH1,
+
               EntryField(
                 prefixIcon: Assets.calendarIcon,
                 hint: "07/04/2025",
@@ -113,10 +113,8 @@ class _SleepTrackerState extends State<SleepTracker> {
               Widgets.heightSpaceH1,
               SeveritySlider(labels: ["Poor","Fair","Good","Perfect"],),
 
-              Widgets.heightSpaceH1,
+              Widgets.heightSpaceH2,
               EntryField(
-
-
                 label: "Duration (hours)",
               ),
               Widgets.heightSpaceH05,
@@ -135,7 +133,7 @@ class _SleepTrackerState extends State<SleepTracker> {
              Obx(()=>CustomDropdown(onTap: (){
                controller.toggleDropDown();
 
-             }, value:"Related Triggers (1) ", hint: "", label:null,color: controller.dropDown.value?ColorConstants.darkPrimaryColor:ColorConstants.transparentColor,iconColor: controller.dropDown.value?ColorConstants.whiteColor:ColorConstants.blackColor,suffixIcon:controller.dropDown.value?Icons.keyboard_arrow_up_outlined:Icons.keyboard_arrow_down_outlined,),),
+             },valueColor:controller.dropDown.value?ColorConstants.whiteColor:ColorConstants.blackColor , value:"Related Triggers (1) ", hint: null, label:null,color: controller.dropDown.value?ColorConstants.darkPrimaryColor:ColorConstants.transparentColor,iconColor: controller.dropDown.value?ColorConstants.whiteColor:ColorConstants.blackColor,suffixIcon:controller.dropDown.value?Icons.keyboard_arrow_up_outlined:Icons.keyboard_arrow_down_outlined,),),
 
           Obx(()=> controller.dropDown.value?Container(
             decoration: BoxDecoration(

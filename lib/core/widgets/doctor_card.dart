@@ -37,16 +37,16 @@ class DoctorCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Texts.textBold(doc["name"], size: 20, maxlines: 2),
-                Widgets.widthSpaceW3,
+                Texts.textBold(doc["name"], size: 18, maxlines: 2),
+                Widgets.widthSpaceW2,
                 Icon(Icons.star, color: Colors.orange, size: 18),
                 Widgets.widthSpaceW05,
-                Texts.textNormal(doc["rating"], size: 15),
+                Texts.textNormal(doc["rating"], size: 14),
               ],
             ),
             Widgets.heightSpaceH05,
             Texts.textNormal(doc["specialty"],
-                size: 14, textAlign: TextAlign.start),
+                size: 12, textAlign: TextAlign.start),
             const SizedBox(height: 6),
             Widgets.divider(),
             Widgets.heightSpaceH2,
@@ -61,7 +61,7 @@ class DoctorCard extends StatelessWidget {
                     Image.asset(Assets.doctorLocationIcon,
                         height: 20, width: 20),
                     Widgets.widthSpaceW1,
-                    Texts.textNormal(doc["location"], size: 14),
+                    Texts.textNormal(doc["location"], size: 12),
                   ],
                 ),
                 Container(
@@ -78,7 +78,7 @@ class DoctorCard extends StatelessWidget {
                       Expanded(
                         child: Texts.textNormal(
                           doc["experience"],
-                          size: 14,
+                          size: 12,
                           textAlign: TextAlign.start,
                         ),
                       ),
@@ -118,7 +118,7 @@ class DoctorCard extends StatelessWidget {
                   ),
                   backgroundColor: ColorConstants.primaryColor
                       .withAlpha((0.2 * 255).toInt()),
-                  labelStyle: TextStyle(color: ColorConstants.redTextColor),
+                  labelStyle: TextStyle(color: ColorConstants.redTextColor,fontSize: 12),
                 );
               }).toList(),
             ),

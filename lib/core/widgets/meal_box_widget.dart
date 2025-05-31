@@ -7,10 +7,12 @@ import 'package:menophol/core/widgets/widgets.dart';
 class MealBoxWidget extends StatelessWidget {
   const MealBoxWidget({
     super.key,
-    required this.title,required this.prefixIcon
+    required this.title,required this.prefixIcon, this.trailingTap,this.suffixIcon
   });
   final String title;
   final String prefixIcon;
+  final String? suffixIcon;
+  final GestureTapCallback? trailingTap;
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +34,11 @@ class MealBoxWidget extends StatelessWidget {
               height: 20,
             ),
             Widgets.widthSpaceW2,
-            Texts.textMedium(title, size: 15),
+            Texts.textMedium(title, size: 14),
             Expanded(child: Widgets.widthSpaceW1),
-            Icon(
-              Icons.add,
-              color: Colors.black,
+            GestureDetector(
+              onTap: trailingTap,
+              child: suffixIcon==null?Icon(Icons.add):Image.asset(suffixIcon!,height: 20,width: 20,),
             ),
           ],
         ),

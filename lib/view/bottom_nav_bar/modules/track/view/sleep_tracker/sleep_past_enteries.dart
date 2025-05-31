@@ -22,6 +22,7 @@ class _SleepPastEnteriesState extends State<SleepPastEnteries> {
   List<String> trigger2=["Exercise",'Temperature',"Weather Changes"];
   Widget build(BuildContext context) {
     return  Scaffold(
+      backgroundColor: ColorConstants.whiteColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: ListView(children: [
@@ -59,24 +60,25 @@ final controller;
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: ColorConstants.greyBorderColor),
 
       ),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Texts.textBold(title,size: 20,textAlign: TextAlign.start),
+                Texts.textBold(title,size: 18,textAlign: TextAlign.start),
                 Widgets.widthSpaceW1,
                 Image.asset(icon,height: 20,width: 20,),
                 Expanded(child:  Widgets.widthSpaceW1,),
-                Image.asset(Assets.deleteIcon,height: 20,),
+                Image.asset(Assets.deleteIcon,height: 18,),
 
               ],),
-            Widgets.heightSpaceH05,
+            Widgets.heightSpaceH1,
             Texts.textNormal("5/10",size: 12),
             Widgets.heightSpaceH1,
 

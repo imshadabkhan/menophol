@@ -77,9 +77,9 @@ class _PeriodTrackerViewState extends State<PeriodTrackerView> with SingleTicker
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                   Column(children: [
-                    Texts.textBold("Period Tracker",size: 20),
+                    Texts.textBold("Period Tracker",size: 18),
                     Widgets.heightSpaceH05,
-                    Texts.textNormal("Track your periods",textAlign: TextAlign.start,size: 14),
+                    Texts.textNormal("Track your periods",textAlign: TextAlign.start,size: 12),
 
 
                   ],),

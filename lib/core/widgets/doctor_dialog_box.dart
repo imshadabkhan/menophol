@@ -23,48 +23,42 @@ class DoctorDialogBox extends StatelessWidget {
       backgroundColor: ColorConstants.whiteColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       content: Column(
-        mainAxisSize: MainAxisSize
-            .min, // <- This makes the height depend on content
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Column(
-            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Texts.textBold(name, size: 18,overFlow: TextOverflow.ellipsis),
+                  Texts.textBold(name,
+                      size: 16, maxlines: 1, textAlign: TextAlign.start),
                   Widgets.widthSpaceW1,
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.star,
-                        color: ColorConstants.goldenColor,
-                        size: 18,
-                      ),
-                      Widgets.widthSpaceW05,
-                      Texts.textNormal('4.9', size: 14),
-                    ],
+                  Icon(
+                    Icons.star,
+                    color: ColorConstants.goldenColor,
+                    size: 16,
                   ),
-                  Expanded(
-                    child: Widgets.widthSpaceW05,
-                  ),
+                  Widgets.widthSpaceW05,
+                  Texts.textNormal('4.9', size: 12),
+                  Expanded(child: Widgets.widthSpaceW1),
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       Navigator.pop(context);
                     },
                     child: Icon(
+                      size: 18,
                       Icons.close,
                     ),
                   ),
                 ],
               ),
-
-              Texts.textNormal(
-                  speaciality,
-                  size: 14,
-                  textAlign: TextAlign.start),
+              Texts.textNormal(speaciality,
+                  size: 12, textAlign: TextAlign.start),
             ],
           ),
           Widgets.heightSpaceH1,
@@ -72,20 +66,23 @@ class DoctorDialogBox extends StatelessWidget {
           Widgets.heightSpaceH1,
           Texts.textNormal(
               "Specializing in personalized menopause care with focus on hormone optimization and lifestyle medicine.",
-              textAlign: TextAlign.start,size: 14,overflow: TextOverflow.ellipsis,maxLines: 5),
+              textAlign: TextAlign.start,
+              size: 12,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 5),
           Widgets.heightSpaceH1,
           Wrap(
             children: List.generate(
                 symptomsList.length,
-                    (int index) => Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: ChipWidget(
-                    label: symptomsList[index],
-                    bgColor: ColorConstants.primaryColor.withAlpha((0.3*255).toInt()),
-                    textColor:
-                    ColorConstants.darkPrimaryColor,
-                  ),
-                )),
+                (int index) => Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: ChipWidget(
+                        label: symptomsList[index],
+                        bgColor: ColorConstants.primaryColor
+                            .withAlpha((0.3 * 255).toInt()),
+                        textColor: ColorConstants.darkPrimaryColor,
+                      ),
+                    )),
           ),
           Widgets.heightSpaceH1,
           Widgets.divider(),
@@ -94,11 +91,11 @@ class DoctorDialogBox extends StatelessWidget {
             children: [
               Image.asset(
                 Assets.phoneIcon,
-                width: 20,
-                height: 20,
+                width: 15,
+                height: 15,
               ),
               Widgets.widthSpaceW1,
-              Texts.textNormal("+44 20 24253456", size: 14),
+              Texts.textNormal("+44 20 24253456", size: 12),
             ],
           ),
           Widgets.heightSpaceH1,
@@ -107,13 +104,13 @@ class DoctorDialogBox extends StatelessWidget {
             children: [
               Image.asset(
                 Assets.emailIcon,
-                width: 20,
-                height: 20,
+                width: 15,
+                height: 15,
               ),
               Widgets.widthSpaceW1,
               Expanded(
                 child: Texts.textNormal("dr.thompson@menopal.com",
-                    size: 14, textAlign: TextAlign.start),
+                    size: 12, textAlign: TextAlign.start),
               ),
             ],
           ),

@@ -45,7 +45,7 @@ class CustomRadioWithText extends StatelessWidget {
           Widgets.widthSpaceW1,
           Texts.textNormal(
             label,
-            color: ColorConstants.blackColor,size: 13
+            color: ColorConstants.blackColor,size: 12
           ),
         ],
       ),

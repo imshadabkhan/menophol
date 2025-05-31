@@ -33,7 +33,7 @@ class Exercise extends StatelessWidget {
             Texts.textBold('Activity Type',size: 18),
             Widgets.heightSpaceH1,
             SizedBox(
-              height: 35.h,
+              height: 33.h,
               child: ListView.builder(
                 itemCount: activityType.length,
                 scrollDirection: Axis.horizontal,

@@ -3,7 +3,6 @@ import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
 
-// import 'package:menophol/view/bottom_nav_bar/modules/track/view/supplement_tracker/database.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/supplement_tracker/past_enteries.dart';
 import 'package:menophol/view/bottom_nav_bar/modules/track/view/supplement_tracker/supplements.dart';
 
@@ -64,9 +63,9 @@ class SupplementTrackerState extends State<SupplementTracker> with SingleTickerP
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textBold("Supplement Tracker",size: 20),),
+              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textBold("Supplement Tracker",size: 18),),
               Widgets.heightSpaceH05,
-              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textNormal("Track your supplements and vitamins",textAlign: TextAlign.start,size: 14),
+              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textNormal("Track your supplements and vitamins",textAlign: TextAlign.start,size: 12),
               ),
               Widgets.heightSpaceH1,
               Padding(

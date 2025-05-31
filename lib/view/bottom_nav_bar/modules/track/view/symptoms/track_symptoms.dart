@@ -12,44 +12,50 @@ import 'package:menophol/view/bottom_nav_bar/modules/track/model.dart';
 class TrackSymptoms extends StatelessWidget {
   final List<TrackItem> trackItems = [
     TrackItem(
-        icon: Assets.symptomsIcon,
-        title: 'Symptoms',
-        subtitle: 'Track your hormonal health symptoms',
-
+      icon: Assets.pulseLinear,
+      title: 'Symptoms',
+      subtitle: 'Track your hormonal health symptoms',
     ),
     TrackItem(
-        icon: Assets.unfilledHeart,
-        title: 'Mood',
-        subtitle: 'Monitor your emotional wellbeing',),
+      icon: Assets.unfilledHeart,
+      title: 'Mood',
+      subtitle: 'Monitor your emotional wellbeing',
+    ),
     TrackItem(
-        icon: Assets.sleepIcon,
-        title: 'Sleep',
-        subtitle: 'Track your sleep patterns',),
+      icon: Assets.sleepIcon,
+      title: 'Sleep',
+      subtitle: 'Track your sleep patterns',
+    ),
     TrackItem(
-        icon: Assets.foodDrinkIcon,
-        title: 'Food & Drink',
-        subtitle: 'Track your diet and liquid intake',),
+      icon: Assets.foodDrinkIcon,
+      title: 'Food & Drink',
+      subtitle: 'Track your diet and liquid intake',
+    ),
     TrackItem(
-        icon: Assets.dumbellIcon,
-        title: 'Exercise',
-        subtitle: 'Log your physical activity',),
+      icon: Assets.dumbellIcon,
+      title: 'Exercise',
+      subtitle: 'Log your physical activity',
+    ),
     // TrackItem(icon: Assets.hrtIcon, title: 'joint Pain', subtitle: 'aching',),
     TrackItem(
-        icon: Assets.hrtIcon,
-        title: 'HRT',
-        subtitle: 'Track your harmone therapy',),
+      icon: Assets.hrtIcon,
+      title: 'HRT',
+      subtitle: 'Track your harmone therapy',
+    ),
     TrackItem(
-        icon: Assets.supplimentsIcon,
-        title: 'Suppliments',
-        subtitle: 'Track your suppliments and vitamins',),
+      icon: Assets.supplimentsIcon,
+      title: 'Suppliments',
+      subtitle: 'Track your suppliments and vitamins',
+    ),
     // TrackItem(
     //     icon: Assets.supplimentsIcon,
     //     title: 'Periods',
     //     subtitle: 'Sweating at night'),
     TrackItem(
-        icon: Assets.periodsIcon,
-        title: 'Periods',
-        subtitle: 'Track your menstrual cyclesss',),
+      icon: Assets.periodsIcon,
+      title: 'Periods',
+      subtitle: 'Track your menstrual cyclesss',
+    ),
   ];
 
   TrackSymptoms({super.key});
@@ -57,41 +63,37 @@ class TrackSymptoms extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-
       children: [
         Container(
           height: 200.h,
           decoration: BoxDecoration(
-
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-
                 colors: [
-
-                  ColorConstants.gradient1.withAlpha((0.5*255).toInt()),
-                  ColorConstants.gradient2.withAlpha((0.5*255).toInt()),
+                  ColorConstants.gradient1.withAlpha((0.5 * 255).toInt()),
+                  ColorConstants.gradient2.withAlpha((0.5 * 255).toInt()),
                   Colors.transparent,
                 ]),
           ),
         ),
         Scaffold(
-backgroundColor: ColorConstants.transparentColor,
-
+          backgroundColor: ColorConstants.transparentColor,
           body: SafeArea(
             child: Padding(
               padding: PaddingConstants.screenPaddingHalf.copyWith(top: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Texts.textBold("Track", size: 22),
+                  Texts.textBold("Track", size: 18),
                   Widgets.heightSpaceH05,
                   Texts.textNormal(
                       'Track your symptoms, sleep, mood, and more to uncover patterns, gain insights, and take back control of your health.',
-                      size: 14,
+                      size: 12,
                       textAlign: TextAlign.start),
                   Widgets.heightSpaceH2,
-                  Texts.textBold('What would you like to track today?', size: 24),
+                  Texts.textBold('What would you like to track today?',
+                      size: 18, textAlign: TextAlign.start),
                   Widgets.heightSpaceH2,
                   Expanded(
                     child: ListView.separated(
@@ -100,18 +102,34 @@ backgroundColor: ColorConstants.transparentColor,
                       itemBuilder: (context, index) {
                         final item = trackItems[index];
                         return InkWell(
-                          onTap: (){
-                            if(index==0){Get.toNamed(AppRoutes.trackView);}
-                            if(index==1){Get.toNamed(AppRoutes.moodTrackerView);}
-                            if(index==2){Get.toNamed(AppRoutes.sleepView);}
-                            if(index==3){Get.toNamed(AppRoutes.foodAndDrinkOrder);}
-                            if(index==4){Get.toNamed(AppRoutes.exerciseTrackerView);}
-                            if(index==5){Get.toNamed(AppRoutes.hrtTracker);}
-                            if(index==6){Get.toNamed(AppRoutes.supplementTracker);}
-                            if(index==7){Get.toNamed(AppRoutes.periodTrackerView);}
+                          onTap: () {
+                            if (index == 0) {
+                              Get.toNamed(AppRoutes.trackView);
+                            }
+                            if (index == 1) {
+                              Get.toNamed(AppRoutes.moodTrackerView);
+                            }
+                            if (index == 2) {
+                              Get.toNamed(AppRoutes.sleepView);
+                            }
+                            if (index == 3) {
+                              Get.toNamed(AppRoutes.foodAndDrinkOrder);
+                            }
+                            if (index == 4) {
+                              Get.toNamed(AppRoutes.exerciseTrackerView);
+                            }
+                            if (index == 5) {
+                              Get.toNamed(AppRoutes.hrtTracker);
+                            }
+                            if (index == 6) {
+                              Get.toNamed(AppRoutes.supplementTracker);
+                            }
+                            if (index == 7) {
+                              Get.toNamed(AppRoutes.periodTrackerView);
+                            }
                           },
                           child: Container(
-                            padding: const EdgeInsets.all(12),
+                            padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(12),
@@ -124,7 +142,8 @@ backgroundColor: ColorConstants.transparentColor,
                               children: [
                                 Container(
                                   decoration: BoxDecoration(
-                                    color: ColorConstants.primaryColor.withAlpha((0.5*255).toInt()),
+                                    color: ColorConstants.primaryColor
+                                        .withAlpha((0.5 * 255).toInt()),
                                     borderRadius: BorderRadius.circular(10.r),
                                   ),
                                   alignment: Alignment.center,
@@ -141,12 +160,13 @@ backgroundColor: ColorConstants.transparentColor,
                                 Widgets.widthSpaceW2,
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
-                                      Texts.textMedium(item.title, size: 15),
-            
+                                      Texts.textMedium(item.title, size: 14),
+                                      Widgets.heightSpaceH05,
                                       Texts.textNormal(item.subtitle,
-                                          size: 14, textAlign: TextAlign.start),
+                                          size: 12, textAlign: TextAlign.start),
                                     ],
                                   ),
                                 ),

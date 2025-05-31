@@ -49,21 +49,21 @@ class Track extends StatelessWidget {
     controller.initializeDropDownStates(drinkList);
 
     return Scaffold(
+      backgroundColor: ColorConstants.whiteColor,
       body: Padding(
           padding: PaddingConstants.screenPaddingHalf.copyWith(bottom: 5),
           child: ListView(
-
             children: [
               EntryField(
                 prefixIcon: Assets.calendarIcon,
                 hint: "07/04/2025",
               ),
-              Widgets.heightSpaceH05,
+              Widgets.heightSpaceH1,
               Obx(() => Row(
                     children: [
                       DynamicButton(
                         padding:
-                        EdgeInsets.symmetric(vertical: 9, horizontal: 16),
+                            EdgeInsets.symmetric(vertical: 9, horizontal: 16),
                         bgColor: controller.selected.value == 'Food'
                             ? ColorConstants.darkPrimaryColor
                             : ColorConstants.transparentColor,
@@ -85,7 +85,9 @@ class Track extends StatelessWidget {
                         bgColor: controller.selected.value == 'Drink'
                             ? ColorConstants.darkPrimaryColor
                             : ColorConstants.transparentColor,
-                        borderColor: controller.selected.value == 'Drink'?ColorConstants.transparentColor: ColorConstants.blackColor,
+                        borderColor: controller.selected.value == 'Drink'
+                            ? ColorConstants.transparentColor
+                            : ColorConstants.blackColor,
                         title: "Drink",
                         textColor: controller.selected.value == 'Drink'
                             ? ColorConstants.whiteColor
@@ -97,7 +99,7 @@ class Track extends StatelessWidget {
               Widgets.heightSpaceH2,
               Texts.textBold("Meal Type",
                   textAlign: TextAlign.start, size: 18.sp),
-              Widgets.heightSpaceH05,
+              Widgets.heightSpaceH1,
               Obx(() => Row(
                     children: List.generate(
                       foodType.length,
@@ -107,7 +109,7 @@ class Track extends StatelessWidget {
                             controller.selectedMealType.value == label;
 
                         return Padding(
-                          padding: const EdgeInsets.all(6.0),
+                          padding: const EdgeInsets.all(6.0).copyWith(left: 0),
                           child: CustomRadioWithText(
                             label: label,
                             onTap: () => controller.selectMealType(label),
@@ -122,6 +124,7 @@ class Track extends StatelessWidget {
                 prefixIcon: Assets.searchbarIcon,
                 hint: "Search for food or drink",
               ),
+              Widgets.heightSpaceH05,
               SizedBox(
                 height: 40.h,
                 child: Obx(() {
@@ -144,7 +147,7 @@ class Track extends StatelessWidget {
                         child: DynamicButton(
                           padding:
                               EdgeInsets.symmetric(vertical: 8, horizontal: 10),
-                          size: 16.0,
+                          size: 12.0,
                           onTap: () => controller.selectItem(label),
                           title: label,
                           bgColor: isSelected
@@ -162,12 +165,13 @@ class Track extends StatelessWidget {
                   );
                 }),
               ),
-              Widgets.heightSpaceH05,
+              Widgets.heightSpaceH1,
               Widgets.divider(),
-              Widgets.heightSpaceH2,
+              Widgets.heightSpaceH1,
+              Widgets.heightSpaceH1,
               Obx(() => ListView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
                     itemCount: controller.selected.value == 'Food'
                         ? mealList.length
                         : drinkList.length,
@@ -175,7 +179,10 @@ class Track extends StatelessWidget {
                       return controller.selected.value == 'Food'
                           ? Padding(
                               padding: const EdgeInsets.only(bottom: 8.0),
-                              child: MealBoxWidget(title: mealList[index],prefixIcon: Assets.forkKnifeIcon,),
+                              child: MealBoxWidget(
+                                title: mealList[index],
+                                prefixIcon: Assets.forkKnifeIcon,
+                              ),
                             )
                           : Column(
                               children: [
@@ -193,93 +200,99 @@ class Track extends StatelessWidget {
                                 ),
                                 Widgets.heightSpaceH05,
                                 Obx(
-                                  () => controller.dropDownStates[drinkList[index]]?.value ?? false
+                                  () => controller
+                                              .dropDownStates[drinkList[index]]
+                                              ?.value ??
+                                          false
                                       ? Padding(
-                                    padding: const EdgeInsets.only(bottom: 10.0),
-                                    child: Container(
-                                      width: double.infinity,
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color:
-                                          ColorConstants.blackColor,
-                                        ),
-                                        borderRadius:
-                                        BorderRadius.circular(8),
-                                      ),
-                                      child: Column(
-                                        children: [
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: 8.0,
-                                                horizontal: 8.0),
-                                            child: Row(
-                                              crossAxisAlignment:CrossAxisAlignment.end,
-                                              children: [
-                                                Image.asset(
-                                                  Assets.drinkIcon,
-                                                  height: 20,
-                                                  width: 20,
-                                                ),
-                                                Widgets.widthSpaceW1,
-                                                Texts.textNormal("Tea",
-                                                    size: 14),
-                                                Expanded(
-                                                    child: Widgets
-                                                        .widthSpaceW05),
-                                                Icon(
-                                                  Icons
-                                                      .keyboard_arrow_down_outlined,
-                                                  color: Colors.black,
-                                                  size: 18,
-                                                )
-                                              ],
+                                          padding: const EdgeInsets.only(
+                                              bottom: 10.0),
+                                          child: Container(
+                                            width: double.infinity,
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                color:
+                                                    ColorConstants.blackColor,
+                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
+                                            ),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Column(
+                                                children: [
+                                                  Row(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment.end,
+                                                    children: [
+                                                      Image.asset(
+                                                        Assets.drinkIcon,
+                                                        height: 20,
+                                                        width: 20,
+                                                      ),
+                                                      Widgets.widthSpaceW1,
+                                                      Texts.textNormal("Tea",
+                                                          size: 14),
+                                                      Expanded(
+                                                          child: Widgets
+                                                              .widthSpaceW05),
+                                                      Icon(
+                                                        Icons
+                                                            .keyboard_arrow_down_outlined,
+                                                        color: Colors.black,
+                                                        size: 18,
+                                                      )
+                                                    ],
+                                                  ),
+                                                  Widgets.heightSpaceH1,
+                                                  Widgets.divider(),
+                                                  Widgets.heightSpaceH2,
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                            horizontal: 5),
+                                                    child: Row(
+                                                      children: [
+                                                        Expanded(
+                                                            flex: 2,
+                                                            child: EntryField(
+                                                              hint:
+                                                                  "Enter Amount",
+                                                            )),
+                                                        Widgets.widthSpaceW2,
+                                                        Flexible(
+                                                            child: EntryField(
+                                                          hint: "ml",
+                                                        )),
+                                                        Widgets.widthSpaceW2,
+                                                        Expanded(
+                                                            child: CustomButton(
+                                                          label: "Add",
+                                                          textColor:
+                                                              ColorConstants
+                                                                  .whiteColor,
+                                                          backgroundColor:
+                                                              ColorConstants
+                                                                  .darkPrimaryColor,
+                                                        )),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ),
-                                          Widgets.divider(),
-                                          Widgets.heightSpaceH1,
-                                          Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 5),
-                                            child: Row(
-                                              children: [
-                                                Expanded(
-                                                    flex: 2,
-                                                    child: EntryField(
-                                                      hint:
-                                                      "Enter Amount",
-                                                    )),
-                                                Widgets.widthSpaceW2,
-                                                Flexible(
-                                                    child: EntryField(
-                                                      hint: "ml",
-                                                    )),
-                                                Widgets.widthSpaceW2,
-                                                Expanded(
-                                                    child: CustomButton(
-                                                      label: "Add",
-                                                      textColor:
-                                                      ColorConstants
-                                                          .whiteColor,
-                                                      backgroundColor:
-                                                      ColorConstants
-                                                          .darkPrimaryColor,
-                                                    )),
-                                              ],
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                  )
+                                        )
                                       : Container(),
                                 ),
                               ],
                             );
                     },
                   )),
-              Widgets.heightSpaceH05,
+              Widgets.heightSpaceH2,
               Widgets.divider(),
-              Widgets.heightSpaceH1,
+              Widgets.heightSpaceH2,
               Obx(
                 () => controller.selected.value == 'Food'
                     ? Column(
@@ -303,7 +316,7 @@ class Track extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Widgets.heightSpaceH1,
+                          Widgets.heightSpaceH05,
                         ],
                       )
                     : Column(
@@ -323,7 +336,7 @@ class Track extends StatelessWidget {
                             backgroundColor: ColorConstants.darkPrimaryColor,
                             label: "Add custom drink",
                           ),
-                          Widgets.heightSpaceH1,
+                          Widgets.heightSpaceH05,
                         ],
                       ),
               )
@@ -332,5 +345,3 @@ class Track extends StatelessWidget {
     );
   }
 }
-
-

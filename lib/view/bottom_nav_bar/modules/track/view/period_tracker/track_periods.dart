@@ -19,12 +19,14 @@ List<String> symptomsList=["Cramps","Bloating","Headache",'Fatigue','Mood Swings
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      backgroundColor: ColorConstants.whiteColor,
       body: Padding(
         padding: PaddingConstants.screenPaddingHalf,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+
             EntryField(
               prefixIcon: Assets.calendarIcon,
               hint: "07/04/2025",

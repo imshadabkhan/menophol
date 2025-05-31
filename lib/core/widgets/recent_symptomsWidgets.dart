@@ -40,7 +40,7 @@ class RecentSymptomsWidgets extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Texts.textBold("Recent Symptoms",size: 18),
+                  Texts.textBold("Recent Symptoms",size: 16),
                   Widgets.heightSpaceH05,
                   Texts.textNormal("Each bar represents symptom  severity", size: 12)
 

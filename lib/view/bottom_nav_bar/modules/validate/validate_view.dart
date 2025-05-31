@@ -46,7 +46,7 @@ class ValidateHomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Texts.textBold("Validate", size: 22),
+        title: Texts.textBold("Validate", size: 18),
         elevation: 0,
         scrolledUnderElevation: 0,
         backgroundColor: Colors.white,

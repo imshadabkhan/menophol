@@ -46,7 +46,7 @@ class DynamicButton extends StatelessWidget {
               ):Text(""),
               Widgets.widthSpaceW1,
               Texts.textNormal(title,
-                  color: textColor??ColorConstants.blackColor, size:size?? 12,maxLines: 2,textAlign: TextAlign.start,),
+                  color: textColor??ColorConstants.blackColor, size:size?? 12,maxLines: 2,textAlign: TextAlign.center,),
             ],
           ),
         ),

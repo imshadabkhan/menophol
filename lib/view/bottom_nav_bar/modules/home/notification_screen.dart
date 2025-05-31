@@ -15,13 +15,10 @@ class NotificationSettingsController extends GetxController {
   var appUpdates = false.obs;
   var monthlyReports = false.obs;
 }
-
 class ManageNotificationsScreen extends StatelessWidget {
   final NotificationSettingsController controller =
       Get.put(NotificationSettingsController());
-
   ManageNotificationsScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,12 +36,12 @@ class ManageNotificationsScreen extends StatelessWidget {
             Expanded(
               child: ListView(
                 children: [
-                  Texts.textBold("Manage Notifications", size: 20,textAlign: TextAlign.start),
+                  Texts.textBold("Manage Notifications", size: 18,textAlign: TextAlign.start),
                   Widgets.heightSpaceH05,
 
                   Texts.textNormal(
                     "Choose which notifications you'd like to receive. You can change these settings at any time.",
-                    size: 14,
+                    size: 12,
                     textAlign: TextAlign.start,
                   ),
 
@@ -52,7 +49,7 @@ class ManageNotificationsScreen extends StatelessWidget {
                   Widgets.divider(),
                   Widgets.heightSpaceH1,
 
-                  // Daily Tracking
+
                   _buildToggleSection(
                     title: "Daily Tracking Reminders",
                     description:
@@ -131,7 +128,7 @@ class ManageNotificationsScreen extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  Widgets.heightSpaceH1,
+                                  Widgets.heightSpaceH2,
                                   Container(
                                     width: double.infinity,
                                     padding: const EdgeInsets.symmetric(
@@ -206,6 +203,7 @@ class ManageNotificationsScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Widgets.heightSpaceH1,
         Texts.textBold(title, size: 18),
         Widgets.heightSpaceH05,
         Row(
@@ -213,7 +211,7 @@ class ManageNotificationsScreen extends StatelessWidget {
           children: [
             Expanded(
               child: Texts.textNormal(description,
-                  size: 13, textAlign: TextAlign.start),
+                  size: 12, textAlign: TextAlign.start),
             ),
             Obx(() => Transform.scale(
                   scale: 0.75,

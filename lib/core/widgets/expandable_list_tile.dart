@@ -80,7 +80,7 @@ class _ExpandableListTileState extends State<ExpandableListTile> {
                         Widgets.heightSpaceH05,
                        widget.item.subtitle2!=null?
                         Texts.textNormal(widget.item.subtitle2!,
-                            size: 14, textAlign: TextAlign.start):Container(),
+                            size: 12, textAlign: TextAlign.start):Container(),
 
                       ],
                     ),

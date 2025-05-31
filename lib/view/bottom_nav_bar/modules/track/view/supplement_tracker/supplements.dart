@@ -33,10 +33,12 @@ class Supplements extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      backgroundColor: ColorConstants.whiteColor,
       body: SingleChildScrollView(
         child: Padding(
           padding:PaddingConstants.screenPaddingHalf,
           child: Column(children: [
+
             EntryField(prefixIcon: Assets.calendarIcon,hint: "07/04/2025",),
             Widgets.heightSpaceH05,
             EntrySearchField(prefixIcon: Assets.searchbarIcon,hint: "Search Symptoms",),

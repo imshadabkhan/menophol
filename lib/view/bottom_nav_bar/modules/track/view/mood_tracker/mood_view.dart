@@ -48,17 +48,16 @@ class _MoodViewState extends State<MoodView> {
     Assets.unfilledIrritable,
     Assets.unfilledEnergetic,
     Assets.unfilledTired,
-    Assets.unfilledConfused,
-    Assets.unfilledCalm,
-    Assets.unfilledIrritable,
-    Assets.unfilledEnergetic
+    Assets.unfilledCalm, Assets.unfilledConfused, Assets.unfilledEnergetic, Assets.unfilledOverwhelmed,
+
+
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(backgroundColor: ColorConstants.whiteColor,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 10),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,13 +67,17 @@ class _MoodViewState extends State<MoodView> {
                 prefixIcon: Assets.calendarIcon,
                 hint: "07/04/2025",
               ),
+              Widgets.heightSpaceH1,
               Obx(()=> CustomDropdown(
                 onTap: () {
                   controller.toggleDropDown();
                 },
                 value: 'Related Triggers(0)',
-                hint: '',
-                label: '',
+                hint: null,
+                label: null,
+valueColor: controller.dropDown.value
+    ? ColorConstants.whiteColor
+    : ColorConstants.blackColor ,
                 color: controller.dropDown.value
                     ? ColorConstants.darkPrimaryColor
                     : ColorConstants.whiteColor,
@@ -90,7 +93,7 @@ class _MoodViewState extends State<MoodView> {
                         color: ColorConstants.whiteColor,
                         border:
                             Border.all(color: ColorConstants.greyBorderColor),
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(10),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
@@ -262,19 +265,19 @@ class _MoodViewState extends State<MoodView> {
                   );
                 },
               ),
-              Widgets.heightSpaceH2,
+              Widgets.heightSpaceH3,
               Texts.textBold('Current Mood',
                   size: 18, textAlign: TextAlign.start),
               Widgets.heightSpaceH1,
               EntryField(
-                prefixIcon: Assets.calendarIcon,
+
                 hint: "Enter your mood",
               ),
               Widgets.heightSpaceH05,
               EntryBigField(
                 hint: "Describe your feeling",
               ),
-              Widgets.heightSpaceH2,
+              Widgets.heightSpaceH1,
               CustomButton(
                 label: "Add custom mood",
                 textColor: ColorConstants.blackColor,
@@ -287,7 +290,7 @@ class _MoodViewState extends State<MoodView> {
                 textColor: ColorConstants.whiteColor,
                 backgroundColor: ColorConstants.darkPrimaryColor,
               ),
-              Widgets.heightSpaceH2,
+              Widgets.heightSpaceH1,
             ],
           ),
         ),

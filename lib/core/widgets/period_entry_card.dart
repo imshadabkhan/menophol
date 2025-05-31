@@ -35,7 +35,7 @@ class PeriodEntryCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                       color: ColorConstants.greenColor
                   ),
-                  child: Padding(padding: PaddingConstants.contentPadding,child: Texts.textNormal("Period Start",size: 14),),
+                  child: Padding(padding: PaddingConstants.contentPadding,child: Texts.textNormal("Period Start",size: 12),),
                 ),
                 Image.asset(Assets.deleteIcon,width: 15.w,height: 15.h,),
 
@@ -50,7 +50,7 @@ class PeriodEntryCard extends StatelessWidget {
                   children: [
                     Texts.textMedium('Date',size: 14),
                     Widgets.heightSpaceH05,
-                    Texts.textNormal("April 7,2025",size: 14)
+                    Texts.textNormal("April 7,2025",size: 12)
 
                   ],),
                 Widgets.widthSpaceW4, Widgets.widthSpaceW4, Widgets.widthSpaceW4,
@@ -59,7 +59,7 @@ class PeriodEntryCard extends StatelessWidget {
                   children: [
                     Texts.textMedium('Flow',size: 14),
                     Widgets.heightSpaceH05,
-                    Texts.textNormal("Heavy",size: 14)
+                    Texts.textNormal("Heavy",size: 12)
 
                   ],),
 

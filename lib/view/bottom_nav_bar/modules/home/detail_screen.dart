@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:menophol/core/constants/assets_constants.dart';
+import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/constants/padding_constants.dart';
 import 'package:menophol/core/widgets/rich_txt_paragraphs.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
@@ -12,9 +13,11 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorConstants.whiteColor,
         appBar: AppBar(
           elevation: 0,
           scrolledUnderElevation: 0,
+          backgroundColor: ColorConstants.whiteColor,
         ),
         body: SingleChildScrollView(
           child: Padding(

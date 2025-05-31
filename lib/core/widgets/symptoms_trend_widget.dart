@@ -46,7 +46,7 @@ class SymptomsTrendWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Texts.textBold("Symptom Trends", size: 18),
+                      Texts.textBold("Symptom Trends", size: 16),
                       Widgets.heightSpaceH05,
                       Texts.textNormal(
                           "Monitor your sleep quality and duration and patterns",

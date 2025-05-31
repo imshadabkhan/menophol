@@ -44,7 +44,7 @@ class SummaryCard extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Texts.textBold(title, size: 18),
+                    Texts.textBold(title, size: 16),
                     Widgets.heightSpaceH05,
                     Texts.textNormal("Mar 17, 2025 - Mar 24, 2025",  size: 12)
 

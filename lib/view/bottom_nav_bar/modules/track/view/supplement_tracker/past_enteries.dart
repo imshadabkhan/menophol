@@ -11,11 +11,12 @@ class PastEnteries extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      backgroundColor: ColorConstants.whiteColor,
       body: Padding(
         padding: PaddingConstants.screenPaddingHalf,
         child: Column(children: [
           PastEntrySupplementCard(title: 'Vitamin D',dosageNo: '1',),
-          Widgets.heightSpaceH1,
+          Widgets.heightSpaceH2,
           PastEntrySupplementCard(title: 'Magnesium',dosageNo: '4',),
 
 
@@ -51,24 +52,18 @@ class PastEntrySupplementCard extends StatelessWidget {
 
           children: [
             Row(
-
               mainAxisAlignment:MainAxisAlignment.spaceBetween,
               children: [
-              Texts.textBold(title,size: 20),
-              Image.asset(Assets.deleteIcon,height: 20,width: 20,),
+              Texts.textBold(title,size: 14),
+              Image.asset(Assets.deleteIcon,height: 18,width: 18,),
             ],),
             Widgets.heightSpaceH1,
-            Texts.textMedium("Dosage",size: 16),
+            Texts.textMedium("Dosage",size: 12),
             Widgets.heightSpaceH05,
-            Texts.textNormal(dosageNo,size: 16),
-
-
-
+            Texts.textNormal(dosageNo,size: 12),
           ],
         ),
       ),
-
-
     );
   }
 }

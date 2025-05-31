@@ -35,7 +35,7 @@ class SleepPatternWidgets extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Texts.textBold("Sleep Patterns",size: 18),
+                    Texts.textBold("Sleep Patterns",size: 16),
                     Widgets.heightSpaceH05,
                     Texts.textNormal("Monitor your sleep quality and duration and patterns",textAlign: TextAlign.start,size: 12),
 

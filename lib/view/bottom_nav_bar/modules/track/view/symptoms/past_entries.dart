@@ -22,16 +22,17 @@ class _PastEntriesState extends State<PastEntries> {
   List<String> trigger2=["Exercise",'Temperature',"Weather Changes"];
   Widget build(BuildContext context) {
     return  Scaffold(
+      backgroundColor: ColorConstants.whiteColor,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 10),
         child: ListView(children: [
           EntryField(
             prefixIcon: Assets.calendarIcon,
             hint: "07/04/2025",
           ),
-          Widgets.heightSpaceH05,
+
           PastEntryCards(triggers: triggers,title: "Anxiety",label: 'High Severity',controller: controller,),
-          PastEntryCards(triggers: trigger2,title: 'Sleep Issues',label:"Very Severe" ,labelColor: ColorConstants.redColor,controller: controller,),
+          PastEntryCards(triggers: trigger2,title: 'Sleep Issues',label:"Very Severe" ,labelColor: ColorConstants.redTextColor,controller: controller,subtitleBgColor: ColorConstants.primaryColor.withAlpha((0.4*255).toInt()),),
 
         ],),
       ),
@@ -45,6 +46,7 @@ class PastEntryCards extends StatelessWidget {
     required this.triggers,
     required this.title,
     required this.label,
+    this.subtitleBgColor,
      this.labelColor,this.controller
   });
 
@@ -52,13 +54,15 @@ class PastEntryCards extends StatelessWidget {
 final String title;
   final String label;
   final Color? labelColor;
+  final Color? subtitleBgColor;
   final controller;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(bottom: 12.0),
       child: Container(
         decoration: BoxDecoration(
+          border: Border.all(color: ColorConstants.greyBorderColor),
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
 
@@ -71,27 +75,24 @@ final String title;
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Texts.textBold(title,size: 20,textAlign: TextAlign.start),
+                  Texts.textBold(title,size: 18,textAlign: TextAlign.start),
 
-                Image.asset(Assets.deleteIcon,height: 20,),
+                Image.asset(Assets.deleteIcon,height: 15,),
 
               ],),
               Widgets.heightSpaceH1,
               Container(
                 decoration: BoxDecoration(
-                    color: ColorConstants.greyBgColor,
-                    borderRadius: BorderRadius.circular(8),
+                    color: subtitleBgColor??ColorConstants.greyBgColor,
+                    borderRadius: BorderRadius.circular(4),
 
                 ),
-                child: Padding(padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),child: Texts.textNormal(label,color:labelColor?? ColorConstants.goldenColor,size: 14),),),
+                child: Padding(padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),child: Texts.textNormal(label,color:labelColor?? ColorConstants.goldenColor,size: 12),),),
               Widgets.heightSpaceH1,
               Widgets.divider(),
+              Widgets.heightSpaceH2,
+      Texts.textBold("Triggers",size: 16),
               Widgets.heightSpaceH1,
-      Texts.textBold("Triggers",size: 20),
-              Widgets.heightSpaceH1,
-
-
-
               Wrap(
                 direction:Axis.horizontal,
                 children: List.generate( triggers.length, (index){

@@ -10,7 +10,6 @@ import 'package:menophol/core/widgets/custom_dropdown.dart';
 import 'package:menophol/core/widgets/entry_field.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
 import 'package:menophol/core/widgets/widgets.dart';
-import 'package:menophol/view/bottom_nav_bar/modules/track/view/hrt/medication_tracker/add_custom_medication.dart';
 
 class AddMedicationMedication extends StatelessWidget {
   const AddMedicationMedication({super.key});
@@ -58,9 +57,9 @@ class AddMedicationMedication extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                Texts.textBold("Add Medication",size: 20),
+                Texts.textBold("Add Medication",size: 18),
                 Widgets.heightSpaceH1,
-                Texts.textNormal("Add a medication that’s not in our database. You can  also include a photo so we can add it for future users.",textAlign: TextAlign.start,size: 14),
+                Texts.textNormal("Add a medication that’s not in our database. You can  also include a photo so we can add it for future users.",textAlign: TextAlign.start,size: 12),
                   Widgets.heightSpaceH1,
                   Widgets.divider(),
                   Widgets.heightSpaceH1,
@@ -71,11 +70,17 @@ class AddMedicationMedication extends StatelessWidget {
                   Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
+                      gradient: LinearGradient(colors: [
+                        ColorConstants.primaryColor.withAlpha((0.5*255).toInt()),
+                        ColorConstants.primaryColor.withAlpha((0.3*255).toInt()),
+                        ColorConstants.whiteColor
+
+                      ]),
                       borderRadius:BorderRadius.circular(16),
                       border: Border.all(color: ColorConstants.darkPrimaryColor),
                     ),
                     child: Padding(
-                      padding: PaddingConstants.screenPaddingHalf,
+                      padding: EdgeInsets.symmetric(vertical: 12,horizontal: 12),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -86,11 +91,11 @@ class AddMedicationMedication extends StatelessWidget {
                       Image.asset(Assets.infoIcon,width: 20,height: 20,),
                         Widgets.widthSpaceW1
                           ,
-                        Texts.textBold('Dosage Information',size: 18,color: ColorConstants.primaryColor),
+                        Texts.textBold('Dosage Information',size: 18,color: ColorConstants.darkPrimaryColor),
                       ],),
                           Widgets.heightSpaceH1,
-                          RichText(text: TextSpan(text: 'Initial dose: ',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),children: [
-                            TextSpan(text: 'Apply 1 applicatorful (0.5 mg estriol) daily for the first 2 to 3 weeks. Maintenance dose: After initial treatment, reduce to 1 applicatorful twice a week.',style: TextStyle(fontWeight: FontWeight.normal)),
+                          RichText(text: TextSpan(text: 'Initial dose: ',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontFamily: "Montserrat",fontSize: 14),children: [
+                            TextSpan(text: 'Apply 1 applicatorful (0.5 mg estriol) daily for the first 2 to 3 weeks. Maintenance dose: After initial treatment, reduce to 1 applicatorful twice a week.',style: TextStyle(fontWeight: FontWeight.normal,fontFamily: 'Montserrat',fontSize: 12)),
 
                           ])),
 
@@ -98,8 +103,8 @@ class AddMedicationMedication extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Widgets.heightSpaceH1,
-                  Widgets.heightSpaceH05,
+                  Widgets.heightSpaceH2,
+
                   CustomDropdown(onTap: (){}, value: "Initial: 1 applicatorful (0.5 mg estriol) daily", hint: "", label: "Dosage",color:ColorConstants.whiteColor,iconColor: ColorConstants.blackColor,),
                   Widgets.heightSpaceH05,
                   CustomDropdown(onTap: (){}, value: "Cream", hint: "", label: "Method",color:ColorConstants.whiteColor,iconColor: ColorConstants.blackColor,),

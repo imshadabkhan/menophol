@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:menophol/core/constants/color_constants.dart';
+import 'package:menophol/core/widgets/text_widgets.dart';
 
 class EntryField extends StatelessWidget {
   final String? hint;
@@ -66,12 +67,9 @@ class EntryField extends StatelessWidget {
             ? Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    '${label!}',
-                    style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                        color: Colors.black,
-                        fontSize: 13,
-                        fontFamily: "PoppinsRegular"),
+                  Texts.textNormal(
+                    label!,size: 12,fontWeight: FontWeight.w600
+
                   ),
                   if (trailingTitle != null)
                     GestureDetector(
@@ -109,7 +107,7 @@ alignment: Alignment.center,
                 : MaxLengthEnforcement.none,
             textAlign: textAlign ?? TextAlign.left,
             style: const TextStyle(
-                fontFamily: "PoppinsRegular",
+                fontFamily: "Montserrat",
                 fontWeight: FontWeight.w400,
                 fontSize: 12,
                 color: Colors.black),
@@ -136,7 +134,7 @@ filled: true,
                   child: Icon(suffixIcon,size: 17,color: Colors.black,)),
               hintText: hint,
               hintStyle: TextStyle(
-                  fontFamily: "PoppinsRegular",
+                  fontFamily: "Montserrat",
                   fontWeight: FontWeight.w400,
                   fontSize: 12,
                   color:Colors.grey),
@@ -230,7 +228,7 @@ class EntrySearchField extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              '${label!}',
+              label!,
               style: Theme.of(context).textTheme.titleSmall!.copyWith(
                   color: Colors.black87,
                   fontSize: 13,
@@ -402,13 +400,13 @@ class EntryBigField extends StatelessWidget {
             ? Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    '${label!}',
-                    style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                        color: Colors.black87,
-                        fontSize: 13,
-                        fontFamily: "RobotoRegular"),
-                  ),
+                  Texts.textNormal(
+                    label!,
+
+                      fontWeight: FontWeight.w600,
+                      size: 12,
+                        fontFamily: "Montserrat"),
+
                   if (trailingTitle != null)
                     GestureDetector(
                       onTap: onTrailingTap,
@@ -444,7 +442,7 @@ class EntryBigField extends StatelessWidget {
               : MaxLengthEnforcement.none,
           textAlign: textAlign ?? TextAlign.left,
           style: const TextStyle(
-              fontFamily: "PlusJakartaSansRegular",
+              fontFamily: "Montserrat",
               fontWeight: FontWeight.normal,
               fontSize: 12,
               color: Colors.black),          keyboardType: textInputType,
@@ -467,7 +465,7 @@ class EntryBigField extends StatelessWidget {
                 )),
             hintText: hint,
             hintStyle: const TextStyle(
-                fontFamily: "PlusJakartaSansRegular",
+                fontFamily: "Montserrat",
                 fontWeight: FontWeight.normal,
                 fontSize: 12,
                 color: Colors.black45),

@@ -53,18 +53,18 @@ class AddCustomMedication extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Texts.textBold("Add Custom HRT Medication",size: 20),
+                  Texts.textBold("Add Custom HRT Medication",size: 18),
                   Widgets.heightSpaceH1,
-                  Texts.textNormal("Add a medication that's not in our database. Include a photo of the medication bottle to help us add it to our database for future users.",textAlign: TextAlign.start,size: 14),
+                  Texts.textNormal("Add a medication that's not in our database. Include a photo of the medication bottle to help us add it to our database for future users.",textAlign: TextAlign.start,size: 12),
                   Widgets.heightSpaceH1,
                   Widgets.divider(),
                   Widgets.heightSpaceH1,
                   Widgets.heightSpaceH1,
-                  CustomDropdown(onTap: (){}, value: "Estrogen medications", hint: "", label: "Medication Name*",color:Colors.white,iconColor: ColorConstants.blackColor,),
-                  Widgets.heightSpaceH05,
+                  CustomDropdown(onTap: (){}, value: "Estrogen medications", hint: "", label: "Medication Name *",color:Colors.white,iconColor: ColorConstants.blackColor,),
+                  Widgets.heightSpaceH1,
                   CustomDropdown(onTap: (){}, value: "e.g, 1mg,2mg", hint: "", label: "Dosage",color:ColorConstants.whiteColor,iconColor: ColorConstants.blackColor,),
                   Widgets.heightSpaceH1,
-                  CustomDropdown(onTap: (){}, value: "select method", hint: "", label: "Method of Administration*",color:ColorConstants.whiteColor,iconColor: ColorConstants.blackColor,),
+                  CustomDropdown(onTap: (){}, value: "select method", hint: "", label: "Method of Administration *",color:ColorConstants.whiteColor,iconColor: ColorConstants.blackColor,),
                   Widgets.heightSpaceH1,
                   CustomDropdown(onTap: (){}, value: "Daily", hint: "", label: "Frequency",color:ColorConstants.whiteColor,iconColor: ColorConstants.blackColor,),
                   Widgets.heightSpaceH1,
@@ -73,7 +73,7 @@ class AddCustomMedication extends StatelessWidget {
                     hint: "e.g http//www.medicines.org.uk/emc..",
 
                   ),
-                 Texts.textNormal("Enter a link to the medication's Patient Information Leaflet(PIL) if available.",size: 14,textAlign: TextAlign.start),
+                 Texts.textNormal("Enter a link to the medication's Patient Information Leaflet(PIL) if available.",size: 12,textAlign: TextAlign.start),
                   Widgets.heightSpaceH2,
 
                   EntryBigField(hint:"Enter detailed information about dosing instructions, e.g., 'Initial dose: Apply once daily for first 2 weeks. Maintenance: Apply twice weekly." ,label:"Detailed Dosage Information (optional)" ,),
@@ -81,7 +81,7 @@ class AddCustomMedication extends StatelessWidget {
                EntryField(label: "Start Date",prefixIcon: Assets.calendarIcon,hint: "07/04/2025",),
                   Widgets.heightSpaceH1,
                   Texts.textMedium("Upload Medication Image(optional)",size: 14),
-                  Widgets.heightSpaceH1,
+                  Widgets.heightSpaceH2,
                   DottedBorder(
                     color: ColorConstants.primaryColor,
                     strokeWidth: 2,
@@ -114,7 +114,7 @@ class AddCustomMedication extends StatelessWidget {
                   Widgets.heightSpaceH1,
                   Texts.textNormal("Upload a photo of your medication bottle or packaging to help us add this medication to our database.",size: 12,textAlign: TextAlign.start),
 
-                  Widgets.heightSpaceH1,
+                  Widgets.heightSpaceH2,
                   EntryBigField(label:"Additional Notes" ,hint:"Additional notes about this medication" ,),
                   Widgets.heightSpaceH1,
                   CustomButton(

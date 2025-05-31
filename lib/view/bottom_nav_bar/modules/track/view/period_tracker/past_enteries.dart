@@ -15,6 +15,7 @@ class PeriodsPastEnteries extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorConstants.whiteColor,
       body: Padding(
         padding: PaddingConstants.screenPaddingHalf,
         child: Column(
@@ -54,7 +55,7 @@ class ChipWidget extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
         child: Texts.textNormal(label,
-            size: 14, color: textColor ?? ColorConstants.blackColor),
+            size: 12, color: textColor ?? ColorConstants.blackColor),
       ),
     );
   }

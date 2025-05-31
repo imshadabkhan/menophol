@@ -51,12 +51,12 @@ class EditProfile extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Texts.textBold("Edit Profile", size: 20),
+              Texts.textBold("Edit Profile", size: 18),
               Widgets.heightSpaceH05,
               Texts.textNormal(
                   "Update your personal information and keep your profile up to date.",
                   textAlign: TextAlign.start,
-                  size: 14),
+                  size: 12),
               Widgets.heightSpaceH2,
               Center(
                 child: Stack(
@@ -187,9 +187,9 @@ class EditProfile extends StatelessWidget {
               ),
               Texts.textNormal(
                   'This information helps us provide more personalized insights about your health.',
-                  size: 14,
+                  size: 12,
                   textAlign: TextAlign.start),
-              Widgets.heightSpaceH1,
+              Widgets.heightSpaceH2,
               CustomDropdown(
                 onTap: () {},
                 value: '',
@@ -198,13 +198,13 @@ class EditProfile extends StatelessWidget {
                 color: ColorConstants.transparentColor,
                 iconColor: ColorConstants.blackColor,
               ),
-              Widgets.heightSpaceH05,
+
               Texts.textNormal(
-                size: 14,
+                size: 12,
                 textAlign: TextAlign.start,
                 "This helps us suggest appropriate food options for managing menopause symptoms",
               ),
-              Widgets.heightSpaceH1,
+              Widgets.heightSpaceH2,
               CustomButton(
                 label: "Save changes",
                 textColor: ColorConstants.whiteColor,
@@ -212,7 +212,7 @@ class EditProfile extends StatelessWidget {
               ),
               Widgets.heightSpaceH2,
               Texts.textBold('Privacy Setting', size: 18),
-              Widgets.heightSpaceH1,
+              Widgets.heightSpaceH2,
               ...List.generate(options.length, (index) {
                 return Obx(() {
                   bool isSelected = controller.selectedOption.value == index;
@@ -290,9 +290,9 @@ class EditProfile extends StatelessWidget {
               ),
               Widgets.heightSpaceH2,
               Texts.textBold("Data Management", size: 18),
-              Widgets.heightSpaceH05,
+              Widgets.heightSpaceH1,
               Texts.textNormal(
-                size: 14,
+                size: 12,
                 textAlign: TextAlign.start,
                 "Under GDPR, you have the right to access, export, and delete your personal data.",
               ),
@@ -308,14 +308,14 @@ class EditProfile extends StatelessWidget {
                 borderColor: Colors.black,
                 textColor: Colors.black,
               ),
-              Widgets.heightSpaceH1,
+              Widgets.heightSpaceH2,
               Widgets.divider(),
-              Widgets.heightSpaceH1,
+              Widgets.heightSpaceH2,
               Texts.textNormal(
                   "Delete your account and all associated data. This action cannot be undone.",
-                  size: 14,
+                  size: 12,
                   textAlign: TextAlign.start),
-              Widgets.heightSpaceH1,
+              Widgets.heightSpaceH2,
               CustomButton(
                 label: "Delete my account",
                 backgroundColor: ColorConstants.redTextColor,

@@ -36,7 +36,7 @@ class HorizontalListButtons extends StatelessWidget {
           ),
           child: Texts.textMedium(
             label,
-            size: 14,
+            size: 12,
             color: isSelected ? Colors.white : Colors.black,
           ),
         ),

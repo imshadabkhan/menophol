@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:menophol/core/constants/assets_constants.dart';
+import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/widgets/entry_field.dart';
 import 'package:menophol/core/widgets/radiobuttonwithtext.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
@@ -21,14 +22,16 @@ class _MoodPastEntriesState extends State<MoodPastEntries> {
   List<String> trigger2=["Exercise",'Temperature',"Weather Changes"];
   Widget build(BuildContext context) {
     return  Scaffold(
+      backgroundColor: ColorConstants.whiteColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: ListView(children: [
+          Widgets.heightSpaceH1,
           EntryField(
             prefixIcon: Assets.calendarIcon,
             hint: "07/04/2025",
           ),
-          Widgets.heightSpaceH05,
+          Widgets.heightSpaceH1,
           PastEntryCards(triggers: triggers,title: "Happy",icon:Assets.unfilledHappy,controller:controller,),
           // PastEntryCards(triggers: trigger2,title: 'Sleep Issues',label:"Very Severe" ,labelColor: ColorConstants.redColor,),
 
@@ -56,10 +59,11 @@ class PastEntryCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(bottom: 8.0),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
+          border: Border.all(color: ColorConstants.greyBorderColor),
           borderRadius: BorderRadius.circular(20),
 
         ),
@@ -71,11 +75,11 @@ class PastEntryCards extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Texts.textBold(title,size: 22,textAlign: TextAlign.start),
+                  Texts.textBold(title,size: 18,textAlign: TextAlign.start),
                   Widgets.widthSpaceW1,
                   Image.asset(icon,height: 20,width: 20,),
                   Expanded(child:  Widgets.widthSpaceW1,),
-                  Image.asset(Assets.deleteIcon,height: 20,),
+                  Image.asset(Assets.deleteIcon,height: 16,),
 
                 ],),
               Widgets.heightSpaceH1,
@@ -88,11 +92,9 @@ class PastEntryCards extends StatelessWidget {
               //   child: Padding(padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),child: Texts.textNormal(label,color:labelColor?? ColorConstants.goldenColor,size: 14),),),
               Widgets.heightSpaceH1,
               Widgets.divider(),
+              Widgets.heightSpaceH2,
+              Texts.textBold("Triggers",size: 16),
               Widgets.heightSpaceH1,
-              Texts.textBold("Triggers",size: 18),
-              Widgets.heightSpaceH1,
-
-
 
               Wrap(
                 children: List.generate(triggers.length, (index) {

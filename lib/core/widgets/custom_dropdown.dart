@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
-
-
 import '../constants/color_constants.dart';
 
 class CustomDropdown extends StatelessWidget {
@@ -19,6 +17,7 @@ class CustomDropdown extends StatelessWidget {
      this.borderColor,
      this.iconColor,
      this.prefixIcon,
+     this.valueColor,
      this.suffixIcon
   });
 
@@ -32,25 +31,28 @@ class CustomDropdown extends StatelessWidget {
    final Color? borderColor;
    Color? iconColor;
    Color? labelColor;
+   Color? valueColor;
    String? prefixIcon;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
+        label!=null?  Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Texts.textBlock(fontWeight: FontWeight.w600,
-              label??"",
-            size: 10,
+            Texts.textNormal(
+              label!,
+            size: 12,
+              fontWeight: FontWeight.w600
             ),
 
           ],
-        ),
+        ):SizedBox(),
         label!=null?const SizedBox(
           height: 7,
-        ):Container(),
+        ):SizedBox(height: 0,),
         GestureDetector(
             onTap:onTap,
             child: Container(
@@ -74,11 +76,11 @@ class CustomDropdown extends StatelessWidget {
                   Expanded(
                     child: Texts.textNormal(
                       textAlign: TextAlign.start,
-                      size: 14,
+                      size: 12,
                       (value == null || value!.isEmpty) ? hint! : value!,
                       color: (value == null || value!.isEmpty)
                           ? Colors.grey // or your placeholder color
-                          : ColorConstants.blackColor,
+                          : valueColor??ColorConstants.blackColor,
                     ),
                   ),
 

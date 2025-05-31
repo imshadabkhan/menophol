@@ -88,7 +88,7 @@ class ConnectWearableDevicesScreen extends StatelessWidget {
                 Widgets.heightSpaceH05,
                 Texts.textNormal(
                   'Connect your wearable devices to seamlessly track health data and activity.',
-                  size: 14,textAlign: TextAlign.start
+                  size: 12,textAlign: TextAlign.start
                 ),
               Widgets.heightSpaceH1,
               Widgets.divider(),
@@ -98,7 +98,7 @@ class ConnectWearableDevicesScreen extends StatelessWidget {
 
                 ),
                 Widgets.heightSpaceH05,
-                Texts.textNormal("Connect your wearable devices to enhance your health tracking",size: 14,textAlign: TextAlign.start),
+                Texts.textNormal("Connect your wearable devices to enhance your health tracking",size: 12,textAlign: TextAlign.start),
                 Widgets.heightSpaceH2,
                 ...devices.map((device) => Container(
                   margin: EdgeInsets.only(bottom: 12.h),

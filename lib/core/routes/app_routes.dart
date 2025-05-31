@@ -23,8 +23,8 @@ import 'package:menophol/view/connect_wearable_devices.dart';
 import 'package:menophol/view/glp_medication/view/glp1_medication/glp1_medications.dart';
 import 'package:menophol/view/glp_medication/view/manage_medications.dart';
 import 'package:menophol/view/hrt_medication.dart';
-import 'package:menophol/view/medical_condition.dart';
-import 'package:menophol/view/medical_procedure_screen.dart';
+import 'package:menophol/view/medical_condition/medical_condition.dart';
+import 'package:menophol/view/medical_procedure/medical_procedure_screen.dart';
 
 import '../../view/bottom_nav_bar/modules/track/view/mood_tracker/mood_tracker_view.dart';
 import '../../view/bottom_nav_bar/modules/track/view/supplement_tracker/supplement_tracker.dart';

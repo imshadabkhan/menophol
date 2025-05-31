@@ -12,7 +12,9 @@ class ExercisePastEnteries extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(body: Padding(
+    return  Scaffold(
+      backgroundColor: ColorConstants.whiteColor,
+      body: Padding(
       padding: PaddingConstants.screenPaddingHalf,
       child: Column(children: [
         EntryField(
@@ -34,7 +36,7 @@ Widgets.heightSpaceH1,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                 children: [
-                Texts.textBold("Walking",size: 20),
+                Texts.textBold("Walking",size: 18),
                   Image.asset(Assets.deleteIcon,height: 15.h,width: 15.w,),
 
               ],),

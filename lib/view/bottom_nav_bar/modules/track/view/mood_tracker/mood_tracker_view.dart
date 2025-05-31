@@ -66,9 +66,9 @@ class _MoodTrackerViewState extends State<MoodTrackerView> with SingleTickerProv
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textBold("Mood Tracker",size: 20),),
+              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textBold("Mood Tracker",size: 18),),
               Widgets.heightSpaceH05,
-              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textNormal("Track your mood to spot patterns in yur health and emotional wellbeing",textAlign: TextAlign.start,size: 14),
+              Padding(padding: EdgeInsets.symmetric(horizontal: 16),child: Texts.textNormal("Track your mood to spot patterns in yur health and emotional wellbeing",textAlign: TextAlign.start,size: 12),
               ),
               Widgets.heightSpaceH1,
               Padding(
@@ -78,7 +78,7 @@ class _MoodTrackerViewState extends State<MoodTrackerView> with SingleTickerProv
                   controller: _tabController,
                   labelColor: Colors.black,
                   unselectedLabelColor: Colors.grey,
-                  indicatorColor: Colors.black,
+                  indicatorColor: ColorConstants.darkPrimaryColor,
                   indicatorSize: TabBarIndicatorSize.tab,
                   tabs: myTabs,
                 ),

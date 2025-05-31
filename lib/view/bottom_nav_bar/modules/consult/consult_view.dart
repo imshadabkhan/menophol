@@ -55,10 +55,10 @@ class ConsultView extends StatelessWidget {
             children: [
               Widgets.heightSpaceH1,
               Texts.textBold('Find a Speacialist',
-                  textAlign: TextAlign.start, size: 20),
+                  textAlign: TextAlign.start, size: 18),
               Widgets.heightSpaceH05,
               Texts.textNormal('Find a Speacialist',
-                  textAlign: TextAlign.start, size: 14),
+                  textAlign: TextAlign.start, size: 12),
               Widgets.heightSpaceH1,
               EntrySearchField(
                 prefixIcon: Assets.searchbarIcon,

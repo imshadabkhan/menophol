@@ -59,7 +59,7 @@ class SeveritySlider extends StatelessWidget {
             children: labels
                 .map((label) => Text(
               label,
-              style: TextStyle(fontSize: 10, color: Colors.black),
+              style: TextStyle(fontSize: 10, color: Colors.black,fontFamily:"Montserrat"),
             ))
                 .toList(),
           ),

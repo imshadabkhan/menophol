@@ -38,7 +38,7 @@ class PreviousPeriodDialogBox extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Texts.textBold('Add Previous Period',size: 20),
+                      Texts.textBold('Add Previous Period',size: 18),
                       GestureDetector(
                         onTap: () => Navigator.pop(context),
                         child: Icon(Icons.close),
@@ -48,7 +48,7 @@ class PreviousPeriodDialogBox extends StatelessWidget {
                   Widgets.heightSpaceH05,
                   Texts.textNormal(
                       "Record a past menstrual cycle by adding start and end dates",
-                      textAlign: TextAlign.start,size: 14
+                      textAlign: TextAlign.start,size: 12
                   ),
                   Widgets.heightSpaceH1,
                   EntryField(label: "Start Date", prefixIcon: Assets.calendarIcon,hint: '7/4/2025',),
