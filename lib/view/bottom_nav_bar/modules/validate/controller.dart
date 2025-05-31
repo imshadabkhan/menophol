@@ -1,6 +1,35 @@
+import 'dart:ui';
+
 import 'package:get/get.dart';
+import 'package:menophol/core/constants/color_constants.dart';
 
 class ValidateController extends GetxController {
+
+  RxList<Color> colorList = [
+    ColorConstants.grayColor,
+    ColorConstants.severeColor,
+    ColorConstants.moderateColor,
+    ColorConstants.extremeColor,
+    ColorConstants.darkRedColor
+  ].obs;
+
+   RxList<String> symptomsTitleList = [
+    "Night Sweats",
+    "Insomnia",
+    "Hot Flushes",
+    "Head Aches",
+    "Anxiety",
+    "Fatigue"
+  ].obs;
+
+   RxList<String> moodTitleList = [
+    "Happy",
+    "Anxious",
+    "Tired",
+    "irritable",
+    "Content"
+  ].obs;
+
   var selectedIndex = 0.obs;
 
   String get currentRange {

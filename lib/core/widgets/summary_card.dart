@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:menophol/core/constants/assets_constants.dart';
+
 import 'package:menophol/core/constants/color_constants.dart';
 import 'package:menophol/core/widgets/symtopms_row_widgets.dart';
 import 'package:menophol/core/widgets/text_widgets.dart';
@@ -15,9 +15,15 @@ class SummaryCard extends StatelessWidget {
   final String level;
   final String? icon;
   final List<String> tags;
-  final Color color;
+  final List<String> symptoms;
+  final List<Color>? color;
+  final Color? progressColor;
 
-  const SummaryCard({super.key, required this.title, required this.dateRange, required this.score, required this.level, required this.tags, required this.color,required this.icon});
+
+
+
+
+  SummaryCard({super.key, required this.title, required this.dateRange, required this.score, required this.level, required this.tags,required this.icon,required this.symptoms,this.color,this.progressColor});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -67,7 +73,7 @@ class SummaryCard extends StatelessWidget {
                   percent: 0.3,
                  backgroundColor: ColorConstants.lightGray,
                   center: Texts.textBold("3",size: 18),
-                  progressColor: ColorConstants.darkGray,
+                  progressColor: progressColor,
                 ),
                 Widgets.widthSpaceW3,
                 Expanded(
@@ -77,23 +83,23 @@ class SummaryCard extends StatelessWidget {
                   
                     Flexible(
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SypmtomRowWidget(color: ColorConstants.grayColor,title:tags[0],baseline: 15,),
+                          SypmtomRowWidget(title:tags[0],baseline: 15,color: ColorConstants.mildGray,),
                           Widgets.heightSpaceH2,
-                          SypmtomRowWidget(color:ColorConstants.darkPeachColor ,title: tags[1],baseline: 15,),
+                          SypmtomRowWidget(title: tags[2],baseline: 15,color: ColorConstants.moderateColor,),
                         ],),
                     ),
                     Widgets.widthSpaceW3,
                     Flexible(
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SypmtomRowWidget(color: ColorConstants.peachColor,title: tags[2],baseline: 15,),
+                          SypmtomRowWidget(title: tags[3],baseline: 15,color: ColorConstants.severeColor,),
                           Widgets.heightSpaceH2,
-                          SypmtomRowWidget(color:ColorConstants.redColor,title: tags[3],baseline: 15,),
+                          SypmtomRowWidget(title: tags[1],baseline: 15,color: ColorConstants.extremeColor,),
                         ],),
                     ),
                   ],),
@@ -106,15 +112,12 @@ class SummaryCard extends StatelessWidget {
             Widgets.heightSpaceH2,
             Widgets.customDivider(),
             Widgets.heightSpaceH2,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(child: SypmtomRowWidget(height:10,width:10,color: Colors.grey,title: "Mood Swings",)),
-                Expanded(child: SypmtomRowWidget(height:10,width:10,color: ColorConstants.peachColor,title: "Anxiety",)),
-                Expanded(child: SypmtomRowWidget(height:10,width:10,color: Colors.grey,title: "Night Sweats",)),
-              ],
-            ),
+            Wrap(direction: Axis.horizontal,spacing: 6,
+            children: List.generate(symptoms.length, (int index)=>Padding(
+              padding: const EdgeInsets.symmetric(vertical: 6.0),
+              child: SypmtomRowWidget(height:10,width:10,title: symptoms[index],color: (color != null && index < color!.length) ? color![index] : Colors.grey,),
+            ),),),
+
 
 
 

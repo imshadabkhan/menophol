@@ -17,31 +17,6 @@ import 'package:flutter_toggle_button/flutter_toggle_button.dart';
 class ValidateHomePage extends StatelessWidget {
   final controller = Get.put(ValidateController());
 
-  final List<Color> colorList = [
-    ColorConstants.grayColor,
-    ColorConstants.peachColor,
-    ColorConstants.darkPeachColor,
-    ColorConstants.lightRedColor,
-    ColorConstants.darkRedColor
-  ];
-
-  final List<String> symptomsTitleList = [
-    "Night Sweats",
-    "Insomnia",
-    "Hot Flushes",
-    "Head Aches",
-    "Anxiety",
-    "Fatigue"
-  ];
-
-  final List<String> moodTitleList = [
-    "Happy",
-    "Anxious",
-    "Tired",
-    "irritable",
-    "Content"
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -205,39 +180,45 @@ class ValidateHomePage extends StatelessWidget {
               Widgets.heightSpaceH3,
 
               SummaryCard(
+progressColor: ColorConstants.mildGray,
                 icon: Assets.symptomsIcon,
                 title: "Symptoms",
                 dateRange: dateRange,
                 score: 3,
                 level: "Mild",
+                symptoms: ["Mood Swings","Anxiety","Night Sweats"],
                 tags: ["Mild", "Moderate", "Severe","Extreme"],
-                color: Colors.orange,
+                color: [ColorConstants.mildGray, ColorConstants.moderateColor, ColorConstants.extremeColor],
               ),
 
               Widgets.heightSpaceH2,
 
               SummaryCard(
+                progressColor:ColorConstants.severeColor ,
+                symptoms: ["Exercise,Sleep Changes","Temperature","Caffeine,Alcohol","Work Stress"],
                 icon: Assets.brainIcon,
                 title: "Triggers",
                 dateRange: dateRange,
                 score: 6,
                 level: "Lifestyle",
                 tags: ["Lifestyle", "Environmental", "Dietary", "Stress"],
-                color: Colors.redAccent,
+                color: [ColorConstants.mildGray, ColorConstants.severeColor, ColorConstants.extremeColor, ColorConstants.moderateColor, ],
+
+
               ),
 
               Widgets.heightSpaceH2,
 
               RecentSymptomsWidgets(
-                colorList: colorList,
-                symptomsTitleList: symptomsTitleList,
+                colorList: controller.colorList,
+                symptomsTitleList: controller.symptomsTitleList,
               ),
 
               Widgets.heightSpaceH2,
 
               RecentMoodWidget(
-                colorList: colorList,
-                moodTitleList: moodTitleList,
+                colorList: controller.colorList,
+                moodTitleList: controller.moodTitleList,
               ),
               Widgets.heightSpaceH2,
               SleepPatternWidgets(),
@@ -250,40 +231,3 @@ class ValidateHomePage extends StatelessWidget {
     );
   }
 }
-
-class ToggleButton extends StatelessWidget {
-  final String title;
-  final bool isSelected;
-  final VoidCallback onTap;
-
-  const ToggleButton(this.title, this.isSelected,
-      {required this.onTap, super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: GestureDetector(
-        onTap: onTap,
-        child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: isSelected ? ColorConstants.blackColor : Colors.transparent,
-            borderRadius: BorderRadius.circular(10),
-
-          ),
-          child:Padding(padding: EdgeInsets.symmetric(horizontal: 8,vertical: 5),child:  Texts.textNormal(
-              title,
-
-              color:
-              isSelected ? Colors.white : Colors.grey,
-              fontWeight: FontWeight.bold,
-              size: 10
-
-          ),),
-        ),
-      ),
-    );
-  }
-}
-

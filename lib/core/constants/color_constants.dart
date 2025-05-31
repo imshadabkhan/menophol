@@ -27,16 +27,16 @@ static var moodTrackerGradient1= Color(0xffEAD1F5);
   static var blackColor =  Color(0xff000000);
 
   static var redColor =  Color(0xffC0392B);
-  static var peachColor =  Color(0xffF7E5B7);
+  static var moderateColor =  Color(0xffF7E5B7);
   static var redTextColor =  Color(0xffC0392B);
   static var chipBGColor =  Color(0xffF0F0F0);
 
   static var lightGray =  Color(0xffF1F1F1);
-  static var darkGray =  Color(0xffB6C1B1);
+  static var mildGray =  Color(0xffB6C1B1);
   static var grayColor =  Color(0xffB6C1B1);
-  static var darkPeachColor =  Color(0xffF2B279);
+  static var severeColor =  Color(0xffF2B279);
 
-  static var lightRedColor =  Color(0xffEB7A5C);
+  static var extremeColor =  Color(0xffEB7A5C);
 
   static var darkRedColor =  Color(0xffB71C1C);
 
